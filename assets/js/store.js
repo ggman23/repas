@@ -340,14 +340,17 @@
 
     async testConnection() {
       try {
-        const ref = encodeURIComponent(this.dataBranch());
-        const r = await this._api(`contents/${encodeURIComponent(C.recipesPath)}?ref=${ref}`);
-        if (r.status === 401) return { ok: false, msg: 'Token refusé (401). Vérifiez que le jeton est correct et non expiré.' };
-        if (r.status === 403) return { ok: false, msg: 'Accès refusé (403). Le token n\'a pas accès à ce dépôt.' };
-        if (!r.ok && r.status !== 404) return { ok: false, msg: 'Erreur HTTP ' + r.status + ' (branche « ' + this.dataBranch() + ' » introuvable ?).' };
-        // sonde d'ECRITURE : c'est ce qui manque le plus souvent (token en lecture seule)
+        const t = this.token();
+        if (!t) return { ok: false, msg: 'Aucun jeton saisi.' };
+        // 1) le JETON est-il valide ? (/user exige une authentification correcte)
+        const who = await fetch('https://api.github.com/user', {
+          cache: 'no-store',
+          headers: { 'Accept': 'application/vnd.github+json', 'X-GitHub-Api-Version': '2022-11-28', 'Authorization': 'Bearer ' + t }
+        });
+        if (who.status === 401) return { ok: false, msg: 'Jeton refusé (401) : invalide, incomplet ou régénéré. Recopiez-le ENTIER (bouton copier de GitHub), collez-le, puis Enregistrer.' };
+        // 2) l'ECRITURE sur le depot/branche est-elle autorisee ?
         const probe = await this._writeProbe();
-        if (probe.ok) return { ok: true, msg: 'Lecture ET écriture OK — la synchronisation va fonctionner (branche « ' + this.dataBranch() + ' »).' };
+        if (probe.ok) return { ok: true, msg: 'Jeton valide + écriture OK — la synchronisation va fonctionner (branche « ' + this.dataBranch() + ' »).' };
         return { ok: false, msg: probe.msg };
       } catch (e) { return { ok: false, msg: 'Réseau indisponible : ' + e.message }; }
     },
@@ -364,7 +367,8 @@
           method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body)
         });
         if (put.ok) return { ok: true };
-        if (put.status === 403) return { ok: false, msg: 'Lecture OK, mais ÉCRITURE refusée (403) : votre token est en LECTURE SEULE. Modifiez-le → Permissions → Contents → Read and write.' };
+        if (put.status === 401) return { ok: false, msg: 'Jeton refusé (401) : recopiez-le ENTIER (bouton copier de GitHub) ou régénérez-le, puis Enregistrer.' };
+        if (put.status === 403) return { ok: false, msg: 'Écriture refusée (403) : le jeton est en LECTURE SEULE. Permissions → Contents → Read and write.' };
         if (put.status === 404) return { ok: false, msg: 'Écriture impossible : la branche « ' + this.dataBranch() + ' » est introuvable.' };
         if (put.status === 409 && sha == null) return { ok: true }; // course d'ecriture, l'acces marche
         return { ok: false, msg: 'Écriture refusée (HTTP ' + put.status + ').' };
