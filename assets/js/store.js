@@ -251,11 +251,16 @@
        Synchronisation GitHub
        ============================================================ */
     _api(path, opts) {
+      opts = opts || {};
       const url = `https://api.github.com/repos/${C.owner}/${C.repo}/${path}`;
-      const headers = { 'Accept': 'application/vnd.github+json', 'X-GitHub-Api-Version': '2022-11-28' };
+      // fusionne les en-tetes de base AVEC ceux de l'appel (sans perdre Authorization)
+      const headers = Object.assign(
+        { 'Accept': 'application/vnd.github+json', 'X-GitHub-Api-Version': '2022-11-28' },
+        opts.headers || {}
+      );
       const t = this.token();
       if (t) headers['Authorization'] = 'Bearer ' + t;
-      return fetch(url, Object.assign({ headers }, opts));
+      return fetch(url, Object.assign({}, opts, { headers }));
     },
     async pullRemote(silent) {
       if (!this.syncEnabled() || this._syncing) return;

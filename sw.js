@@ -2,7 +2,7 @@
    (pratique pour la liste de courses en magasin). Les appels a
    l'API GitHub passent toujours par le reseau. Les photos sont
    mises en cache pour rester visibles hors connexion. */
-const VERSION = 'v5';
+const VERSION = 'v6';
 const CACHE = 'mes-repas-' + VERSION;
 const IMG = 'mes-repas-img';
 const SHELL = [
