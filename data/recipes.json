@@ -1,0 +1,5186 @@
+{
+ "version": 1,
+ "generated_for": "outil repas diabetique",
+ "note": "Valeurs nutritionnelles approximatives par portion. IG = index glycemique global estime.",
+ "count": 83,
+ "recipes": [
+  {
+   "nom": "Omelette aux champignons",
+   "famille": "oeuf",
+   "types": "ms",
+   "saisons": [
+    "toute"
+   ],
+   "temps": 15,
+   "diff": 1,
+   "nutrition": {
+    "kcal": 330,
+    "glucides": 4,
+    "proteines": 22,
+    "lipides": 25,
+    "fibres": 2
+   },
+   "ig": 35,
+   "ingredients": [
+    {
+     "nom": "Oeufs",
+     "qte": "4",
+     "subs": [
+      "tofu brouille"
+     ]
+    },
+    {
+     "nom": "Champignons de Paris",
+     "qte": "250 g",
+     "subs": [
+      "epinards",
+      "courgette"
+     ]
+    },
+    {
+     "nom": "Oignon",
+     "qte": "1/2",
+     "subs": [
+      "echalote",
+      "ciboulette"
+     ]
+    },
+    {
+     "nom": "Huile d'olive",
+     "qte": "1 c. a soupe",
+     "subs": [
+      "beurre"
+     ]
+    },
+    {
+     "nom": "Sel, poivre",
+     "qte": "selon gout",
+     "subs": []
+    }
+   ],
+   "etapes": [
+    "Emincez et faites revenir les champignons et l'oignon 5 min a la poele.",
+    "Battez les oeufs avec sel et poivre, versez sur les champignons.",
+    "Laissez prendre 3-4 min a feu moyen, pliez et servez."
+   ],
+   "tags": [
+    "rapide",
+    "vegetarien",
+    "sans feculent"
+   ],
+   "astuce": "",
+   "id": "r001",
+   "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=omelette+champignons",
+   "ig_label": "bas"
+  },
+  {
+   "nom": "Omelette aux fines herbes",
+   "famille": "oeuf",
+   "types": "ms",
+   "saisons": [
+    "toute"
+   ],
+   "temps": 10,
+   "diff": 1,
+   "nutrition": {
+    "kcal": 300,
+    "glucides": 2,
+    "proteines": 20,
+    "lipides": 24,
+    "fibres": 0
+   },
+   "ig": 30,
+   "ingredients": [
+    {
+     "nom": "Oeufs",
+     "qte": "4",
+     "subs": []
+    },
+    {
+     "nom": "Persil et ciboulette",
+     "qte": "1 poignee",
+     "subs": [
+      "herbes de Provence",
+      "basilic"
+     ]
+    },
+    {
+     "nom": "Huile d'olive",
+     "qte": "1 c. a soupe",
+     "subs": [
+      "beurre"
+     ]
+    },
+    {
+     "nom": "Sel, poivre",
+     "qte": "selon gout",
+     "subs": []
+    }
+   ],
+   "etapes": [
+    "Battez les oeufs avec les herbes ciselees, sel et poivre.",
+    "Versez dans la poele chaude huilee.",
+    "Cuisez 3-4 min, pliez et servez avec une salade verte."
+   ],
+   "tags": [
+    "rapide",
+    "vegetarien",
+    "express"
+   ],
+   "astuce": "",
+   "id": "r002",
+   "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=omelette+fines+herbes",
+   "ig_label": "bas"
+  },
+  {
+   "nom": "Oeufs brouilles a la tomate",
+   "famille": "oeuf",
+   "types": "ms",
+   "saisons": [
+    "ete",
+    "toute"
+   ],
+   "temps": 15,
+   "diff": 2,
+   "nutrition": {
+    "kcal": 290,
+    "glucides": 8,
+    "proteines": 18,
+    "lipides": 19,
+    "fibres": 2
+   },
+   "ig": 35,
+   "ingredients": [
+    {
+     "nom": "Oeufs",
+     "qte": "4",
+     "subs": []
+    },
+    {
+     "nom": "Tomates",
+     "qte": "2",
+     "subs": [
+      "coulis de tomate",
+      "poivron"
+     ]
+    },
+    {
+     "nom": "Oignon",
+     "qte": "1/2",
+     "subs": [
+      "echalote"
+     ]
+    },
+    {
+     "nom": "Huile d'olive",
+     "qte": "1 c. a soupe",
+     "subs": []
+    },
+    {
+     "nom": "Sel, poivre, cumin",
+     "qte": "selon gout",
+     "subs": []
+    }
+   ],
+   "etapes": [
+    "Faites compoter tomates et oignon 8 min a la poele.",
+    "Ajoutez les oeufs battus, melangez doucement sur feu doux.",
+    "Retirez quand c'est cremeux, salez, poivrez."
+   ],
+   "tags": [
+    "vegetarien",
+    "rapide"
+   ],
+   "astuce": "",
+   "id": "r003",
+   "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=oeufs+brouilles+tomate",
+   "ig_label": "bas"
+  },
+  {
+   "nom": "Shakshuka (oeufs poches tomate-poivron)",
+   "famille": "oeuf",
+   "types": "ms",
+   "saisons": [
+    "toute"
+   ],
+   "temps": 25,
+   "diff": 3,
+   "nutrition": {
+    "kcal": 310,
+    "glucides": 14,
+    "proteines": 17,
+    "lipides": 18,
+    "fibres": 4
+   },
+   "ig": 45,
+   "ingredients": [
+    {
+     "nom": "Oeufs",
+     "qte": "4",
+     "subs": []
+    },
+    {
+     "nom": "Poivrons",
+     "qte": "2",
+     "subs": [
+      "courgette"
+     ]
+    },
+    {
+     "nom": "Tomates concassees (boite)",
+     "qte": "400 g",
+     "subs": [
+      "tomates fraiches"
+     ]
+    },
+    {
+     "nom": "Oignon",
+     "qte": "1",
+     "subs": [
+      "echalote"
+     ]
+    },
+    {
+     "nom": "Ail",
+     "qte": "1 gousse",
+     "subs": []
+    },
+    {
+     "nom": "Cumin et paprika",
+     "qte": "1 c. a cafe",
+     "subs": [
+      "curry"
+     ]
+    }
+   ],
+   "etapes": [
+    "Faites revenir oignon, ail et poivrons 8 min.",
+    "Ajoutez tomates et epices, laissez mijoter 10 min.",
+    "Creusez 4 puits, cassez-y les oeufs, couvrez 5-6 min."
+   ],
+   "tags": [
+    "vegetarien",
+    "plat unique",
+    "conserve"
+   ],
+   "astuce": "",
+   "id": "r004",
+   "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=shakshuka",
+   "ig_label": "bas"
+  },
+  {
+   "nom": "Frittata courgette-feta",
+   "famille": "oeuf",
+   "types": "ms",
+   "saisons": [
+    "ete",
+    "printemps"
+   ],
+   "temps": 25,
+   "diff": 3,
+   "nutrition": {
+    "kcal": 340,
+    "glucides": 6,
+    "proteines": 21,
+    "lipides": 25,
+    "fibres": 2
+   },
+   "ig": 40,
+   "ingredients": [
+    {
+     "nom": "Oeufs",
+     "qte": "5",
+     "subs": []
+    },
+    {
+     "nom": "Courgette",
+     "qte": "1",
+     "subs": [
+      "poireau",
+      "brocoli"
+     ]
+    },
+    {
+     "nom": "Feta",
+     "qte": "80 g",
+     "subs": [
+      "fromage de chevre",
+      "mozzarella"
+     ]
+    },
+    {
+     "nom": "Oignon",
+     "qte": "1/2",
+     "subs": []
+    },
+    {
+     "nom": "Huile d'olive",
+     "qte": "1 c. a soupe",
+     "subs": []
+    }
+   ],
+   "etapes": [
+    "Faites revenir la courgette en des 6 min.",
+    "Versez les oeufs battus, emiettez la feta dessus.",
+    "Cuisez a couvert 10 min a feu doux jusqu'a prise."
+   ],
+   "tags": [
+    "vegetarien",
+    "froid possible"
+   ],
+   "astuce": "",
+   "id": "r005",
+   "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=frittata+courgette",
+   "ig_label": "bas"
+  },
+  {
+   "nom": "Oeufs cocotte aux epinards",
+   "famille": "oeuf",
+   "types": "ms",
+   "saisons": [
+    "hiver",
+    "toute"
+   ],
+   "temps": 20,
+   "diff": 3,
+   "nutrition": {
+    "kcal": 260,
+    "glucides": 5,
+    "proteines": 16,
+    "lipides": 19,
+    "fibres": 3
+   },
+   "ig": 35,
+   "ingredients": [
+    {
+     "nom": "Oeufs",
+     "qte": "4",
+     "subs": []
+    },
+    {
+     "nom": "Epinards",
+     "qte": "200 g",
+     "subs": [
+      "blettes",
+      "brocoli"
+     ]
+    },
+    {
+     "nom": "Creme legere",
+     "qte": "4 c. a soupe",
+     "subs": [
+      "fromage blanc"
+     ]
+    },
+    {
+     "nom": "Noix de muscade",
+     "qte": "1 pincee",
+     "subs": []
+    }
+   ],
+   "etapes": [
+    "Faites tomber les epinards 4 min, repartissez dans 4 ramequins.",
+    "Ajoutez 1 c. de creme, cassez un oeuf par ramequin.",
+    "Four 12 min a 180 C, le blanc doit etre pris."
+   ],
+   "tags": [
+    "vegetarien",
+    "four"
+   ],
+   "astuce": "",
+   "id": "r006",
+   "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=oeufs+cocotte+epinards",
+   "ig_label": "bas"
+  },
+  {
+   "nom": "Salade d'oeufs durs et crudites",
+   "famille": "oeuf",
+   "types": "m",
+   "saisons": [
+    "ete",
+    "toute"
+   ],
+   "temps": 15,
+   "diff": 1,
+   "nutrition": {
+    "kcal": 280,
+    "glucides": 9,
+    "proteines": 16,
+    "lipides": 18,
+    "fibres": 5
+   },
+   "ig": 30,
+   "ingredients": [
+    {
+     "nom": "Oeufs",
+     "qte": "4",
+     "subs": []
+    },
+    {
+     "nom": "Salade verte",
+     "qte": "1",
+     "subs": []
+    },
+    {
+     "nom": "Concombre",
+     "qte": "1/2",
+     "subs": [
+      "tomate"
+     ]
+    },
+    {
+     "nom": "Tomates",
+     "qte": "2",
+     "subs": []
+    },
+    {
+     "nom": "Vinaigrette (huile olive + moutarde)",
+     "qte": "2 c. a soupe",
+     "subs": []
+    }
+   ],
+   "etapes": [
+    "Faites cuire les oeufs 9 min, refroidissez et ecalez.",
+    "Coupez les crudites, dressez sur la salade.",
+    "Ajoutez les oeufs en quartiers et la vinaigrette."
+   ],
+   "tags": [
+    "sans cuisson chaude",
+    "froid",
+    "rapide"
+   ],
+   "astuce": "",
+   "id": "r007",
+   "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=salade+oeufs+durs",
+   "ig_label": "bas"
+  },
+  {
+   "nom": "Galette de sarrasin oeuf-jambon",
+   "famille": "oeuf",
+   "types": "ms",
+   "saisons": [
+    "toute"
+   ],
+   "temps": 20,
+   "diff": 3,
+   "nutrition": {
+    "kcal": 330,
+    "glucides": 30,
+    "proteines": 20,
+    "lipides": 13,
+    "fibres": 4
+   },
+   "ig": 45,
+   "ingredients": [
+    {
+     "nom": "Galettes de sarrasin",
+     "qte": "2",
+     "subs": [
+      "tortilla de ble complet"
+     ]
+    },
+    {
+     "nom": "Oeufs",
+     "qte": "2",
+     "subs": []
+    },
+    {
+     "nom": "Jambon blanc",
+     "qte": "2 tranches",
+     "subs": [
+      "jambon de dinde",
+      "champignons"
+     ]
+    },
+    {
+     "nom": "Emmental rape",
+     "qte": "40 g",
+     "subs": [
+      "comte"
+     ]
+    }
+   ],
+   "etapes": [
+    "Rechauffez une galette a la poele.",
+    "Cassez un oeuf au centre, ajoutez jambon et fromage.",
+    "Repliez les bords, laissez fondre 2 min."
+   ],
+   "tags": [
+    "rapide",
+    "bretagne"
+   ],
+   "astuce": "",
+   "id": "r008",
+   "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=galette+sarrasin+complete",
+   "ig_label": "bas"
+  },
+  {
+   "nom": "Quiche sans pate aux poireaux",
+   "famille": "oeuf",
+   "types": "ms",
+   "saisons": [
+    "automne",
+    "hiver"
+   ],
+   "temps": 45,
+   "diff": 3,
+   "nutrition": {
+    "kcal": 300,
+    "glucides": 12,
+    "proteines": 18,
+    "lipides": 18,
+    "fibres": 4
+   },
+   "ig": 45,
+   "ingredients": [
+    {
+     "nom": "Oeufs",
+     "qte": "4",
+     "subs": []
+    },
+    {
+     "nom": "Poireaux",
+     "qte": "3",
+     "subs": [
+      "courgette",
+      "brocoli"
+     ]
+    },
+    {
+     "nom": "Lait",
+     "qte": "20 cl",
+     "subs": [
+      "lait vegetal"
+     ]
+    },
+    {
+     "nom": "Farine complete",
+     "qte": "2 c. a soupe",
+     "subs": [
+      "maizena"
+     ]
+    },
+    {
+     "nom": "Emmental rape",
+     "qte": "50 g",
+     "subs": []
+    }
+   ],
+   "etapes": [
+    "Emincez et faites fondre les poireaux 10 min.",
+    "Battez oeufs, lait, farine et fromage, ajoutez les poireaux.",
+    "Versez dans un moule huile, four 30 min a 180 C."
+   ],
+   "tags": [
+    "vegetarien",
+    "four",
+    "sans pate"
+   ],
+   "astuce": "",
+   "id": "r009",
+   "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=quiche+sans+pate+poireaux",
+   "ig_label": "bas"
+  },
+  {
+   "nom": "Tartines avocat-oeuf",
+   "famille": "oeuf",
+   "types": "m",
+   "saisons": [
+    "toute"
+   ],
+   "temps": 10,
+   "diff": 1,
+   "nutrition": {
+    "kcal": 340,
+    "glucides": 24,
+    "proteines": 15,
+    "lipides": 20,
+    "fibres": 7
+   },
+   "ig": 40,
+   "ingredients": [
+    {
+     "nom": "Pain complet",
+     "qte": "2 tranches",
+     "subs": [
+      "pain de seigle"
+     ]
+    },
+    {
+     "nom": "Avocat",
+     "qte": "1",
+     "subs": [
+      "houmous"
+     ]
+    },
+    {
+     "nom": "Oeufs",
+     "qte": "2",
+     "subs": []
+    },
+    {
+     "nom": "Citron",
+     "qte": "1/2",
+     "subs": []
+    },
+    {
+     "nom": "Sel, poivre, piment",
+     "qte": "selon gout",
+     "subs": []
+    }
+   ],
+   "etapes": [
+    "Faites cuire les oeufs (au plat ou durs).",
+    "Ecrasez l'avocat avec citron, sel et poivre sur le pain.",
+    "Posez l'oeuf dessus, parsemez de piment."
+   ],
+   "tags": [
+    "rapide",
+    "vegetarien",
+    "express"
+   ],
+   "astuce": "",
+   "id": "r010",
+   "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=tartine+avocat+oeuf",
+   "ig_label": "bas"
+  },
+  {
+   "nom": "Poulet grille citron-thym",
+   "famille": "volaille",
+   "types": "ms",
+   "saisons": [
+    "ete",
+    "toute"
+   ],
+   "temps": 25,
+   "diff": 2,
+   "nutrition": {
+    "kcal": 300,
+    "glucides": 3,
+    "proteines": 38,
+    "lipides": 14,
+    "fibres": 1
+   },
+   "ig": 25,
+   "ingredients": [
+    {
+     "nom": "Blancs de poulet",
+     "qte": "2",
+     "subs": [
+      "escalopes de dinde"
+     ]
+    },
+    {
+     "nom": "Citron",
+     "qte": "1",
+     "subs": []
+    },
+    {
+     "nom": "Thym",
+     "qte": "2 branches",
+     "subs": [
+      "herbes de Provence",
+      "romarin"
+     ]
+    },
+    {
+     "nom": "Huile d'olive",
+     "qte": "1 c. a soupe",
+     "subs": []
+    },
+    {
+     "nom": "Ail",
+     "qte": "1 gousse",
+     "subs": []
+    }
+   ],
+   "etapes": [
+    "Marinez le poulet 10 min avec citron, ail, thym et huile.",
+    "Saisissez 5-6 min de chaque cote a la poele.",
+    "Servez avec des legumes verts ou une salade."
+   ],
+   "tags": [
+    "proteine",
+    "leger",
+    "rapide"
+   ],
+   "astuce": "",
+   "id": "r011",
+   "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=poulet+citron+thym",
+   "ig_label": "bas"
+  },
+  {
+   "nom": "Escalope de poulet a la moutarde",
+   "famille": "volaille",
+   "types": "ms",
+   "saisons": [
+    "toute"
+   ],
+   "temps": 20,
+   "diff": 2,
+   "nutrition": {
+    "kcal": 320,
+    "glucides": 4,
+    "proteines": 37,
+    "lipides": 16,
+    "fibres": 1
+   },
+   "ig": 30,
+   "ingredients": [
+    {
+     "nom": "Escalopes de poulet",
+     "qte": "2",
+     "subs": [
+      "dinde",
+      "porc"
+     ]
+    },
+    {
+     "nom": "Moutarde",
+     "qte": "1 c. a soupe",
+     "subs": [
+      "moutarde a l'ancienne"
+     ]
+    },
+    {
+     "nom": "Creme legere",
+     "qte": "3 c. a soupe",
+     "subs": [
+      "yaourt nature"
+     ]
+    },
+    {
+     "nom": "Champignons",
+     "qte": "150 g",
+     "subs": [
+      "echalote"
+     ]
+    }
+   ],
+   "etapes": [
+    "Saisissez les escalopes 4 min par face, reservez.",
+    "Faites revenir les champignons, ajoutez moutarde et creme.",
+    "Remettez le poulet, laissez napper 3 min."
+   ],
+   "tags": [
+    "proteine",
+    "rapide"
+   ],
+   "astuce": "",
+   "id": "r012",
+   "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=escalope+poulet+moutarde",
+   "ig_label": "bas"
+  },
+  {
+   "nom": "Poulet au curry et lait de coco",
+   "famille": "volaille",
+   "types": "ms",
+   "saisons": [
+    "toute"
+   ],
+   "temps": 30,
+   "diff": 3,
+   "nutrition": {
+    "kcal": 390,
+    "glucides": 12,
+    "proteines": 35,
+    "lipides": 21,
+    "fibres": 3
+   },
+   "ig": 45,
+   "ingredients": [
+    {
+     "nom": "Blancs de poulet",
+     "qte": "2",
+     "subs": [
+      "dinde",
+      "pois chiches"
+     ]
+    },
+    {
+     "nom": "Lait de coco",
+     "qte": "20 cl",
+     "subs": [
+      "creme legere"
+     ]
+    },
+    {
+     "nom": "Oignon",
+     "qte": "1",
+     "subs": []
+    },
+    {
+     "nom": "Curry en poudre",
+     "qte": "1 c. a soupe",
+     "subs": [
+      "curcuma + cumin"
+     ]
+    },
+    {
+     "nom": "Poivron",
+     "qte": "1",
+     "subs": [
+      "courgette",
+      "carotte"
+     ]
+    }
+   ],
+   "etapes": [
+    "Faites dorer le poulet en morceaux, reservez.",
+    "Revenez oignon et poivron, ajoutez curry puis lait de coco.",
+    "Remettez le poulet, mijotez 12 min. Servez avec riz complet."
+   ],
+   "tags": [
+    "proteine",
+    "epices",
+    "plat unique"
+   ],
+   "astuce": "",
+   "id": "r013",
+   "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=poulet+curry+coco",
+   "ig_label": "bas"
+  },
+  {
+   "nom": "Emince de dinde au wok",
+   "famille": "volaille",
+   "types": "ms",
+   "saisons": [
+    "toute"
+   ],
+   "temps": 20,
+   "diff": 2,
+   "nutrition": {
+    "kcal": 300,
+    "glucides": 14,
+    "proteines": 32,
+    "lipides": 11,
+    "fibres": 4
+   },
+   "ig": 45,
+   "ingredients": [
+    {
+     "nom": "Emince de dinde",
+     "qte": "300 g",
+     "subs": [
+      "poulet",
+      "tofu"
+     ]
+    },
+    {
+     "nom": "Legumes wok (poivron, chou, carotte)",
+     "qte": "400 g",
+     "subs": [
+      "courgette",
+      "haricots verts"
+     ]
+    },
+    {
+     "nom": "Sauce soja",
+     "qte": "2 c. a soupe",
+     "subs": [
+      "sauce teriyaki"
+     ]
+    },
+    {
+     "nom": "Gingembre",
+     "qte": "1 c. a cafe",
+     "subs": [
+      "ail"
+     ]
+    },
+    {
+     "nom": "Huile",
+     "qte": "1 c. a soupe",
+     "subs": []
+    }
+   ],
+   "etapes": [
+    "Saisissez la dinde a feu vif 4 min, reservez.",
+    "Faites sauter les legumes 6 min en gardant du croquant.",
+    "Remettez la dinde, ajoutez soja et gingembre, melangez 2 min."
+   ],
+   "tags": [
+    "proteine",
+    "rapide",
+    "asiatique"
+   ],
+   "astuce": "",
+   "id": "r014",
+   "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=wok+dinde+legumes",
+   "ig_label": "bas"
+  },
+  {
+   "nom": "Cuisses de poulet roties au four",
+   "famille": "volaille",
+   "types": "ms",
+   "saisons": [
+    "automne",
+    "hiver"
+   ],
+   "temps": 50,
+   "diff": 2,
+   "nutrition": {
+    "kcal": 380,
+    "glucides": 6,
+    "proteines": 34,
+    "lipides": 24,
+    "fibres": 2
+   },
+   "ig": 25,
+   "ingredients": [
+    {
+     "nom": "Cuisses de poulet",
+     "qte": "2",
+     "subs": [
+      "pilons"
+     ]
+    },
+    {
+     "nom": "Pommes de terre",
+     "qte": "300 g",
+     "subs": [
+      "patate douce",
+      "navet"
+     ]
+    },
+    {
+     "nom": "Oignon",
+     "qte": "1",
+     "subs": []
+    },
+    {
+     "nom": "Herbes de Provence",
+     "qte": "1 c. a soupe",
+     "subs": []
+    },
+    {
+     "nom": "Huile d'olive",
+     "qte": "2 c. a soupe",
+     "subs": []
+    }
+   ],
+   "etapes": [
+    "Disposez poulet et legumes dans un plat, huilez et assaisonnez.",
+    "Enfournez 45 min a 200 C en retournant a mi-cuisson.",
+    "La peau doit etre doree et croustillante."
+   ],
+   "tags": [
+    "proteine",
+    "four",
+    "plat unique"
+   ],
+   "astuce": "",
+   "id": "r015",
+   "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=cuisses+poulet+four",
+   "ig_label": "bas"
+  },
+  {
+   "nom": "Poulet basquaise",
+   "famille": "volaille",
+   "types": "ms",
+   "saisons": [
+    "ete",
+    "automne"
+   ],
+   "temps": 40,
+   "diff": 3,
+   "nutrition": {
+    "kcal": 340,
+    "glucides": 14,
+    "proteines": 34,
+    "lipides": 15,
+    "fibres": 4
+   },
+   "ig": 45,
+   "ingredients": [
+    {
+     "nom": "Blancs de poulet",
+     "qte": "2",
+     "subs": [
+      "cuisses"
+     ]
+    },
+    {
+     "nom": "Poivrons rouge et vert",
+     "qte": "2",
+     "subs": []
+    },
+    {
+     "nom": "Tomates concassees",
+     "qte": "400 g",
+     "subs": []
+    },
+    {
+     "nom": "Oignon",
+     "qte": "1",
+     "subs": []
+    },
+    {
+     "nom": "Ail",
+     "qte": "1 gousse",
+     "subs": []
+    },
+    {
+     "nom": "Piment d'Espelette",
+     "qte": "1 pincee",
+     "subs": [
+      "paprika"
+     ]
+    }
+   ],
+   "etapes": [
+    "Dorez le poulet, reservez.",
+    "Faites compoter oignon, poivrons, ail et tomates 15 min.",
+    "Remettez le poulet, mijotez 15 min. Servez avec riz."
+   ],
+   "tags": [
+    "proteine",
+    "mijote",
+    "sud-ouest"
+   ],
+   "astuce": "",
+   "id": "r016",
+   "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=poulet+basquaise",
+   "ig_label": "bas"
+  },
+  {
+   "nom": "Salade de poulet et crudites",
+   "famille": "volaille",
+   "types": "m",
+   "saisons": [
+    "ete",
+    "toute"
+   ],
+   "temps": 20,
+   "diff": 1,
+   "nutrition": {
+    "kcal": 340,
+    "glucides": 12,
+    "proteines": 33,
+    "lipides": 16,
+    "fibres": 6
+   },
+   "ig": 30,
+   "ingredients": [
+    {
+     "nom": "Blanc de poulet cuit",
+     "qte": "2",
+     "subs": [
+      "restes de poulet",
+      "thon"
+     ]
+    },
+    {
+     "nom": "Salade verte",
+     "qte": "1",
+     "subs": []
+    },
+    {
+     "nom": "Tomates cerises",
+     "qte": "150 g",
+     "subs": []
+    },
+    {
+     "nom": "Mais",
+     "qte": "2 c. a soupe",
+     "subs": [
+      "pois chiches"
+     ]
+    },
+    {
+     "nom": "Vinaigrette",
+     "qte": "2 c. a soupe",
+     "subs": []
+    }
+   ],
+   "etapes": [
+    "Emincez le poulet cuit.",
+    "Melangez salade, tomates, mais et poulet.",
+    "Assaisonnez de vinaigrette legere."
+   ],
+   "tags": [
+    "froid",
+    "rapide",
+    "restes"
+   ],
+   "astuce": "",
+   "id": "r017",
+   "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=salade+poulet",
+   "ig_label": "bas"
+  },
+  {
+   "nom": "Brochettes de poulet et courgettes",
+   "famille": "volaille",
+   "types": "ms",
+   "saisons": [
+    "ete",
+    "printemps"
+   ],
+   "temps": 30,
+   "diff": 3,
+   "nutrition": {
+    "kcal": 290,
+    "glucides": 6,
+    "proteines": 35,
+    "lipides": 13,
+    "fibres": 2
+   },
+   "ig": 30,
+   "ingredients": [
+    {
+     "nom": "Blancs de poulet",
+     "qte": "2",
+     "subs": [
+      "dinde"
+     ]
+    },
+    {
+     "nom": "Courgettes",
+     "qte": "2",
+     "subs": [
+      "poivron",
+      "champignon"
+     ]
+    },
+    {
+     "nom": "Oignon rouge",
+     "qte": "1",
+     "subs": []
+    },
+    {
+     "nom": "Paprika et huile d'olive",
+     "qte": "2 c. a soupe",
+     "subs": [
+      "herbes"
+     ]
+    }
+   ],
+   "etapes": [
+    "Coupez poulet et legumes en cubes, enfilez sur des piques.",
+    "Badigeonnez d'huile et paprika.",
+    "Grillez 12-15 min au four ou a la poele en tournant."
+   ],
+   "tags": [
+    "proteine",
+    "barbecue",
+    "ete"
+   ],
+   "astuce": "",
+   "id": "r018",
+   "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=brochettes+poulet+courgette",
+   "ig_label": "bas"
+  },
+  {
+   "nom": "Poulet, riz complet et brocoli",
+   "famille": "volaille",
+   "types": "ms",
+   "saisons": [
+    "toute"
+   ],
+   "temps": 30,
+   "diff": 2,
+   "nutrition": {
+    "kcal": 420,
+    "glucides": 38,
+    "proteines": 34,
+    "lipides": 12,
+    "fibres": 6
+   },
+   "ig": 50,
+   "ingredients": [
+    {
+     "nom": "Blancs de poulet",
+     "qte": "2",
+     "subs": [
+      "dinde"
+     ]
+    },
+    {
+     "nom": "Riz complet",
+     "qte": "120 g cru",
+     "subs": [
+      "quinoa",
+      "boulgour"
+     ]
+    },
+    {
+     "nom": "Brocoli",
+     "qte": "300 g",
+     "subs": [
+      "haricots verts",
+      "chou-fleur"
+     ]
+    },
+    {
+     "nom": "Sauce soja",
+     "qte": "1 c. a soupe",
+     "subs": []
+    }
+   ],
+   "etapes": [
+    "Cuisez le riz complet (18 min) et le brocoli vapeur (8 min).",
+    "Poelez le poulet en des 8 min.",
+    "Melangez le tout, ajoutez la sauce soja."
+   ],
+   "tags": [
+    "proteine",
+    "complet",
+    "plat unique"
+   ],
+   "astuce": "",
+   "id": "r019",
+   "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=poulet+riz+complet+brocoli",
+   "ig_label": "bas"
+  },
+  {
+   "nom": "Wrap au poulet et crudites",
+   "famille": "volaille",
+   "types": "m",
+   "saisons": [
+    "toute"
+   ],
+   "temps": 15,
+   "diff": 2,
+   "nutrition": {
+    "kcal": 380,
+    "glucides": 34,
+    "proteines": 28,
+    "lipides": 14,
+    "fibres": 6
+   },
+   "ig": 45,
+   "ingredients": [
+    {
+     "nom": "Tortilla de ble complet",
+     "qte": "2",
+     "subs": [
+      "galette de sarrasin"
+     ]
+    },
+    {
+     "nom": "Blanc de poulet cuit",
+     "qte": "1",
+     "subs": [
+      "thon",
+      "jambon"
+     ]
+    },
+    {
+     "nom": "Salade, tomate, carotte rapee",
+     "qte": "1 bol",
+     "subs": []
+    },
+    {
+     "nom": "Fromage blanc + moutarde",
+     "qte": "2 c. a soupe",
+     "subs": [
+      "houmous"
+     ]
+    }
+   ],
+   "etapes": [
+    "Tartinez la tortilla de sauce au fromage blanc.",
+    "Garnissez de poulet et crudites.",
+    "Roulez serre et coupez en deux."
+   ],
+   "tags": [
+    "rapide",
+    "froid",
+    "nomade"
+   ],
+   "astuce": "",
+   "id": "r020",
+   "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=wrap+poulet",
+   "ig_label": "bas"
+  },
+  {
+   "nom": "Emince de dinde a la creme et champignons",
+   "famille": "volaille",
+   "types": "ms",
+   "saisons": [
+    "automne",
+    "hiver"
+   ],
+   "temps": 25,
+   "diff": 2,
+   "nutrition": {
+    "kcal": 330,
+    "glucides": 8,
+    "proteines": 34,
+    "lipides": 17,
+    "fibres": 2
+   },
+   "ig": 35,
+   "ingredients": [
+    {
+     "nom": "Emince de dinde",
+     "qte": "300 g",
+     "subs": [
+      "poulet"
+     ]
+    },
+    {
+     "nom": "Champignons",
+     "qte": "250 g",
+     "subs": []
+    },
+    {
+     "nom": "Creme legere",
+     "qte": "10 cl",
+     "subs": [
+      "yaourt",
+      "lait de coco"
+     ]
+    },
+    {
+     "nom": "Echalote",
+     "qte": "1",
+     "subs": [
+      "oignon"
+     ]
+    },
+    {
+     "nom": "Persil",
+     "qte": "1 poignee",
+     "subs": []
+    }
+   ],
+   "etapes": [
+    "Saisissez la dinde 5 min, reservez.",
+    "Faites revenir echalote et champignons 6 min.",
+    "Ajoutez la creme, remettez la dinde, mijotez 5 min."
+   ],
+   "tags": [
+    "proteine",
+    "rapide"
+   ],
+   "astuce": "",
+   "id": "r021",
+   "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=emince+dinde+creme+champignons",
+   "ig_label": "bas"
+  },
+  {
+   "nom": "Pave de saumon au four",
+   "famille": "poisson",
+   "types": "ms",
+   "saisons": [
+    "toute"
+   ],
+   "temps": 25,
+   "diff": 2,
+   "nutrition": {
+    "kcal": 380,
+    "glucides": 2,
+    "proteines": 34,
+    "lipides": 26,
+    "fibres": 0
+   },
+   "ig": 20,
+   "ingredients": [
+    {
+     "nom": "Paves de saumon",
+     "qte": "2",
+     "subs": [
+      "truite",
+      "cabillaud"
+     ]
+    },
+    {
+     "nom": "Citron",
+     "qte": "1",
+     "subs": []
+    },
+    {
+     "nom": "Aneth ou persil",
+     "qte": "1 poignee",
+     "subs": [
+      "ciboulette"
+     ]
+    },
+    {
+     "nom": "Huile d'olive",
+     "qte": "1 c. a soupe",
+     "subs": []
+    }
+   ],
+   "etapes": [
+    "Posez les paves sur du papier cuisson, arrosez d'huile et citron.",
+    "Parsemez d'herbes, sel et poivre.",
+    "Four 15 min a 200 C. Servez avec des legumes verts."
+   ],
+   "tags": [
+    "omega-3",
+    "four",
+    "leger"
+   ],
+   "astuce": "",
+   "id": "r022",
+   "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=saumon+four+citron",
+   "ig_label": "bas"
+  },
+  {
+   "nom": "Papillote de cabillaud aux legumes",
+   "famille": "poisson",
+   "types": "ms",
+   "saisons": [
+    "toute"
+   ],
+   "temps": 30,
+   "diff": 2,
+   "nutrition": {
+    "kcal": 280,
+    "glucides": 8,
+    "proteines": 32,
+    "lipides": 12,
+    "fibres": 4
+   },
+   "ig": 25,
+   "ingredients": [
+    {
+     "nom": "Dos de cabillaud",
+     "qte": "2",
+     "subs": [
+      "colin",
+      "lieu"
+     ]
+    },
+    {
+     "nom": "Courgette",
+     "qte": "1",
+     "subs": [
+      "fenouil",
+      "poireau"
+     ]
+    },
+    {
+     "nom": "Tomates cerises",
+     "qte": "150 g",
+     "subs": []
+    },
+    {
+     "nom": "Citron + huile d'olive",
+     "qte": "2 c. a soupe",
+     "subs": []
+    },
+    {
+     "nom": "Thym",
+     "qte": "selon gout",
+     "subs": []
+    }
+   ],
+   "etapes": [
+    "Repartissez les legumes en lamelles sur 2 feuilles de papier.",
+    "Posez le poisson, citron, huile et thym, fermez les papillotes.",
+    "Four 20 min a 200 C."
+   ],
+   "tags": [
+    "leger",
+    "four",
+    "sans matiere grasse"
+   ],
+   "astuce": "",
+   "id": "r023",
+   "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=papillote+cabillaud+legumes",
+   "ig_label": "bas"
+  },
+  {
+   "nom": "Colin sauce tomate",
+   "famille": "poisson",
+   "types": "ms",
+   "saisons": [
+    "toute"
+   ],
+   "temps": 25,
+   "diff": 2,
+   "nutrition": {
+    "kcal": 260,
+    "glucides": 9,
+    "proteines": 31,
+    "lipides": 10,
+    "fibres": 3
+   },
+   "ig": 35,
+   "ingredients": [
+    {
+     "nom": "Filets de colin",
+     "qte": "2",
+     "subs": [
+      "cabillaud",
+      "merlu"
+     ]
+    },
+    {
+     "nom": "Tomates concassees",
+     "qte": "400 g",
+     "subs": []
+    },
+    {
+     "nom": "Oignon",
+     "qte": "1",
+     "subs": []
+    },
+    {
+     "nom": "Ail",
+     "qte": "1 gousse",
+     "subs": []
+    },
+    {
+     "nom": "Olives noires",
+     "qte": "1 poignee",
+     "subs": [
+      "capres"
+     ]
+    }
+   ],
+   "etapes": [
+    "Faites une sauce tomate avec oignon, ail et tomates (12 min).",
+    "Posez les filets dans la sauce, ajoutez les olives.",
+    "Couvrez et laissez pocher 10 min."
+   ],
+   "tags": [
+    "leger",
+    "mediterraneen"
+   ],
+   "astuce": "",
+   "id": "r024",
+   "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=colin+sauce+tomate",
+   "ig_label": "bas"
+  },
+  {
+   "nom": "Truite aux amandes",
+   "famille": "poisson",
+   "types": "ms",
+   "saisons": [
+    "toute"
+   ],
+   "temps": 20,
+   "diff": 2,
+   "nutrition": {
+    "kcal": 370,
+    "glucides": 5,
+    "proteines": 33,
+    "lipides": 24,
+    "fibres": 2
+   },
+   "ig": 25,
+   "ingredients": [
+    {
+     "nom": "Filets de truite",
+     "qte": "2",
+     "subs": [
+      "saumon",
+      "cabillaud"
+     ]
+    },
+    {
+     "nom": "Amandes effilees",
+     "qte": "40 g",
+     "subs": [
+      "noisettes",
+      "pignons"
+     ]
+    },
+    {
+     "nom": "Beurre ou huile",
+     "qte": "1 c. a soupe",
+     "subs": []
+    },
+    {
+     "nom": "Citron",
+     "qte": "1/2",
+     "subs": []
+    }
+   ],
+   "etapes": [
+    "Poelez les filets cote peau 4 min, retournez 3 min.",
+    "Faites dorer les amandes a sec ou avec un peu de beurre.",
+    "Parsemez les amandes et un filet de citron."
+   ],
+   "tags": [
+    "omega-3",
+    "rapide"
+   ],
+   "astuce": "",
+   "id": "r025",
+   "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=truite+amandes",
+   "ig_label": "bas"
+  },
+  {
+   "nom": "Maquereaux au four a la moutarde",
+   "famille": "poisson",
+   "types": "ms",
+   "saisons": [
+    "toute"
+   ],
+   "temps": 25,
+   "diff": 2,
+   "nutrition": {
+    "kcal": 360,
+    "glucides": 3,
+    "proteines": 28,
+    "lipides": 26,
+    "fibres": 1
+   },
+   "ig": 20,
+   "ingredients": [
+    {
+     "nom": "Filets de maquereau",
+     "qte": "4",
+     "subs": [
+      "sardines",
+      "saumon"
+     ]
+    },
+    {
+     "nom": "Moutarde a l'ancienne",
+     "qte": "1 c. a soupe",
+     "subs": []
+    },
+    {
+     "nom": "Citron",
+     "qte": "1",
+     "subs": []
+    },
+    {
+     "nom": "Herbes de Provence",
+     "qte": "selon gout",
+     "subs": []
+    }
+   ],
+   "etapes": [
+    "Badigeonnez les filets de moutarde.",
+    "Arrosez de citron, parsemez d'herbes.",
+    "Four 15 min a 200 C."
+   ],
+   "tags": [
+    "omega-3",
+    "economique",
+    "four"
+   ],
+   "astuce": "",
+   "id": "r026",
+   "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=maquereau+moutarde+four",
+   "ig_label": "bas"
+  },
+  {
+   "nom": "Salade de sardines et pommes de terre",
+   "famille": "poisson",
+   "types": "m",
+   "saisons": [
+    "ete",
+    "toute"
+   ],
+   "temps": 20,
+   "diff": 1,
+   "nutrition": {
+    "kcal": 380,
+    "glucides": 28,
+    "proteines": 24,
+    "lipides": 19,
+    "fibres": 4
+   },
+   "ig": 50,
+   "ingredients": [
+    {
+     "nom": "Sardines a l'huile (boite)",
+     "qte": "2 boites",
+     "subs": [
+      "maquereau",
+      "thon"
+     ]
+    },
+    {
+     "nom": "Pommes de terre",
+     "qte": "250 g",
+     "subs": [
+      "lentilles cuites"
+     ]
+    },
+    {
+     "nom": "Oignon rouge",
+     "qte": "1/2",
+     "subs": []
+    },
+    {
+     "nom": "Salade verte + vinaigrette",
+     "qte": "1 bol",
+     "subs": []
+    }
+   ],
+   "etapes": [
+    "Cuisez les pommes de terre 18 min, coupez en rondelles tiedes.",
+    "Dressez avec salade, oignon et sardines egouttees.",
+    "Assaisonnez de vinaigrette."
+   ],
+   "tags": [
+    "omega-3",
+    "conserve",
+    "economique"
+   ],
+   "astuce": "",
+   "id": "r027",
+   "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=salade+sardines+pommes+de+terre",
+   "ig_label": "bas"
+  },
+  {
+   "nom": "Salade de thon, haricots et oeuf",
+   "famille": "poisson",
+   "types": "m",
+   "saisons": [
+    "ete",
+    "toute"
+   ],
+   "temps": 15,
+   "diff": 1,
+   "nutrition": {
+    "kcal": 340,
+    "glucides": 16,
+    "proteines": 30,
+    "lipides": 16,
+    "fibres": 7
+   },
+   "ig": 35,
+   "ingredients": [
+    {
+     "nom": "Thon au naturel (boite)",
+     "qte": "2 boites",
+     "subs": [
+      "sardines",
+      "poulet"
+     ]
+    },
+    {
+     "nom": "Haricots blancs (boite)",
+     "qte": "200 g",
+     "subs": [
+      "pois chiches",
+      "lentilles"
+     ]
+    },
+    {
+     "nom": "Oeufs durs",
+     "qte": "2",
+     "subs": []
+    },
+    {
+     "nom": "Tomates",
+     "qte": "2",
+     "subs": []
+    },
+    {
+     "nom": "Vinaigrette",
+     "qte": "2 c. a soupe",
+     "subs": []
+    }
+   ],
+   "etapes": [
+    "Egouttez et rincez thon et haricots.",
+    "Melangez avec tomates en des et oeufs en quartiers.",
+    "Assaisonnez de vinaigrette legere."
+   ],
+   "tags": [
+    "proteine",
+    "froid",
+    "sans cuisson"
+   ],
+   "astuce": "",
+   "id": "r028",
+   "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=salade+thon+haricots+blancs",
+   "ig_label": "bas"
+  },
+  {
+   "nom": "Crevettes sautees a l'ail",
+   "famille": "poisson",
+   "types": "ms",
+   "saisons": [
+    "toute"
+   ],
+   "temps": 15,
+   "diff": 2,
+   "nutrition": {
+    "kcal": 240,
+    "glucides": 4,
+    "proteines": 30,
+    "lipides": 11,
+    "fibres": 1
+   },
+   "ig": 25,
+   "ingredients": [
+    {
+     "nom": "Crevettes decortiquees",
+     "qte": "300 g",
+     "subs": [
+      "gambas",
+      "noix de Saint-Jacques"
+     ]
+    },
+    {
+     "nom": "Ail",
+     "qte": "2 gousses",
+     "subs": []
+    },
+    {
+     "nom": "Persil",
+     "qte": "1 poignee",
+     "subs": [
+      "coriandre"
+     ]
+    },
+    {
+     "nom": "Huile d'olive",
+     "qte": "1 c. a soupe",
+     "subs": []
+    },
+    {
+     "nom": "Citron",
+     "qte": "1/2",
+     "subs": []
+    }
+   ],
+   "etapes": [
+    "Chauffez l'huile, faites sauter l'ail 30 s.",
+    "Ajoutez les crevettes 4-5 min jusqu'a coloration.",
+    "Citron et persil, servez aussitot."
+   ],
+   "tags": [
+    "rapide",
+    "express",
+    "leger"
+   ],
+   "astuce": "",
+   "id": "r029",
+   "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=crevettes+ail+persil",
+   "ig_label": "bas"
+  },
+  {
+   "nom": "Poke bowl au saumon",
+   "famille": "poisson",
+   "types": "m",
+   "saisons": [
+    "ete",
+    "toute"
+   ],
+   "temps": 20,
+   "diff": 3,
+   "nutrition": {
+    "kcal": 450,
+    "glucides": 42,
+    "proteines": 30,
+    "lipides": 18,
+    "fibres": 6
+   },
+   "ig": 50,
+   "ingredients": [
+    {
+     "nom": "Saumon cru (extra frais) ou cuit",
+     "qte": "200 g",
+     "subs": [
+      "thon",
+      "tofu"
+     ]
+    },
+    {
+     "nom": "Riz complet",
+     "qte": "100 g cru",
+     "subs": [
+      "quinoa"
+     ]
+    },
+    {
+     "nom": "Avocat",
+     "qte": "1",
+     "subs": []
+    },
+    {
+     "nom": "Concombre + edamame",
+     "qte": "1 bol",
+     "subs": [
+      "carotte"
+     ]
+    },
+    {
+     "nom": "Sauce soja + sesame",
+     "qte": "2 c. a soupe",
+     "subs": []
+    }
+   ],
+   "etapes": [
+    "Cuisez le riz, laissez tiedir.",
+    "Coupez saumon, avocat et legumes en des.",
+    "Dressez en bol, nappez de sauce soja-sesame."
+   ],
+   "tags": [
+    "omega-3",
+    "froid",
+    "tendance"
+   ],
+   "astuce": "",
+   "id": "r030",
+   "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=poke+bowl+saumon",
+   "ig_label": "bas"
+  },
+  {
+   "nom": "Dos de cabillaud et lentilles",
+   "famille": "poisson",
+   "types": "ms",
+   "saisons": [
+    "automne",
+    "hiver"
+   ],
+   "temps": 30,
+   "diff": 2,
+   "nutrition": {
+    "kcal": 360,
+    "glucides": 30,
+    "proteines": 38,
+    "lipides": 8,
+    "fibres": 9
+   },
+   "ig": 35,
+   "ingredients": [
+    {
+     "nom": "Dos de cabillaud",
+     "qte": "2",
+     "subs": [
+      "colin",
+      "saumon"
+     ]
+    },
+    {
+     "nom": "Lentilles vertes cuites",
+     "qte": "250 g",
+     "subs": [
+      "lentilles corail",
+      "pois chiches"
+     ]
+    },
+    {
+     "nom": "Carotte",
+     "qte": "1",
+     "subs": []
+    },
+    {
+     "nom": "Echalote",
+     "qte": "1",
+     "subs": []
+    },
+    {
+     "nom": "Persil + citron",
+     "qte": "selon gout",
+     "subs": []
+    }
+   ],
+   "etapes": [
+    "Faites revenir echalote et carotte, ajoutez les lentilles, rechauffez.",
+    "Poelez ou cuisez le cabillaud vapeur 10 min.",
+    "Servez le poisson sur les lentilles, citron et persil."
+   ],
+   "tags": [
+    "proteine",
+    "fibres",
+    "ig bas"
+   ],
+   "astuce": "",
+   "id": "r031",
+   "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=cabillaud+lentilles",
+   "ig_label": "bas"
+  },
+  {
+   "nom": "Filet de colin pane maison et epinards",
+   "famille": "poisson",
+   "types": "ms",
+   "saisons": [
+    "toute"
+   ],
+   "temps": 25,
+   "diff": 3,
+   "nutrition": {
+    "kcal": 330,
+    "glucides": 18,
+    "proteines": 32,
+    "lipides": 14,
+    "fibres": 4
+   },
+   "ig": 40,
+   "ingredients": [
+    {
+     "nom": "Filets de colin",
+     "qte": "2",
+     "subs": [
+      "cabillaud",
+      "merlu"
+     ]
+    },
+    {
+     "nom": "Chapelure complete",
+     "qte": "4 c. a soupe",
+     "subs": [
+      "flocons d'avoine mixes"
+     ]
+    },
+    {
+     "nom": "Oeuf",
+     "qte": "1",
+     "subs": []
+    },
+    {
+     "nom": "Epinards",
+     "qte": "300 g",
+     "subs": [
+      "brocoli"
+     ]
+    }
+   ],
+   "etapes": [
+    "Passez les filets dans l'oeuf battu puis la chapelure.",
+    "Poelez 4 min par face jusqu'a doree.",
+    "Faites tomber les epinards a cote, servez ensemble."
+   ],
+   "tags": [
+    "proteine",
+    "famille"
+   ],
+   "astuce": "",
+   "id": "r032",
+   "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=colin+pane+epinards",
+   "ig_label": "bas"
+  },
+  {
+   "nom": "Steak hache et haricots verts",
+   "famille": "boeuf",
+   "types": "ms",
+   "saisons": [
+    "toute"
+   ],
+   "temps": 20,
+   "diff": 1,
+   "nutrition": {
+    "kcal": 340,
+    "glucides": 7,
+    "proteines": 36,
+    "lipides": 18,
+    "fibres": 5
+   },
+   "ig": 25,
+   "ingredients": [
+    {
+     "nom": "Steaks haches 5%",
+     "qte": "2",
+     "subs": [
+      "steak de dinde"
+     ]
+    },
+    {
+     "nom": "Haricots verts",
+     "qte": "300 g",
+     "subs": [
+      "brocoli",
+      "courgette"
+     ]
+    },
+    {
+     "nom": "Echalote",
+     "qte": "1",
+     "subs": []
+    },
+    {
+     "nom": "Huile d'olive",
+     "qte": "1 c. a soupe",
+     "subs": []
+    }
+   ],
+   "etapes": [
+    "Faites revenir l'echalote, ajoutez les haricots 8 min.",
+    "Poelez les steaks 3-4 min selon cuisson.",
+    "Servez ensemble, salez, poivrez."
+   ],
+   "tags": [
+    "proteine",
+    "rapide",
+    "fer"
+   ],
+   "astuce": "",
+   "id": "r033",
+   "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=steak+hache+haricots+verts",
+   "ig_label": "bas"
+  },
+  {
+   "nom": "Chili con carne",
+   "famille": "boeuf",
+   "types": "ms",
+   "saisons": [
+    "automne",
+    "hiver"
+   ],
+   "temps": 40,
+   "diff": 3,
+   "nutrition": {
+    "kcal": 420,
+    "glucides": 38,
+    "proteines": 32,
+    "lipides": 14,
+    "fibres": 11
+   },
+   "ig": 45,
+   "ingredients": [
+    {
+     "nom": "Boeuf hache 5%",
+     "qte": "300 g",
+     "subs": [
+      "dinde hachee",
+      "proteine de soja"
+     ]
+    },
+    {
+     "nom": "Haricots rouges (boite)",
+     "qte": "400 g",
+     "subs": [
+      "haricots noirs"
+     ]
+    },
+    {
+     "nom": "Tomates concassees",
+     "qte": "400 g",
+     "subs": []
+    },
+    {
+     "nom": "Oignon + poivron",
+     "qte": "1 + 1",
+     "subs": []
+    },
+    {
+     "nom": "Cumin, paprika, piment",
+     "qte": "1 c. a soupe",
+     "subs": []
+    }
+   ],
+   "etapes": [
+    "Faites dorer la viande avec oignon et poivron.",
+    "Ajoutez epices, tomates et haricots egouttes.",
+    "Mijotez 25 min a feu doux. Servez avec riz complet."
+   ],
+   "tags": [
+    "proteine",
+    "fibres",
+    "plat unique",
+    "batch cooking"
+   ],
+   "astuce": "",
+   "id": "r034",
+   "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=chili+con+carne",
+   "ig_label": "bas"
+  },
+  {
+   "nom": "Boulettes de boeuf a la tomate",
+   "famille": "boeuf",
+   "types": "ms",
+   "saisons": [
+    "toute"
+   ],
+   "temps": 35,
+   "diff": 3,
+   "nutrition": {
+    "kcal": 380,
+    "glucides": 14,
+    "proteines": 32,
+    "lipides": 22,
+    "fibres": 4
+   },
+   "ig": 40,
+   "ingredients": [
+    {
+     "nom": "Boeuf hache",
+     "qte": "300 g",
+     "subs": [
+      "dinde",
+      "agneau"
+     ]
+    },
+    {
+     "nom": "Oeuf",
+     "qte": "1",
+     "subs": []
+    },
+    {
+     "nom": "Chapelure complete",
+     "qte": "2 c. a soupe",
+     "subs": [
+      "flocons d'avoine"
+     ]
+    },
+    {
+     "nom": "Tomates concassees",
+     "qte": "400 g",
+     "subs": []
+    },
+    {
+     "nom": "Oignon + ail",
+     "qte": "1 + 1",
+     "subs": []
+    },
+    {
+     "nom": "Herbes",
+     "qte": "selon gout",
+     "subs": []
+    }
+   ],
+   "etapes": [
+    "Melangez viande, oeuf, chapelure, formez des boulettes.",
+    "Dorez-les a la poele, reservez.",
+    "Faites la sauce tomate, remettez les boulettes 15 min."
+   ],
+   "tags": [
+    "proteine",
+    "famille"
+   ],
+   "astuce": "",
+   "id": "r035",
+   "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=boulettes+boeuf+tomate",
+   "ig_label": "bas"
+  },
+  {
+   "nom": "Boeuf saute aux legumes (wok)",
+   "famille": "boeuf",
+   "types": "ms",
+   "saisons": [
+    "toute"
+   ],
+   "temps": 25,
+   "diff": 2,
+   "nutrition": {
+    "kcal": 360,
+    "glucides": 16,
+    "proteines": 30,
+    "lipides": 18,
+    "fibres": 4
+   },
+   "ig": 45,
+   "ingredients": [
+    {
+     "nom": "Boeuf a fondue ou bavette",
+     "qte": "300 g",
+     "subs": [
+      "poulet",
+      "tofu"
+     ]
+    },
+    {
+     "nom": "Brocoli + poivron",
+     "qte": "400 g",
+     "subs": [
+      "chou",
+      "haricots verts"
+     ]
+    },
+    {
+     "nom": "Sauce soja + gingembre",
+     "qte": "2 c. a soupe",
+     "subs": []
+    },
+    {
+     "nom": "Ail",
+     "qte": "1 gousse",
+     "subs": []
+    },
+    {
+     "nom": "Huile",
+     "qte": "1 c. a soupe",
+     "subs": []
+    }
+   ],
+   "etapes": [
+    "Saisissez le boeuf emince a feu vif 3 min, reservez.",
+    "Faites sauter les legumes 6 min.",
+    "Remettez le boeuf, soja, ail et gingembre, melangez."
+   ],
+   "tags": [
+    "proteine",
+    "rapide",
+    "asiatique"
+   ],
+   "astuce": "",
+   "id": "r036",
+   "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=boeuf+saute+legumes+wok",
+   "ig_label": "bas"
+  },
+  {
+   "nom": "Hachis parmentier de patate douce",
+   "famille": "boeuf",
+   "types": "ms",
+   "saisons": [
+    "automne",
+    "hiver"
+   ],
+   "temps": 50,
+   "diff": 3,
+   "nutrition": {
+    "kcal": 430,
+    "glucides": 40,
+    "proteines": 28,
+    "lipides": 18,
+    "fibres": 7
+   },
+   "ig": 50,
+   "ingredients": [
+    {
+     "nom": "Boeuf hache 5%",
+     "qte": "300 g",
+     "subs": [
+      "dinde",
+      "lentilles"
+     ]
+    },
+    {
+     "nom": "Patates douces",
+     "qte": "500 g",
+     "subs": [
+      "pommes de terre",
+      "potiron"
+     ]
+    },
+    {
+     "nom": "Oignon + ail",
+     "qte": "1 + 1",
+     "subs": []
+    },
+    {
+     "nom": "Tomates concassees",
+     "qte": "200 g",
+     "subs": []
+    },
+    {
+     "nom": "Emmental rape",
+     "qte": "40 g",
+     "subs": []
+    }
+   ],
+   "etapes": [
+    "Cuisez et ecrasez les patates douces en puree.",
+    "Faites revenir viande, oignon, ail et tomates.",
+    "Montez viande puis puree dans un plat, fromage, four 20 min a 200 C."
+   ],
+   "tags": [
+    "proteine",
+    "famille",
+    "four"
+   ],
+   "astuce": "",
+   "id": "r037",
+   "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=hachis+parmentier+patate+douce",
+   "ig_label": "bas"
+  },
+  {
+   "nom": "Filet mignon de porc au four",
+   "famille": "porc",
+   "types": "ms",
+   "saisons": [
+    "toute"
+   ],
+   "temps": 40,
+   "diff": 2,
+   "nutrition": {
+    "kcal": 330,
+    "glucides": 6,
+    "proteines": 38,
+    "lipides": 16,
+    "fibres": 1
+   },
+   "ig": 25,
+   "ingredients": [
+    {
+     "nom": "Filet mignon de porc",
+     "qte": "1 (400 g)",
+     "subs": [
+      "roti de dinde"
+     ]
+    },
+    {
+     "nom": "Moutarde",
+     "qte": "1 c. a soupe",
+     "subs": []
+    },
+    {
+     "nom": "Oignon + champignons",
+     "qte": "1 + 200 g",
+     "subs": []
+    },
+    {
+     "nom": "Herbes de Provence",
+     "qte": "selon gout",
+     "subs": []
+    }
+   ],
+   "etapes": [
+    "Badigeonnez le filet de moutarde et herbes.",
+    "Disposez avec oignon et champignons dans un plat.",
+    "Four 30 min a 200 C, laissez reposer 5 min avant de trancher."
+   ],
+   "tags": [
+    "proteine",
+    "four"
+   ],
+   "astuce": "",
+   "id": "r038",
+   "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=filet+mignon+porc+four",
+   "ig_label": "bas"
+  },
+  {
+   "nom": "Endives au jambon gratinees (light)",
+   "famille": "porc",
+   "types": "ms",
+   "saisons": [
+    "automne",
+    "hiver"
+   ],
+   "temps": 45,
+   "diff": 3,
+   "nutrition": {
+    "kcal": 320,
+    "glucides": 16,
+    "proteines": 26,
+    "lipides": 16,
+    "fibres": 6
+   },
+   "ig": 35,
+   "ingredients": [
+    {
+     "nom": "Endives",
+     "qte": "4",
+     "subs": []
+    },
+    {
+     "nom": "Jambon blanc",
+     "qte": "4 tranches",
+     "subs": [
+      "jambon de dinde"
+     ]
+    },
+    {
+     "nom": "Lait + maizena (sauce legere)",
+     "qte": "25 cl + 1 c.",
+     "subs": [
+      "bechamel light"
+     ]
+    },
+    {
+     "nom": "Emmental rape",
+     "qte": "50 g",
+     "subs": []
+    }
+   ],
+   "etapes": [
+    "Braisez les endives 15 min a la poele a couvert.",
+    "Roulez chaque endive dans une tranche de jambon, disposez dans un plat.",
+    "Nappez de sauce legere, fromage, four 20 min a 200 C."
+   ],
+   "tags": [
+    "famille",
+    "four",
+    "legume"
+   ],
+   "astuce": "",
+   "id": "r039",
+   "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=endives+jambon+gratin",
+   "ig_label": "bas"
+  },
+  {
+   "nom": "Saute de porc aux poivrons",
+   "famille": "porc",
+   "types": "ms",
+   "saisons": [
+    "ete",
+    "automne"
+   ],
+   "temps": 30,
+   "diff": 2,
+   "nutrition": {
+    "kcal": 340,
+    "glucides": 12,
+    "proteines": 33,
+    "lipides": 17,
+    "fibres": 3
+   },
+   "ig": 40,
+   "ingredients": [
+    {
+     "nom": "Saute de porc",
+     "qte": "300 g",
+     "subs": [
+      "poulet",
+      "dinde"
+     ]
+    },
+    {
+     "nom": "Poivrons",
+     "qte": "2",
+     "subs": [
+      "courgette"
+     ]
+    },
+    {
+     "nom": "Oignon",
+     "qte": "1",
+     "subs": []
+    },
+    {
+     "nom": "Sauce tomate ou soja",
+     "qte": "2 c. a soupe",
+     "subs": []
+    },
+    {
+     "nom": "Paprika",
+     "qte": "1 c. a cafe",
+     "subs": []
+    }
+   ],
+   "etapes": [
+    "Dorez le porc 5 min, reservez.",
+    "Faites revenir poivrons et oignon 8 min.",
+    "Remettez le porc, sauce et paprika, mijotez 10 min."
+   ],
+   "tags": [
+    "proteine",
+    "rapide"
+   ],
+   "astuce": "",
+   "id": "r040",
+   "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=saute+porc+poivrons",
+   "ig_label": "bas"
+  },
+  {
+   "nom": "Lentilles et oeuf poche",
+   "famille": "legumineuse",
+   "types": "ms",
+   "saisons": [
+    "automne",
+    "hiver"
+   ],
+   "temps": 35,
+   "diff": 2,
+   "nutrition": {
+    "kcal": 380,
+    "glucides": 40,
+    "proteines": 24,
+    "lipides": 11,
+    "fibres": 14
+   },
+   "ig": 30,
+   "ingredients": [
+    {
+     "nom": "Lentilles vertes",
+     "qte": "150 g cru",
+     "subs": [
+      "lentilles corail",
+      "pois chiches"
+     ]
+    },
+    {
+     "nom": "Oeufs",
+     "qte": "2",
+     "subs": []
+    },
+    {
+     "nom": "Carotte + oignon",
+     "qte": "1 + 1",
+     "subs": []
+    },
+    {
+     "nom": "Bouillon de legumes",
+     "qte": "1 cube",
+     "subs": []
+    },
+    {
+     "nom": "Vinaigre + moutarde",
+     "qte": "selon gout",
+     "subs": []
+    }
+   ],
+   "etapes": [
+    "Cuisez les lentilles avec carotte et oignon 25 min.",
+    "Pochez les oeufs 3 min dans l'eau fremissante vinaigree.",
+    "Servez les lentilles assaisonnees, oeuf poche dessus."
+   ],
+   "tags": [
+    "vegetarien",
+    "fibres",
+    "ig bas",
+    "proteine vegetale"
+   ],
+   "astuce": "",
+   "id": "r041",
+   "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=lentilles+oeuf+poche",
+   "ig_label": "bas"
+  },
+  {
+   "nom": "Dahl de lentilles corail",
+   "famille": "legumineuse",
+   "types": "ms",
+   "saisons": [
+    "toute"
+   ],
+   "temps": 30,
+   "diff": 2,
+   "nutrition": {
+    "kcal": 360,
+    "glucides": 42,
+    "proteines": 18,
+    "lipides": 11,
+    "fibres": 10
+   },
+   "ig": 35,
+   "ingredients": [
+    {
+     "nom": "Lentilles corail",
+     "qte": "200 g",
+     "subs": [
+      "lentilles vertes"
+     ]
+    },
+    {
+     "nom": "Lait de coco",
+     "qte": "20 cl",
+     "subs": [
+      "creme legere"
+     ]
+    },
+    {
+     "nom": "Tomates concassees",
+     "qte": "200 g",
+     "subs": []
+    },
+    {
+     "nom": "Oignon + ail + gingembre",
+     "qte": "1 + 1 + 1",
+     "subs": []
+    },
+    {
+     "nom": "Curry / curcuma",
+     "qte": "1 c. a soupe",
+     "subs": []
+    }
+   ],
+   "etapes": [
+    "Faites revenir oignon, ail, gingembre et epices.",
+    "Ajoutez lentilles, tomates et lait de coco + 30 cl d'eau.",
+    "Mijotez 20 min jusqu'a consistance cremeuse."
+   ],
+   "tags": [
+    "vegetarien",
+    "fibres",
+    "epices",
+    "ig bas"
+   ],
+   "astuce": "",
+   "id": "r042",
+   "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=dahl+lentilles+corail",
+   "ig_label": "bas"
+  },
+  {
+   "nom": "Curry de pois chiches",
+   "famille": "legumineuse",
+   "types": "ms",
+   "saisons": [
+    "toute"
+   ],
+   "temps": 30,
+   "diff": 2,
+   "nutrition": {
+    "kcal": 350,
+    "glucides": 44,
+    "proteines": 15,
+    "lipides": 12,
+    "fibres": 12
+   },
+   "ig": 40,
+   "ingredients": [
+    {
+     "nom": "Pois chiches (boite)",
+     "qte": "400 g",
+     "subs": [
+      "haricots blancs",
+      "lentilles"
+     ]
+    },
+    {
+     "nom": "Lait de coco",
+     "qte": "20 cl",
+     "subs": []
+    },
+    {
+     "nom": "Epinards",
+     "qte": "150 g",
+     "subs": [
+      "chou kale"
+     ]
+    },
+    {
+     "nom": "Tomates concassees",
+     "qte": "200 g",
+     "subs": []
+    },
+    {
+     "nom": "Oignon + curry",
+     "qte": "1 + 1 c.",
+     "subs": []
+    }
+   ],
+   "etapes": [
+    "Revenez oignon et curry, ajoutez tomates et lait de coco.",
+    "Ajoutez pois chiches egouttes, mijotez 12 min.",
+    "Incorporez les epinards 3 min. Servez avec riz."
+   ],
+   "tags": [
+    "vegetarien",
+    "fibres",
+    "plat unique"
+   ],
+   "astuce": "",
+   "id": "r043",
+   "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=curry+pois+chiches",
+   "ig_label": "bas"
+  },
+  {
+   "nom": "Salade de pois chiches",
+   "famille": "legumineuse",
+   "types": "m",
+   "saisons": [
+    "ete",
+    "toute"
+   ],
+   "temps": 15,
+   "diff": 1,
+   "nutrition": {
+    "kcal": 360,
+    "glucides": 38,
+    "proteines": 15,
+    "lipides": 16,
+    "fibres": 11
+   },
+   "ig": 35,
+   "ingredients": [
+    {
+     "nom": "Pois chiches (boite)",
+     "qte": "400 g",
+     "subs": [
+      "lentilles",
+      "haricots rouges"
+     ]
+    },
+    {
+     "nom": "Concombre + tomates",
+     "qte": "1 + 2",
+     "subs": []
+    },
+    {
+     "nom": "Oignon rouge",
+     "qte": "1/2",
+     "subs": []
+    },
+    {
+     "nom": "Feta",
+     "qte": "60 g",
+     "subs": [
+      "sans"
+     ]
+    },
+    {
+     "nom": "Huile olive + citron",
+     "qte": "2 c. a soupe",
+     "subs": []
+    }
+   ],
+   "etapes": [
+    "Rincez et egouttez les pois chiches.",
+    "Coupez les legumes en des, melangez le tout.",
+    "Assaisonnez d'huile, citron, sel et feta emiettee."
+   ],
+   "tags": [
+    "vegetarien",
+    "froid",
+    "sans cuisson",
+    "fibres"
+   ],
+   "astuce": "",
+   "id": "r044",
+   "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=salade+pois+chiches+feta",
+   "ig_label": "bas"
+  },
+  {
+   "nom": "Soupe de pois casses",
+   "famille": "legumineuse",
+   "types": "ms",
+   "saisons": [
+    "automne",
+    "hiver"
+   ],
+   "temps": 45,
+   "diff": 2,
+   "nutrition": {
+    "kcal": 300,
+    "glucides": 40,
+    "proteines": 18,
+    "lipides": 4,
+    "fibres": 13
+   },
+   "ig": 30,
+   "ingredients": [
+    {
+     "nom": "Pois casses",
+     "qte": "200 g",
+     "subs": [
+      "lentilles",
+      "pois chiches"
+     ]
+    },
+    {
+     "nom": "Carotte + oignon",
+     "qte": "2 + 1",
+     "subs": []
+    },
+    {
+     "nom": "Lardons ou jambon (option)",
+     "qte": "50 g",
+     "subs": [
+      "sans"
+     ]
+    },
+    {
+     "nom": "Bouillon",
+     "qte": "1 L",
+     "subs": []
+    }
+   ],
+   "etapes": [
+    "Faites revenir oignon et carotte.",
+    "Ajoutez pois casses et bouillon, cuisez 35 min.",
+    "Mixez ou laissez entier selon gout."
+   ],
+   "tags": [
+    "vegetarien option",
+    "fibres",
+    "reconfortant"
+   ],
+   "astuce": "",
+   "id": "r045",
+   "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=soupe+pois+casses",
+   "ig_label": "bas"
+  },
+  {
+   "nom": "Chili sin carne (vegetarien)",
+   "famille": "legumineuse",
+   "types": "ms",
+   "saisons": [
+    "automne",
+    "hiver"
+   ],
+   "temps": 35,
+   "diff": 2,
+   "nutrition": {
+    "kcal": 360,
+    "glucides": 50,
+    "proteines": 18,
+    "lipides": 8,
+    "fibres": 15
+   },
+   "ig": 40,
+   "ingredients": [
+    {
+     "nom": "Haricots rouges (boite)",
+     "qte": "400 g",
+     "subs": [
+      "haricots noirs"
+     ]
+    },
+    {
+     "nom": "Mais",
+     "qte": "150 g",
+     "subs": []
+    },
+    {
+     "nom": "Tomates concassees",
+     "qte": "400 g",
+     "subs": []
+    },
+    {
+     "nom": "Poivron + oignon",
+     "qte": "1 + 1",
+     "subs": []
+    },
+    {
+     "nom": "Cumin, paprika, piment",
+     "qte": "1 c. a soupe",
+     "subs": []
+    }
+   ],
+   "etapes": [
+    "Revenez oignon et poivron, ajoutez epices.",
+    "Ajoutez tomates, haricots et mais, mijotez 20 min.",
+    "Servez avec riz complet ou nature."
+   ],
+   "tags": [
+    "vegetarien",
+    "fibres",
+    "batch cooking"
+   ],
+   "astuce": "",
+   "id": "r046",
+   "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=chili+sin+carne+vegetarien",
+   "ig_label": "bas"
+  },
+  {
+   "nom": "Salade de lentilles et feta",
+   "famille": "legumineuse",
+   "types": "m",
+   "saisons": [
+    "ete",
+    "toute"
+   ],
+   "temps": 20,
+   "diff": 1,
+   "nutrition": {
+    "kcal": 340,
+    "glucides": 36,
+    "proteines": 18,
+    "lipides": 12,
+    "fibres": 12
+   },
+   "ig": 30,
+   "ingredients": [
+    {
+     "nom": "Lentilles vertes cuites",
+     "qte": "250 g",
+     "subs": [
+      "lentilles en boite"
+     ]
+    },
+    {
+     "nom": "Feta",
+     "qte": "60 g",
+     "subs": [
+      "chevre"
+     ]
+    },
+    {
+     "nom": "Tomates + concombre",
+     "qte": "2 + 1/2",
+     "subs": []
+    },
+    {
+     "nom": "Echalote",
+     "qte": "1",
+     "subs": []
+    },
+    {
+     "nom": "Vinaigrette moutarde",
+     "qte": "2 c. a soupe",
+     "subs": []
+    }
+   ],
+   "etapes": [
+    "Si besoin, cuisez les lentilles 20 min puis refroidissez.",
+    "Melangez avec legumes en des et echalote.",
+    "Ajoutez feta et vinaigrette."
+   ],
+   "tags": [
+    "vegetarien",
+    "froid",
+    "fibres",
+    "ig bas"
+   ],
+   "astuce": "",
+   "id": "r047",
+   "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=salade+lentilles+feta",
+   "ig_label": "bas"
+  },
+  {
+   "nom": "Tartine de houmous et crudites",
+   "famille": "legumineuse",
+   "types": "m",
+   "saisons": [
+    "toute"
+   ],
+   "temps": 10,
+   "diff": 1,
+   "nutrition": {
+    "kcal": 330,
+    "glucides": 34,
+    "proteines": 12,
+    "lipides": 16,
+    "fibres": 9
+   },
+   "ig": 40,
+   "ingredients": [
+    {
+     "nom": "Pain complet",
+     "qte": "2 tranches",
+     "subs": [
+      "pain de seigle"
+     ]
+    },
+    {
+     "nom": "Houmous",
+     "qte": "4 c. a soupe",
+     "subs": [
+      "puree d'avocat"
+     ]
+    },
+    {
+     "nom": "Carotte rapee + concombre",
+     "qte": "1 bol",
+     "subs": [
+      "radis",
+      "tomate"
+     ]
+    },
+    {
+     "nom": "Graines de sesame",
+     "qte": "1 c. a soupe",
+     "subs": []
+    }
+   ],
+   "etapes": [
+    "Tartinez le pain de houmous.",
+    "Disposez les crudites dessus.",
+    "Parsemez de graines et d'un filet d'huile."
+   ],
+   "tags": [
+    "vegetarien",
+    "rapide",
+    "express"
+   ],
+   "astuce": "",
+   "id": "r048",
+   "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=tartine+houmous+crudites",
+   "ig_label": "bas"
+  },
+  {
+   "nom": "Ratatouille et oeuf",
+   "famille": "vege",
+   "types": "ms",
+   "saisons": [
+    "ete",
+    "automne"
+   ],
+   "temps": 45,
+   "diff": 2,
+   "nutrition": {
+    "kcal": 280,
+    "glucides": 18,
+    "proteines": 12,
+    "lipides": 16,
+    "fibres": 8
+   },
+   "ig": 30,
+   "ingredients": [
+    {
+     "nom": "Aubergine + courgette",
+     "qte": "1 + 2",
+     "subs": []
+    },
+    {
+     "nom": "Poivrons",
+     "qte": "2",
+     "subs": []
+    },
+    {
+     "nom": "Tomates",
+     "qte": "4",
+     "subs": [
+      "tomates concassees"
+     ]
+    },
+    {
+     "nom": "Oignon + ail",
+     "qte": "1 + 1",
+     "subs": []
+    },
+    {
+     "nom": "Oeufs",
+     "qte": "2",
+     "subs": [
+      "feta"
+     ]
+    },
+    {
+     "nom": "Herbes de Provence",
+     "qte": "1 c. a soupe",
+     "subs": []
+    }
+   ],
+   "etapes": [
+    "Coupez tous les legumes en des.",
+    "Faites mijoter oignon, poivrons, aubergine, courgette, tomates 30 min.",
+    "Servez avec un oeuf au plat ou poche par personne."
+   ],
+   "tags": [
+    "vegetarien",
+    "legumes",
+    "batch cooking",
+    "ig bas"
+   ],
+   "astuce": "",
+   "id": "r049",
+   "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=ratatouille",
+   "ig_label": "bas"
+  },
+  {
+   "nom": "Gratin de courgettes",
+   "famille": "vege",
+   "types": "ms",
+   "saisons": [
+    "ete",
+    "printemps"
+   ],
+   "temps": 45,
+   "diff": 2,
+   "nutrition": {
+    "kcal": 300,
+    "glucides": 12,
+    "proteines": 16,
+    "lipides": 19,
+    "fibres": 4
+   },
+   "ig": 35,
+   "ingredients": [
+    {
+     "nom": "Courgettes",
+     "qte": "4",
+     "subs": [
+      "brocoli",
+      "chou-fleur"
+     ]
+    },
+    {
+     "nom": "Oeufs",
+     "qte": "3",
+     "subs": []
+    },
+    {
+     "nom": "Creme legere",
+     "qte": "10 cl",
+     "subs": [
+      "lait"
+     ]
+    },
+    {
+     "nom": "Emmental rape",
+     "qte": "60 g",
+     "subs": [
+      "comte"
+     ]
+    },
+    {
+     "nom": "Ail",
+     "qte": "1 gousse",
+     "subs": []
+    }
+   ],
+   "etapes": [
+    "Faites revenir les courgettes en rondelles 10 min.",
+    "Battez oeufs, creme et fromage, melangez aux courgettes.",
+    "Versez dans un plat, four 25 min a 180 C."
+   ],
+   "tags": [
+    "vegetarien",
+    "four",
+    "legume"
+   ],
+   "astuce": "",
+   "id": "r050",
+   "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=gratin+courgettes",
+   "ig_label": "bas"
+  },
+  {
+   "nom": "Poelee mediterraneenne",
+   "famille": "vege",
+   "types": "ms",
+   "saisons": [
+    "ete"
+   ],
+   "temps": 25,
+   "diff": 1,
+   "nutrition": {
+    "kcal": 240,
+    "glucides": 20,
+    "proteines": 8,
+    "lipides": 14,
+    "fibres": 7
+   },
+   "ig": 35,
+   "ingredients": [
+    {
+     "nom": "Courgette + aubergine",
+     "qte": "1 + 1",
+     "subs": []
+    },
+    {
+     "nom": "Poivrons",
+     "qte": "2",
+     "subs": []
+    },
+    {
+     "nom": "Tomates cerises",
+     "qte": "200 g",
+     "subs": []
+    },
+    {
+     "nom": "Oignon + ail",
+     "qte": "1 + 1",
+     "subs": []
+    },
+    {
+     "nom": "Olives + huile d'olive",
+     "qte": "1 poignee + 2 c.",
+     "subs": []
+    }
+   ],
+   "etapes": [
+    "Coupez tous les legumes en morceaux.",
+    "Faites sauter a feu vif 15 min en remuant.",
+    "Ajoutez olives, herbes, servez chaud ou tiede."
+   ],
+   "tags": [
+    "vegetarien",
+    "rapide",
+    "accompagnement"
+   ],
+   "astuce": "",
+   "id": "r051",
+   "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=poelee+legumes+mediterraneenne",
+   "ig_label": "bas"
+  },
+  {
+   "nom": "Buddha bowl quinoa",
+   "famille": "vege",
+   "types": "m",
+   "saisons": [
+    "toute"
+   ],
+   "temps": 25,
+   "diff": 2,
+   "nutrition": {
+    "kcal": 420,
+    "glucides": 48,
+    "proteines": 16,
+    "lipides": 18,
+    "fibres": 12
+   },
+   "ig": 45,
+   "ingredients": [
+    {
+     "nom": "Quinoa",
+     "qte": "100 g cru",
+     "subs": [
+      "boulgour",
+      "riz complet"
+     ]
+    },
+    {
+     "nom": "Pois chiches",
+     "qte": "150 g",
+     "subs": [
+      "tofu",
+      "oeuf dur"
+     ]
+    },
+    {
+     "nom": "Avocat",
+     "qte": "1",
+     "subs": []
+    },
+    {
+     "nom": "Carotte rapee + chou rouge",
+     "qte": "1 bol",
+     "subs": []
+    },
+    {
+     "nom": "Sauce yaourt-citron",
+     "qte": "2 c. a soupe",
+     "subs": []
+    }
+   ],
+   "etapes": [
+    "Cuisez le quinoa 12 min, laissez tiedir.",
+    "Disposez en bol quinoa, pois chiches et crudites par zones.",
+    "Ajoutez l'avocat et nappez de sauce."
+   ],
+   "tags": [
+    "vegetarien",
+    "complet",
+    "froid",
+    "fibres"
+   ],
+   "astuce": "",
+   "id": "r052",
+   "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=buddha+bowl+quinoa",
+   "ig_label": "bas"
+  },
+  {
+   "nom": "Taboule de chou-fleur",
+   "famille": "vege",
+   "types": "m",
+   "saisons": [
+    "ete"
+   ],
+   "temps": 20,
+   "diff": 2,
+   "nutrition": {
+    "kcal": 220,
+    "glucides": 16,
+    "proteines": 9,
+    "lipides": 13,
+    "fibres": 7
+   },
+   "ig": 25,
+   "ingredients": [
+    {
+     "nom": "Chou-fleur",
+     "qte": "1/2",
+     "subs": [
+      "chou-fleur surgele rape"
+     ]
+    },
+    {
+     "nom": "Tomates + concombre",
+     "qte": "2 + 1/2",
+     "subs": []
+    },
+    {
+     "nom": "Menthe + persil",
+     "qte": "1 poignee",
+     "subs": []
+    },
+    {
+     "nom": "Citron + huile d'olive",
+     "qte": "2 c. a soupe",
+     "subs": []
+    },
+    {
+     "nom": "Oignon nouveau",
+     "qte": "1",
+     "subs": []
+    }
+   ],
+   "etapes": [
+    "Mixez le chou-fleur cru en semoule.",
+    "Ajoutez legumes en des et herbes ciselees.",
+    "Assaisonnez citron-huile, laissez reposer 15 min au frais."
+   ],
+   "tags": [
+    "vegetarien",
+    "froid",
+    "low carb",
+    "ig bas"
+   ],
+   "astuce": "",
+   "id": "r053",
+   "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=taboule+chou-fleur",
+   "ig_label": "bas"
+  },
+  {
+   "nom": "Legumes rotis au four",
+   "famille": "vege",
+   "types": "ms",
+   "saisons": [
+    "automne",
+    "hiver"
+   ],
+   "temps": 45,
+   "diff": 1,
+   "nutrition": {
+    "kcal": 250,
+    "glucides": 28,
+    "proteines": 6,
+    "lipides": 12,
+    "fibres": 9
+   },
+   "ig": 40,
+   "ingredients": [
+    {
+     "nom": "Patate douce + carottes",
+     "qte": "1 + 2",
+     "subs": [
+      "potiron",
+      "navet"
+     ]
+    },
+    {
+     "nom": "Poivron + oignon rouge",
+     "qte": "1 + 1",
+     "subs": []
+    },
+    {
+     "nom": "Courgette",
+     "qte": "1",
+     "subs": []
+    },
+    {
+     "nom": "Huile d'olive + herbes",
+     "qte": "2 c. a soupe",
+     "subs": []
+    }
+   ],
+   "etapes": [
+    "Coupez les legumes en gros morceaux.",
+    "Melangez avec huile, herbes, sel.",
+    "Four 35 min a 200 C en remuant a mi-cuisson."
+   ],
+   "tags": [
+    "vegetarien",
+    "four",
+    "batch cooking"
+   ],
+   "astuce": "",
+   "id": "r054",
+   "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=legumes+rotis+four",
+   "ig_label": "bas"
+  },
+  {
+   "nom": "Poivrons farcis au quinoa",
+   "famille": "vege",
+   "types": "ms",
+   "saisons": [
+    "ete",
+    "automne"
+   ],
+   "temps": 50,
+   "diff": 3,
+   "nutrition": {
+    "kcal": 330,
+    "glucides": 42,
+    "proteines": 13,
+    "lipides": 12,
+    "fibres": 9
+   },
+   "ig": 45,
+   "ingredients": [
+    {
+     "nom": "Poivrons",
+     "qte": "4",
+     "subs": [
+      "tomates",
+      "courgettes rondes"
+     ]
+    },
+    {
+     "nom": "Quinoa",
+     "qte": "100 g cru",
+     "subs": [
+      "riz complet",
+      "boulgour"
+     ]
+    },
+    {
+     "nom": "Tomates concassees",
+     "qte": "200 g",
+     "subs": []
+    },
+    {
+     "nom": "Feta ou emmental",
+     "qte": "60 g",
+     "subs": []
+    },
+    {
+     "nom": "Oignon + herbes",
+     "qte": "1",
+     "subs": []
+    }
+   ],
+   "etapes": [
+    "Cuisez le quinoa, melangez avec tomates, oignon et fromage.",
+    "Coupez le chapeau des poivrons, videz-les, garnissez.",
+    "Four 35 min a 190 C."
+   ],
+   "tags": [
+    "vegetarien",
+    "four",
+    "complet"
+   ],
+   "astuce": "",
+   "id": "r055",
+   "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=poivrons+farcis+quinoa",
+   "ig_label": "bas"
+  },
+  {
+   "nom": "Tomates farcies (light)",
+   "famille": "vege",
+   "types": "ms",
+   "saisons": [
+    "ete"
+   ],
+   "temps": 50,
+   "diff": 3,
+   "nutrition": {
+    "kcal": 300,
+    "glucides": 16,
+    "proteines": 22,
+    "lipides": 16,
+    "fibres": 4
+   },
+   "ig": 35,
+   "ingredients": [
+    {
+     "nom": "Grosses tomates",
+     "qte": "4",
+     "subs": [
+      "courgettes rondes",
+      "poivrons"
+     ]
+    },
+    {
+     "nom": "Viande hachee 5% ou dinde",
+     "qte": "250 g",
+     "subs": [
+      "lentilles",
+      "tofu"
+     ]
+    },
+    {
+     "nom": "Oignon + ail",
+     "qte": "1 + 1",
+     "subs": []
+    },
+    {
+     "nom": "Herbes + un peu de riz complet",
+     "qte": "selon gout",
+     "subs": []
+    }
+   ],
+   "etapes": [
+    "Evidez les tomates, recuperez la pulpe.",
+    "Melangez viande, oignon, herbes et pulpe, garnissez les tomates.",
+    "Four 35 min a 190 C."
+   ],
+   "tags": [
+    "famille",
+    "four",
+    "legume"
+   ],
+   "astuce": "",
+   "id": "r056",
+   "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=tomates+farcies",
+   "ig_label": "bas"
+  },
+  {
+   "nom": "Courgettes farcies",
+   "famille": "vege",
+   "types": "ms",
+   "saisons": [
+    "ete"
+   ],
+   "temps": 50,
+   "diff": 3,
+   "nutrition": {
+    "kcal": 310,
+    "glucides": 14,
+    "proteines": 22,
+    "lipides": 17,
+    "fibres": 5
+   },
+   "ig": 35,
+   "ingredients": [
+    {
+     "nom": "Courgettes rondes ou longues",
+     "qte": "4",
+     "subs": [
+      "aubergines",
+      "poivrons"
+     ]
+    },
+    {
+     "nom": "Viande hachee ou thon",
+     "qte": "250 g",
+     "subs": [
+      "lentilles"
+     ]
+    },
+    {
+     "nom": "Tomate + oignon",
+     "qte": "1 + 1",
+     "subs": []
+    },
+    {
+     "nom": "Fromage rape",
+     "qte": "40 g",
+     "subs": []
+    }
+   ],
+   "etapes": [
+    "Coupez et evidez les courgettes, faites-les precuire 5 min.",
+    "Melangez chair, viande, tomate et oignon, garnissez.",
+    "Fromage dessus, four 30 min a 190 C."
+   ],
+   "tags": [
+    "famille",
+    "four"
+   ],
+   "astuce": "",
+   "id": "r057",
+   "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=courgettes+farcies",
+   "ig_label": "bas"
+  },
+  {
+   "nom": "Gratin de brocoli",
+   "famille": "vege",
+   "types": "ms",
+   "saisons": [
+    "automne",
+    "hiver"
+   ],
+   "temps": 40,
+   "diff": 2,
+   "nutrition": {
+    "kcal": 280,
+    "glucides": 12,
+    "proteines": 16,
+    "lipides": 18,
+    "fibres": 5
+   },
+   "ig": 35,
+   "ingredients": [
+    {
+     "nom": "Brocoli",
+     "qte": "600 g",
+     "subs": [
+      "chou-fleur",
+      "courgette"
+     ]
+    },
+    {
+     "nom": "Oeufs",
+     "qte": "2",
+     "subs": []
+    },
+    {
+     "nom": "Creme legere + lait",
+     "qte": "20 cl",
+     "subs": []
+    },
+    {
+     "nom": "Emmental rape",
+     "qte": "60 g",
+     "subs": []
+    },
+    {
+     "nom": "Muscade",
+     "qte": "1 pincee",
+     "subs": []
+    }
+   ],
+   "etapes": [
+    "Cuisez le brocoli vapeur 8 min.",
+    "Battez oeufs, creme, lait, muscade et fromage.",
+    "Versez sur le brocoli en plat, four 20 min a 190 C."
+   ],
+   "tags": [
+    "vegetarien",
+    "four",
+    "legume"
+   ],
+   "astuce": "",
+   "id": "r058",
+   "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=gratin+brocoli",
+   "ig_label": "bas"
+  },
+  {
+   "nom": "Chou-fleur roti aux epices",
+   "famille": "vege",
+   "types": "ms",
+   "saisons": [
+    "automne",
+    "hiver"
+   ],
+   "temps": 40,
+   "diff": 1,
+   "nutrition": {
+    "kcal": 220,
+    "glucides": 16,
+    "proteines": 9,
+    "lipides": 13,
+    "fibres": 7
+   },
+   "ig": 30,
+   "ingredients": [
+    {
+     "nom": "Chou-fleur",
+     "qte": "1",
+     "subs": [
+      "brocoli",
+      "romanesco"
+     ]
+    },
+    {
+     "nom": "Curcuma + cumin + paprika",
+     "qte": "1 c. a soupe",
+     "subs": [
+      "curry"
+     ]
+    },
+    {
+     "nom": "Huile d'olive",
+     "qte": "2 c. a soupe",
+     "subs": []
+    },
+    {
+     "nom": "Yaourt-citron (sauce)",
+     "qte": "3 c. a soupe",
+     "subs": []
+    }
+   ],
+   "etapes": [
+    "Detaillez le chou-fleur en bouquets.",
+    "Enrobez d'huile et d'epices, etalez sur une plaque.",
+    "Four 30 min a 200 C. Servez avec la sauce yaourt."
+   ],
+   "tags": [
+    "vegetarien",
+    "four",
+    "epices",
+    "ig bas"
+   ],
+   "astuce": "",
+   "id": "r059",
+   "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=chou-fleur+roti+epices",
+   "ig_label": "bas"
+  },
+  {
+   "nom": "Risotto d'orge aux champignons",
+   "famille": "vege",
+   "types": "ms",
+   "saisons": [
+    "automne",
+    "hiver"
+   ],
+   "temps": 40,
+   "diff": 3,
+   "nutrition": {
+    "kcal": 380,
+    "glucides": 52,
+    "proteines": 14,
+    "lipides": 11,
+    "fibres": 9
+   },
+   "ig": 45,
+   "ingredients": [
+    {
+     "nom": "Orge perle",
+     "qte": "150 g",
+     "subs": [
+      "riz complet",
+      "epeautre"
+     ]
+    },
+    {
+     "nom": "Champignons",
+     "qte": "300 g",
+     "subs": []
+    },
+    {
+     "nom": "Oignon + ail",
+     "qte": "1 + 1",
+     "subs": []
+    },
+    {
+     "nom": "Bouillon de legumes",
+     "qte": "75 cl",
+     "subs": []
+    },
+    {
+     "nom": "Parmesan",
+     "qte": "40 g",
+     "subs": []
+    }
+   ],
+   "etapes": [
+    "Faites revenir oignon et champignons.",
+    "Ajoutez l'orge, puis le bouillon louche par louche 30 min.",
+    "Hors du feu, ajoutez le parmesan."
+   ],
+   "tags": [
+    "vegetarien",
+    "cremeux",
+    "ig modere"
+   ],
+   "astuce": "",
+   "id": "r060",
+   "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=risotto+orge+champignons",
+   "ig_label": "bas"
+  },
+  {
+   "nom": "Soupe minestrone",
+   "famille": "soupe",
+   "types": "ms",
+   "saisons": [
+    "automne",
+    "hiver"
+   ],
+   "temps": 40,
+   "diff": 2,
+   "nutrition": {
+    "kcal": 280,
+    "glucides": 38,
+    "proteines": 12,
+    "lipides": 7,
+    "fibres": 10
+   },
+   "ig": 40,
+   "ingredients": [
+    {
+     "nom": "Haricots blancs (boite)",
+     "qte": "200 g",
+     "subs": [
+      "pois chiches"
+     ]
+    },
+    {
+     "nom": "Carotte + courgette + celeri",
+     "qte": "3 legumes",
+     "subs": [
+      "poireau",
+      "chou"
+     ]
+    },
+    {
+     "nom": "Tomates concassees",
+     "qte": "400 g",
+     "subs": []
+    },
+    {
+     "nom": "Petites pates completes",
+     "qte": "60 g",
+     "subs": [
+      "orge"
+     ]
+    },
+    {
+     "nom": "Oignon + bouillon",
+     "qte": "1 + 1 L",
+     "subs": []
+    }
+   ],
+   "etapes": [
+    "Revenez oignon et legumes en des 8 min.",
+    "Ajoutez tomates, bouillon et haricots, cuisez 20 min.",
+    "Ajoutez les pates 8 min avant la fin."
+   ],
+   "tags": [
+    "vegetarien",
+    "fibres",
+    "plat unique"
+   ],
+   "astuce": "",
+   "id": "r061",
+   "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=minestrone",
+   "ig_label": "bas"
+  },
+  {
+   "nom": "Veloute de courgette",
+   "famille": "soupe",
+   "types": "ms",
+   "saisons": [
+    "ete",
+    "printemps"
+   ],
+   "temps": 25,
+   "diff": 1,
+   "nutrition": {
+    "kcal": 160,
+    "glucides": 12,
+    "proteines": 6,
+    "lipides": 9,
+    "fibres": 4
+   },
+   "ig": 35,
+   "ingredients": [
+    {
+     "nom": "Courgettes",
+     "qte": "4",
+     "subs": [
+      "brocoli"
+     ]
+    },
+    {
+     "nom": "Oignon",
+     "qte": "1",
+     "subs": []
+    },
+    {
+     "nom": "Vache qui rit ou chevre",
+     "qte": "2 portions",
+     "subs": [
+      "creme legere"
+     ]
+    },
+    {
+     "nom": "Bouillon",
+     "qte": "75 cl",
+     "subs": []
+    }
+   ],
+   "etapes": [
+    "Faites revenir l'oignon, ajoutez courgettes et bouillon.",
+    "Cuisez 15 min, mixez finement.",
+    "Incorporez le fromage, rectifiez l'assaisonnement."
+   ],
+   "tags": [
+    "vegetarien",
+    "leger",
+    "rapide"
+   ],
+   "astuce": "",
+   "id": "r062",
+   "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=veloute+courgette",
+   "ig_label": "bas"
+  },
+  {
+   "nom": "Veloute de potiron",
+   "famille": "soupe",
+   "types": "ms",
+   "saisons": [
+    "automne",
+    "hiver"
+   ],
+   "temps": 35,
+   "diff": 2,
+   "nutrition": {
+    "kcal": 200,
+    "glucides": 24,
+    "proteines": 5,
+    "lipides": 8,
+    "fibres": 6
+   },
+   "ig": 45,
+   "ingredients": [
+    {
+     "nom": "Potiron ou potimarron",
+     "qte": "800 g",
+     "subs": [
+      "courge butternut",
+      "carotte"
+     ]
+    },
+    {
+     "nom": "Oignon",
+     "qte": "1",
+     "subs": []
+    },
+    {
+     "nom": "Lait de coco ou creme",
+     "qte": "10 cl",
+     "subs": []
+    },
+    {
+     "nom": "Bouillon",
+     "qte": "50 cl",
+     "subs": []
+    },
+    {
+     "nom": "Muscade",
+     "qte": "1 pincee",
+     "subs": []
+    }
+   ],
+   "etapes": [
+    "Faites revenir l'oignon, ajoutez le potiron en des.",
+    "Couvrez de bouillon, cuisez 20 min, mixez.",
+    "Ajoutez la creme et la muscade."
+   ],
+   "tags": [
+    "vegetarien",
+    "automne",
+    "reconfortant"
+   ],
+   "astuce": "",
+   "id": "r063",
+   "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=veloute+potiron",
+   "ig_label": "bas"
+  },
+  {
+   "nom": "Soupe de legumes maison",
+   "famille": "soupe",
+   "types": "ms",
+   "saisons": [
+    "automne",
+    "hiver"
+   ],
+   "temps": 35,
+   "diff": 1,
+   "nutrition": {
+    "kcal": 150,
+    "glucides": 22,
+    "proteines": 5,
+    "lipides": 4,
+    "fibres": 7
+   },
+   "ig": 40,
+   "ingredients": [
+    {
+     "nom": "Poireau + carotte + navet",
+     "qte": "3 legumes",
+     "subs": [
+      "celeri",
+      "courgette"
+     ]
+    },
+    {
+     "nom": "Pomme de terre",
+     "qte": "1",
+     "subs": [
+      "patate douce"
+     ]
+    },
+    {
+     "nom": "Oignon",
+     "qte": "1",
+     "subs": []
+    },
+    {
+     "nom": "Bouillon",
+     "qte": "1 L",
+     "subs": []
+    }
+   ],
+   "etapes": [
+    "Epluchez et coupez tous les legumes.",
+    "Couvrez de bouillon, cuisez 25 min.",
+    "Mixez ou laissez en morceaux."
+   ],
+   "tags": [
+    "vegetarien",
+    "basique",
+    "batch cooking"
+   ],
+   "astuce": "",
+   "id": "r064",
+   "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=soupe+legumes+maison",
+   "ig_label": "bas"
+  },
+  {
+   "nom": "Veloute de brocoli",
+   "famille": "soupe",
+   "types": "ms",
+   "saisons": [
+    "toute"
+   ],
+   "temps": 25,
+   "diff": 1,
+   "nutrition": {
+    "kcal": 170,
+    "glucides": 12,
+    "proteines": 8,
+    "lipides": 9,
+    "fibres": 5
+   },
+   "ig": 30,
+   "ingredients": [
+    {
+     "nom": "Brocoli",
+     "qte": "600 g",
+     "subs": [
+      "chou-fleur",
+      "epinards"
+     ]
+    },
+    {
+     "nom": "Oignon",
+     "qte": "1",
+     "subs": []
+    },
+    {
+     "nom": "Creme legere",
+     "qte": "10 cl",
+     "subs": [
+      "lait"
+     ]
+    },
+    {
+     "nom": "Bouillon",
+     "qte": "75 cl",
+     "subs": []
+    }
+   ],
+   "etapes": [
+    "Faites revenir l'oignon, ajoutez brocoli et bouillon.",
+    "Cuisez 15 min, mixez.",
+    "Ajoutez la creme, sel et poivre."
+   ],
+   "tags": [
+    "vegetarien",
+    "leger",
+    "ig bas"
+   ],
+   "astuce": "",
+   "id": "r065",
+   "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=veloute+brocoli",
+   "ig_label": "bas"
+  },
+  {
+   "nom": "Soupe de lentilles",
+   "famille": "soupe",
+   "types": "ms",
+   "saisons": [
+    "automne",
+    "hiver"
+   ],
+   "temps": 40,
+   "diff": 2,
+   "nutrition": {
+    "kcal": 300,
+    "glucides": 40,
+    "proteines": 18,
+    "lipides": 5,
+    "fibres": 14
+   },
+   "ig": 30,
+   "ingredients": [
+    {
+     "nom": "Lentilles",
+     "qte": "200 g",
+     "subs": [
+      "lentilles corail"
+     ]
+    },
+    {
+     "nom": "Carotte + oignon + celeri",
+     "qte": "2 + 1 + 1",
+     "subs": []
+    },
+    {
+     "nom": "Tomates concassees",
+     "qte": "200 g",
+     "subs": []
+    },
+    {
+     "nom": "Cumin",
+     "qte": "1 c. a cafe",
+     "subs": []
+    },
+    {
+     "nom": "Bouillon",
+     "qte": "1 L",
+     "subs": []
+    }
+   ],
+   "etapes": [
+    "Faites revenir les legumes en des.",
+    "Ajoutez lentilles, tomates, cumin et bouillon.",
+    "Cuisez 30 min. Mixez a moitie pour une texture cremeuse."
+   ],
+   "tags": [
+    "vegetarien",
+    "fibres",
+    "ig bas",
+    "plat unique"
+   ],
+   "astuce": "",
+   "id": "r066",
+   "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=soupe+lentilles",
+   "ig_label": "bas"
+  },
+  {
+   "nom": "Veloute de champignons",
+   "famille": "soupe",
+   "types": "ms",
+   "saisons": [
+    "automne",
+    "hiver"
+   ],
+   "temps": 30,
+   "diff": 2,
+   "nutrition": {
+    "kcal": 190,
+    "glucides": 12,
+    "proteines": 8,
+    "lipides": 11,
+    "fibres": 4
+   },
+   "ig": 30,
+   "ingredients": [
+    {
+     "nom": "Champignons",
+     "qte": "500 g",
+     "subs": [
+      "cepes surgeles"
+     ]
+    },
+    {
+     "nom": "Oignon + ail",
+     "qte": "1 + 1",
+     "subs": []
+    },
+    {
+     "nom": "Creme legere",
+     "qte": "10 cl",
+     "subs": []
+    },
+    {
+     "nom": "Bouillon",
+     "qte": "60 cl",
+     "subs": []
+    },
+    {
+     "nom": "Persil",
+     "qte": "selon gout",
+     "subs": []
+    }
+   ],
+   "etapes": [
+    "Faites revenir oignon, ail et champignons 10 min.",
+    "Ajoutez le bouillon, cuisez 10 min, mixez.",
+    "Incorporez la creme et le persil."
+   ],
+   "tags": [
+    "vegetarien",
+    "automne",
+    "leger"
+   ],
+   "astuce": "",
+   "id": "r067",
+   "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=veloute+champignons",
+   "ig_label": "bas"
+  },
+  {
+   "nom": "Salade grecque",
+   "famille": "salade",
+   "types": "m",
+   "saisons": [
+    "ete"
+   ],
+   "temps": 15,
+   "diff": 1,
+   "nutrition": {
+    "kcal": 300,
+    "glucides": 14,
+    "proteines": 11,
+    "lipides": 22,
+    "fibres": 5
+   },
+   "ig": 25,
+   "ingredients": [
+    {
+     "nom": "Tomates + concombre",
+     "qte": "3 + 1",
+     "subs": []
+    },
+    {
+     "nom": "Feta",
+     "qte": "100 g",
+     "subs": [
+      "mozzarella"
+     ]
+    },
+    {
+     "nom": "Oignon rouge + olives",
+     "qte": "1 + 1 poignee",
+     "subs": []
+    },
+    {
+     "nom": "Huile d'olive + origan",
+     "qte": "2 c. a soupe",
+     "subs": []
+    }
+   ],
+   "etapes": [
+    "Coupez tomates et concombre en gros morceaux.",
+    "Ajoutez oignon, olives et feta en des.",
+    "Arrosez d'huile d'olive et d'origan."
+   ],
+   "tags": [
+    "vegetarien",
+    "froid",
+    "sans cuisson",
+    "ig bas"
+   ],
+   "astuce": "",
+   "id": "r068",
+   "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=salade+grecque+feta",
+   "ig_label": "bas"
+  },
+  {
+   "nom": "Salade caprese et oeuf",
+   "famille": "salade",
+   "types": "m",
+   "saisons": [
+    "ete"
+   ],
+   "temps": 15,
+   "diff": 1,
+   "nutrition": {
+    "kcal": 330,
+    "glucides": 8,
+    "proteines": 22,
+    "lipides": 23,
+    "fibres": 2
+   },
+   "ig": 25,
+   "ingredients": [
+    {
+     "nom": "Tomates",
+     "qte": "3",
+     "subs": []
+    },
+    {
+     "nom": "Mozzarella",
+     "qte": "125 g",
+     "subs": [
+      "burrata",
+      "feta"
+     ]
+    },
+    {
+     "nom": "Oeufs durs",
+     "qte": "2",
+     "subs": []
+    },
+    {
+     "nom": "Basilic + huile d'olive",
+     "qte": "1 poignee + 2 c.",
+     "subs": []
+    }
+   ],
+   "etapes": [
+    "Coupez tomates et mozzarella en tranches, alternez.",
+    "Ajoutez les oeufs durs en quartiers.",
+    "Basilic, huile d'olive, sel et poivre."
+   ],
+   "tags": [
+    "vegetarien",
+    "froid",
+    "rapide"
+   ],
+   "astuce": "",
+   "id": "r069",
+   "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=salade+caprese",
+   "ig_label": "bas"
+  },
+  {
+   "nom": "Salade concombre-feta et poulet",
+   "famille": "salade",
+   "types": "m",
+   "saisons": [
+    "ete"
+   ],
+   "temps": 15,
+   "diff": 1,
+   "nutrition": {
+    "kcal": 320,
+    "glucides": 10,
+    "proteines": 32,
+    "lipides": 16,
+    "fibres": 3
+   },
+   "ig": 25,
+   "ingredients": [
+    {
+     "nom": "Concombre",
+     "qte": "1",
+     "subs": []
+    },
+    {
+     "nom": "Blanc de poulet cuit",
+     "qte": "2",
+     "subs": [
+      "thon",
+      "pois chiches"
+     ]
+    },
+    {
+     "nom": "Feta",
+     "qte": "60 g",
+     "subs": []
+    },
+    {
+     "nom": "Menthe + citron + huile",
+     "qte": "selon gout",
+     "subs": []
+    }
+   ],
+   "etapes": [
+    "Coupez le concombre en demi-rondelles.",
+    "Ajoutez poulet emince et feta.",
+    "Assaisonnez de menthe, citron et huile."
+   ],
+   "tags": [
+    "froid",
+    "rapide",
+    "ig bas"
+   ],
+   "astuce": "",
+   "id": "r070",
+   "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=salade+concombre+feta+poulet",
+   "ig_label": "bas"
+  },
+  {
+   "nom": "Salade composee complete",
+   "famille": "salade",
+   "types": "m",
+   "saisons": [
+    "ete",
+    "toute"
+   ],
+   "temps": 20,
+   "diff": 1,
+   "nutrition": {
+    "kcal": 380,
+    "glucides": 24,
+    "proteines": 24,
+    "lipides": 20,
+    "fibres": 7
+   },
+   "ig": 35,
+   "ingredients": [
+    {
+     "nom": "Salade verte",
+     "qte": "1",
+     "subs": []
+    },
+    {
+     "nom": "Thon ou jambon",
+     "qte": "1 boite / 2 tr.",
+     "subs": [
+      "oeuf",
+      "poulet"
+     ]
+    },
+    {
+     "nom": "Mais + tomates + mais",
+     "qte": "1 bol",
+     "subs": []
+    },
+    {
+     "nom": "Pommes de terre ou pois chiches",
+     "qte": "150 g",
+     "subs": []
+    },
+    {
+     "nom": "Oeuf dur + vinaigrette",
+     "qte": "2 + 2 c.",
+     "subs": []
+    }
+   ],
+   "etapes": [
+    "Disposez la salade dans un grand saladier.",
+    "Ajoutez tous les ingredients en zones.",
+    "Assaisonnez de vinaigrette au moment de servir."
+   ],
+   "tags": [
+    "froid",
+    "complet",
+    "famille"
+   ],
+   "astuce": "",
+   "id": "r071",
+   "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=salade+composee",
+   "ig_label": "bas"
+  },
+  {
+   "nom": "Pates completes sauce tomate-basilic",
+   "famille": "vege",
+   "types": "ms",
+   "saisons": [
+    "toute"
+   ],
+   "temps": 25,
+   "diff": 1,
+   "nutrition": {
+    "kcal": 420,
+    "glucides": 62,
+    "proteines": 16,
+    "lipides": 10,
+    "fibres": 9
+   },
+   "ig": 50,
+   "ingredients": [
+    {
+     "nom": "Pates completes",
+     "qte": "150 g cru",
+     "subs": [
+      "pates de legumineuses"
+     ]
+    },
+    {
+     "nom": "Tomates concassees",
+     "qte": "400 g",
+     "subs": [
+      "coulis"
+     ]
+    },
+    {
+     "nom": "Ail + oignon",
+     "qte": "1 + 1",
+     "subs": []
+    },
+    {
+     "nom": "Basilic",
+     "qte": "1 poignee",
+     "subs": []
+    },
+    {
+     "nom": "Parmesan",
+     "qte": "30 g",
+     "subs": []
+    }
+   ],
+   "etapes": [
+    "Cuisez les pates al dente (IG plus bas).",
+    "Faites une sauce tomate avec ail, oignon et basilic 12 min.",
+    "Melangez, parsemez de parmesan."
+   ],
+   "tags": [
+    "vegetarien",
+    "rapide",
+    "famille"
+   ],
+   "astuce": "",
+   "id": "r072",
+   "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=pates+completes+tomate+basilic",
+   "ig_label": "bas"
+  },
+  {
+   "nom": "Spaghetti complets aux legumes et thon",
+   "famille": "poisson",
+   "types": "ms",
+   "saisons": [
+    "toute"
+   ],
+   "temps": 25,
+   "diff": 2,
+   "nutrition": {
+    "kcal": 450,
+    "glucides": 60,
+    "proteines": 28,
+    "lipides": 11,
+    "fibres": 10
+   },
+   "ig": 50,
+   "ingredients": [
+    {
+     "nom": "Spaghetti complets",
+     "qte": "150 g cru",
+     "subs": []
+    },
+    {
+     "nom": "Thon au naturel",
+     "qte": "1 boite",
+     "subs": [
+      "sardines",
+      "poulet"
+     ]
+    },
+    {
+     "nom": "Courgette + tomates",
+     "qte": "1 + 300 g",
+     "subs": []
+    },
+    {
+     "nom": "Ail + huile d'olive",
+     "qte": "1 + 1 c.",
+     "subs": []
+    }
+   ],
+   "etapes": [
+    "Cuisez les pates al dente.",
+    "Faites revenir ail, courgette puis tomates 10 min.",
+    "Ajoutez le thon, melangez aux pates."
+   ],
+   "tags": [
+    "complet",
+    "rapide",
+    "famille"
+   ],
+   "astuce": "",
+   "id": "r073",
+   "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=spaghetti+complets+thon+legumes",
+   "ig_label": "bas"
+  },
+  {
+   "nom": "Semoule complete aux legumes (couscous leger)",
+   "famille": "vege",
+   "types": "ms",
+   "saisons": [
+    "toute"
+   ],
+   "temps": 35,
+   "diff": 2,
+   "nutrition": {
+    "kcal": 410,
+    "glucides": 64,
+    "proteines": 14,
+    "lipides": 9,
+    "fibres": 12
+   },
+   "ig": 50,
+   "ingredients": [
+    {
+     "nom": "Semoule complete",
+     "qte": "150 g",
+     "subs": [
+      "boulgour",
+      "quinoa"
+     ]
+    },
+    {
+     "nom": "Courgette + carotte + navet",
+     "qte": "3 legumes",
+     "subs": []
+    },
+    {
+     "nom": "Pois chiches",
+     "qte": "150 g",
+     "subs": []
+    },
+    {
+     "nom": "Tomates + oignon",
+     "qte": "200 g + 1",
+     "subs": []
+    },
+    {
+     "nom": "Epices couscous (ras el hanout)",
+     "qte": "1 c. a soupe",
+     "subs": []
+    }
+   ],
+   "etapes": [
+    "Faites mijoter legumes, pois chiches, tomates et epices 25 min.",
+    "Preparez la semoule complete (eau bouillante, 5 min couverte).",
+    "Servez les legumes sur la semoule."
+   ],
+   "tags": [
+    "vegetarien",
+    "fibres",
+    "famille"
+   ],
+   "astuce": "",
+   "id": "r074",
+   "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=couscous+legumes+semoule+complete",
+   "ig_label": "bas"
+  },
+  {
+   "nom": "Boulgour aux petits legumes",
+   "famille": "vege",
+   "types": "ms",
+   "saisons": [
+    "toute"
+   ],
+   "temps": 25,
+   "diff": 1,
+   "nutrition": {
+    "kcal": 360,
+    "glucides": 58,
+    "proteines": 12,
+    "lipides": 9,
+    "fibres": 11
+   },
+   "ig": 45,
+   "ingredients": [
+    {
+     "nom": "Boulgour",
+     "qte": "150 g cru",
+     "subs": [
+      "quinoa",
+      "semoule complete"
+     ]
+    },
+    {
+     "nom": "Poivron + courgette",
+     "qte": "1 + 1",
+     "subs": []
+    },
+    {
+     "nom": "Tomates + oignon",
+     "qte": "2 + 1",
+     "subs": []
+    },
+    {
+     "nom": "Huile d'olive + persil",
+     "qte": "2 c. a soupe",
+     "subs": []
+    }
+   ],
+   "etapes": [
+    "Faites revenir oignon et legumes 8 min.",
+    "Ajoutez le boulgour et 2 volumes d'eau bouillante.",
+    "Couvrez 12 min hors du feu, ajoutez persil."
+   ],
+   "tags": [
+    "vegetarien",
+    "complet",
+    "rapide"
+   ],
+   "astuce": "",
+   "id": "r075",
+   "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=boulgour+legumes",
+   "ig_label": "bas"
+  },
+  {
+   "nom": "Wok de nouilles soba et crevettes",
+   "famille": "poisson",
+   "types": "ms",
+   "saisons": [
+    "toute"
+   ],
+   "temps": 25,
+   "diff": 2,
+   "nutrition": {
+    "kcal": 420,
+    "glucides": 54,
+    "proteines": 26,
+    "lipides": 10,
+    "fibres": 6
+   },
+   "ig": 50,
+   "ingredients": [
+    {
+     "nom": "Nouilles soba (sarrasin)",
+     "qte": "150 g",
+     "subs": [
+      "nouilles completes"
+     ]
+    },
+    {
+     "nom": "Crevettes",
+     "qte": "200 g",
+     "subs": [
+      "poulet",
+      "tofu"
+     ]
+    },
+    {
+     "nom": "Legumes wok",
+     "qte": "300 g",
+     "subs": []
+    },
+    {
+     "nom": "Sauce soja + gingembre",
+     "qte": "2 c. a soupe",
+     "subs": []
+    }
+   ],
+   "etapes": [
+    "Cuisez les soba selon le paquet, egouttez.",
+    "Faites sauter crevettes et legumes 6 min.",
+    "Ajoutez nouilles, soja et gingembre, melangez."
+   ],
+   "tags": [
+    "asiatique",
+    "rapide",
+    "complet"
+   ],
+   "astuce": "",
+   "id": "r076",
+   "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=wok+nouilles+soba+crevettes",
+   "ig_label": "bas"
+  },
+  {
+   "nom": "Oeuf dur, avocat et pain complet",
+   "famille": "oeuf",
+   "types": "m",
+   "saisons": [
+    "toute"
+   ],
+   "temps": 12,
+   "diff": 1,
+   "nutrition": {
+    "kcal": 340,
+    "glucides": 22,
+    "proteines": 16,
+    "lipides": 21,
+    "fibres": 7
+   },
+   "ig": 35,
+   "ingredients": [
+    {
+     "nom": "Oeufs",
+     "qte": "3",
+     "subs": []
+    },
+    {
+     "nom": "Avocat",
+     "qte": "1",
+     "subs": []
+    },
+    {
+     "nom": "Pain complet",
+     "qte": "2 tranches",
+     "subs": [
+      "pain de seigle"
+     ]
+    },
+    {
+     "nom": "Citron + piment",
+     "qte": "selon gout",
+     "subs": []
+    }
+   ],
+   "etapes": [
+    "Cuisez les oeufs durs 9 min.",
+    "Ecrasez l'avocat avec citron sur le pain.",
+    "Ajoutez les oeufs en rondelles, sel, piment."
+   ],
+   "tags": [
+    "vegetarien",
+    "rapide",
+    "express"
+   ],
+   "astuce": "",
+   "id": "r077",
+   "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=oeuf+dur+avocat+tartine",
+   "ig_label": "bas"
+  },
+  {
+   "nom": "Saute de tofu aux legumes",
+   "famille": "vege",
+   "types": "ms",
+   "saisons": [
+    "toute"
+   ],
+   "temps": 25,
+   "diff": 2,
+   "nutrition": {
+    "kcal": 320,
+    "glucides": 18,
+    "proteines": 22,
+    "lipides": 17,
+    "fibres": 6
+   },
+   "ig": 40,
+   "ingredients": [
+    {
+     "nom": "Tofu ferme",
+     "qte": "250 g",
+     "subs": [
+      "poulet",
+      "oeufs"
+     ]
+    },
+    {
+     "nom": "Brocoli + poivron + carotte",
+     "qte": "400 g",
+     "subs": []
+    },
+    {
+     "nom": "Sauce soja + gingembre + ail",
+     "qte": "2 c. a soupe",
+     "subs": []
+    },
+    {
+     "nom": "Huile + graines de sesame",
+     "qte": "1 c. + 1 c.",
+     "subs": []
+    }
+   ],
+   "etapes": [
+    "Coupez et dorez le tofu 6 min, reservez.",
+    "Faites sauter les legumes 7 min.",
+    "Remettez le tofu, sauce soja, ail, gingembre, sesame."
+   ],
+   "tags": [
+    "vegetarien",
+    "proteine vegetale",
+    "asiatique"
+   ],
+   "astuce": "",
+   "id": "r078",
+   "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=saute+tofu+legumes",
+   "ig_label": "bas"
+  },
+  {
+   "nom": "Soupe de tomate et vermicelles complets",
+   "famille": "soupe",
+   "types": "ms",
+   "saisons": [
+    "toute"
+   ],
+   "temps": 25,
+   "diff": 1,
+   "nutrition": {
+    "kcal": 240,
+    "glucides": 36,
+    "proteines": 9,
+    "lipides": 6,
+    "fibres": 6
+   },
+   "ig": 45,
+   "ingredients": [
+    {
+     "nom": "Tomates concassees",
+     "qte": "800 g",
+     "subs": [
+      "tomates fraiches"
+     ]
+    },
+    {
+     "nom": "Oignon + ail",
+     "qte": "1 + 1",
+     "subs": []
+    },
+    {
+     "nom": "Vermicelles complets",
+     "qte": "60 g",
+     "subs": [
+      "petites pates completes"
+     ]
+    },
+    {
+     "nom": "Basilic + huile d'olive",
+     "qte": "selon gout",
+     "subs": []
+    }
+   ],
+   "etapes": [
+    "Faites revenir oignon et ail, ajoutez les tomates et 50 cl d'eau.",
+    "Mijotez 12 min, mixez si desire.",
+    "Ajoutez les vermicelles 5 min, basilic."
+   ],
+   "tags": [
+    "vegetarien",
+    "rapide",
+    "reconfortant"
+   ],
+   "astuce": "",
+   "id": "r079",
+   "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=soupe+tomate+vermicelles",
+   "ig_label": "bas"
+  },
+  {
+   "nom": "Salade de quinoa, concombre et feta",
+   "famille": "vege",
+   "types": "m",
+   "saisons": [
+    "ete"
+   ],
+   "temps": 20,
+   "diff": 1,
+   "nutrition": {
+    "kcal": 380,
+    "glucides": 42,
+    "proteines": 15,
+    "lipides": 16,
+    "fibres": 9
+   },
+   "ig": 40,
+   "ingredients": [
+    {
+     "nom": "Quinoa",
+     "qte": "100 g cru",
+     "subs": [
+      "boulgour"
+     ]
+    },
+    {
+     "nom": "Concombre + tomates",
+     "qte": "1 + 2",
+     "subs": []
+    },
+    {
+     "nom": "Feta",
+     "qte": "60 g",
+     "subs": []
+    },
+    {
+     "nom": "Menthe + citron + huile",
+     "qte": "selon gout",
+     "subs": []
+    }
+   ],
+   "etapes": [
+    "Cuisez le quinoa 12 min, refroidissez.",
+    "Ajoutez legumes en des, feta et herbes.",
+    "Assaisonnez citron-huile."
+   ],
+   "tags": [
+    "vegetarien",
+    "froid",
+    "complet",
+    "fibres"
+   ],
+   "astuce": "",
+   "id": "r080",
+   "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=salade+quinoa+concombre+feta",
+   "ig_label": "bas"
+  },
+  {
+   "nom": "Poelee de haricots verts, amandes et poulet",
+   "famille": "volaille",
+   "types": "ms",
+   "saisons": [
+    "toute"
+   ],
+   "temps": 25,
+   "diff": 2,
+   "nutrition": {
+    "kcal": 350,
+    "glucides": 12,
+    "proteines": 34,
+    "lipides": 18,
+    "fibres": 6
+   },
+   "ig": 30,
+   "ingredients": [
+    {
+     "nom": "Blancs de poulet",
+     "qte": "2",
+     "subs": [
+      "dinde",
+      "tofu"
+     ]
+    },
+    {
+     "nom": "Haricots verts",
+     "qte": "400 g",
+     "subs": [
+      "brocoli"
+     ]
+    },
+    {
+     "nom": "Amandes effilees",
+     "qte": "30 g",
+     "subs": [
+      "noisettes"
+     ]
+    },
+    {
+     "nom": "Ail + huile d'olive",
+     "qte": "1 + 1 c.",
+     "subs": []
+    }
+   ],
+   "etapes": [
+    "Cuisez les haricots verts 8 min, egouttez.",
+    "Poelez le poulet en des 8 min avec l'ail.",
+    "Ajoutez haricots et amandes dorees, melangez."
+   ],
+   "tags": [
+    "proteine",
+    "fibres",
+    "ig bas"
+   ],
+   "astuce": "",
+   "id": "r081",
+   "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=poelee+haricots+verts+poulet+amandes",
+   "ig_label": "bas"
+  },
+  {
+   "nom": "Cabillaud vapeur et ratatouille",
+   "famille": "poisson",
+   "types": "ms",
+   "saisons": [
+    "ete",
+    "automne"
+   ],
+   "temps": 35,
+   "diff": 2,
+   "nutrition": {
+    "kcal": 290,
+    "glucides": 18,
+    "proteines": 34,
+    "lipides": 9,
+    "fibres": 7
+   },
+   "ig": 30,
+   "ingredients": [
+    {
+     "nom": "Dos de cabillaud",
+     "qte": "2",
+     "subs": [
+      "colin",
+      "lieu"
+     ]
+    },
+    {
+     "nom": "Ratatouille (maison ou bocal)",
+     "qte": "400 g",
+     "subs": [
+      "legumes du soleil"
+     ]
+    },
+    {
+     "nom": "Citron + basilic",
+     "qte": "selon gout",
+     "subs": []
+    }
+   ],
+   "etapes": [
+    "Rechauffez ou preparez la ratatouille.",
+    "Cuisez le cabillaud vapeur 10 min.",
+    "Servez le poisson sur la ratatouille, citron et basilic."
+   ],
+   "tags": [
+    "leger",
+    "ig bas",
+    "sans matiere grasse"
+   ],
+   "astuce": "",
+   "id": "r082",
+   "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=cabillaud+ratatouille",
+   "ig_label": "bas"
+  },
+  {
+   "nom": "Veloute de lentilles corail et carotte",
+   "famille": "soupe",
+   "types": "ms",
+   "saisons": [
+    "automne",
+    "hiver"
+   ],
+   "temps": 30,
+   "diff": 1,
+   "nutrition": {
+    "kcal": 280,
+    "glucides": 36,
+    "proteines": 16,
+    "lipides": 6,
+    "fibres": 11
+   },
+   "ig": 30,
+   "ingredients": [
+    {
+     "nom": "Lentilles corail",
+     "qte": "150 g",
+     "subs": [
+      "lentilles vertes"
+     ]
+    },
+    {
+     "nom": "Carottes",
+     "qte": "3",
+     "subs": [
+      "potiron"
+     ]
+    },
+    {
+     "nom": "Oignon + cumin",
+     "qte": "1 + 1 c.",
+     "subs": []
+    },
+    {
+     "nom": "Lait de coco",
+     "qte": "10 cl",
+     "subs": [
+      "creme"
+     ]
+    },
+    {
+     "nom": "Bouillon",
+     "qte": "75 cl",
+     "subs": []
+    }
+   ],
+   "etapes": [
+    "Faites revenir oignon, carottes et cumin.",
+    "Ajoutez lentilles et bouillon, cuisez 20 min.",
+    "Mixez, ajoutez le lait de coco."
+   ],
+   "tags": [
+    "vegetarien",
+    "fibres",
+    "ig bas",
+    "reconfortant"
+   ],
+   "astuce": "",
+   "id": "r083",
+   "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=veloute+lentilles+corail+carotte",
+   "ig_label": "bas"
+  }
+ ]
+}
