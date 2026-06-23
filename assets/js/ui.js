@@ -41,12 +41,17 @@
     const on = Store.isFavori(id);
     return `<button class="rcard__fav" data-act="fav" data-fav-id="${id}" title="${on ? 'Retirer des favoris' : 'Ajouter aux favoris'}">${on ? '★' : '☆'}</button>`;
   }
+  function cardTop(r) {
+    const ph = Data.photoFor(r);
+    const img = ph ? `<img class="rcard__img" src="${esc(ph)}" alt="" loading="lazy" onerror="this.classList.add('hide')">` : '';
+    return `<div class="rcard__top" data-act="open" data-id="${r.id}">${img}<span class="rcard__emoji">${Data.emojiFor(r)}</span></div>`;
+  }
   function recipeCard(r) {
     const sel = selected.has(r.id) ? ' selected' : '';
     return `<article class="rcard${sel}" data-card-id="${r.id}">
       <div class="rcard__sel" data-act="sel" data-id="${r.id}">✓</div>
       ${favStar(r.id)}
-      <div class="rcard__top" data-act="open" data-id="${r.id}">${Data.emojiFor(r)}</div>
+      ${cardTop(r)}
       <div class="rcard__body">
         <div class="rcard__title" data-act="open" data-id="${r.id}">${esc(r.nom)}</div>
         ${metaRow(r)}
@@ -216,11 +221,14 @@
     let body = '';
     if (coursesTab === 'liste') body = coursesListe();
     else if (coursesTab === 'favoris') body = coursesFavoris();
+    else if (coursesTab === 'photos') body = coursesPhotos();
     else body = coursesListesSauvegardees();
+    const np = Store.activePhotos().length;
     view.innerHTML = `<div class="page-head"><h2>🛒 Courses</h2></div>
       <div class="list-tabs">
         ${tabBtn('liste', '🛒 Liste du jour')}
-        ${tabBtn('favoris', '⭐ Ingrédients favoris')}
+        ${tabBtn('photos', '📷 Photos' + (np ? ' (' + np + ')' : ''))}
+        ${tabBtn('favoris', '⭐ Favoris')}
         ${tabBtn('listes', '💾 Mes listes')}
       </div>${body}`;
     wireCoursesInputs();
@@ -259,13 +267,38 @@
   }
   function citem(i) {
     const fav = Store.isIngFav(i.nom);
+    const pc = Store.photosForLabel(i.nom).length;
     return `<div class="citem${i.coche ? ' done' : ''}" data-act="coche" data-id="${i.id}">
       <div class="citem__check">${i.coche ? '✓' : ''}</div>
       <div class="citem__name">${esc(i.nom)}</div>
       ${i.qte ? `<div class="citem__qte">${esc(i.qte)}</div>` : ''}
+      <button class="citem__star" data-act="item-photo" data-name="${esc(i.nom)}" title="Ajouter une photo">📷${pc ? `<sup>${pc}</sup>` : ''}</button>
       <button class="citem__star" data-act="cfav" data-name="${esc(i.nom)}" title="Ingrédient favori">${fav ? '★' : '☆'}</button>
       <button class="citem__del" data-act="cdel" data-id="${i.id}" title="Supprimer">✕</button>
     </div>`;
+  }
+  function coursesPhotos() {
+    const photos = Store.activePhotos().sort((a, b) => (b.at || 0) - (a.at || 0));
+    let html = `<p class="muted small">Photos rattachées à un article (ex : reconnaître le bon paquet en rayon).
+      Ajoutez-en avec 📷 dans « Liste du jour ». La liste, elle, n'affiche qu'un petit 📷.</p>`;
+    if (!photos.length) {
+      html += `<div class="empty"><span class="big">📷</span>Aucune photo pour l'instant.</div>`;
+      return html;
+    }
+    const groups = {};
+    photos.forEach(p => { (groups[p.label] = groups[p.label] || []).push(p); });
+    Object.keys(groups).sort((a, b) => a.localeCompare(b, 'fr')).forEach(label => {
+      html += `<div class="rayon__title">🛒 ${esc(label)}</div><div class="photo-grid">`;
+      groups[label].forEach(p => {
+        html += `<div class="photo-cell">
+          <img src="${esc(p.url)}" alt="${esc(label)}" loading="lazy" onerror="this.classList.add('hide');this.parentNode.classList.add('imgerr')">
+          <button class="photo-del" data-act="photo-del" data-id="${p.id}" title="Supprimer">✕</button>
+          ${p.by ? `<span class="photo-by">${esc(p.by)}</span>` : ''}
+        </div>`;
+      });
+      html += `</div>`;
+    });
+    return html;
   }
 
   function coursesFavoris() {
@@ -425,6 +458,7 @@
     const base = Data.baseServings || 2;
     const factor = detailServings / base;
     const n = r.nutrition;
+    const ph = Data.photoFor(r);
     const ings = r.ingredients.map(ing => `<div class="ing">
         <div><span class="ing__name">${esc(ing.nom)}</span>
           ${ing.subs && ing.subs.length ? `<div class="ing__sub">↔ à la place : ${ing.subs.map(esc).join(', ')}</div>` : ''}
@@ -436,7 +470,7 @@
     view.innerHTML = `<div class="detail">
       <button class="btn btn--sm" data-act="back">← Retour</button>
       <div class="detail__hero">
-        <div class="detail__emoji">${Data.emojiFor(r)}</div>
+        <div class="detail__emoji">${ph ? `<img class="emoji-img" src="${esc(ph)}" alt="" onerror="this.outerHTML='${Data.emojiFor(r)}'">` : Data.emojiFor(r)}</div>
         <div style="flex:1">
           <h2 style="margin:0 0 6px">${esc(r.nom)} ${r.custom ? '<span class="badge badge--soft">perso</span>' : ''}</h2>
           <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">${igBadge(r)} ${cgBadge(r)}
@@ -450,6 +484,8 @@
         <button class="btn btn--primary" data-act="cook" data-id="${r.id}">👨‍🍳 Mode cuisine</button>
         <button class="btn" data-act="addcourses-srv" data-id="${r.id}">🛒 Ajouter aux courses</button>
         <a class="btn" href="${esc(r.lien)}" target="_blank" rel="noopener">🔗 Variantes</a>
+        <button class="btn btn--sm" data-act="recipe-photo" data-id="${r.id}">📷 ${ph ? 'Changer la photo' : 'Ajouter une photo'}</button>
+        ${ph ? `<button class="btn btn--sm btn--danger" data-act="recipe-photo-del" data-id="${r.id}">Retirer la photo</button>` : ''}
         ${r.custom ? `<a class="btn btn--sm" href="#/ajouter/${r.id}">✏️ Modifier</a>` : ''}
       </div>
 
@@ -616,6 +652,10 @@
       case 'srv-dec': detailServings = Math.max(1, detailServings - 1); render(); break;
       case 'srv-inc': detailServings = Math.min(20, detailServings + 1); render(); break;
       case 'addplaisir': Store.addCourse(t.dataset.name); toast('🛒 Ajouté : ' + t.dataset.name); break;
+      case 'item-photo': pickPhoto(d => Store.addShoppingPhoto(t.dataset.name, d), 'à « ' + t.dataset.name + ' »'); break;
+      case 'recipe-photo': { const rid = t.dataset.id; pickPhoto(d => { Store.setRecipePhoto(rid, d); render(); }, 'à la recette'); break; }
+      case 'recipe-photo-del': Store.removeRecipePhoto(t.dataset.id); break;
+      case 'photo-del': Store.removeShoppingPhoto(t.dataset.id); break;
       case 'theme-set': Store.setTheme(t.dataset.theme); applyTheme(); render(); break;
       case 'srv-def-dec': Store.setDefaultServings(Store.defaultServings() - 1); render(); break;
       case 'srv-def-inc': Store.setDefaultServings(Store.defaultServings() + 1); render(); break;
@@ -682,6 +722,15 @@
     const inList = Store.activeCourses().find(c => App.eqName(c.nom, name));
     if (inList) { Store.removeCourse(inList.id); toast('Retiré de la liste'); }
     else { Store.addCourse(name); toast('Ajouté à la liste'); }
+  }
+  function pickPhoto(saveFn, label) {
+    App.Photos.pick(async (dataUrl) => {
+      if (!dataUrl) return;
+      toast(Store.syncEnabled() ? '📷 Envoi de la photo…' : '📷 Photo enregistrée (locale)');
+      const url = await Store.saveImage(dataUrl);
+      saveFn(url);
+      toast('📷 Photo ajoutée ' + (label || ''));
+    });
   }
   function doSaveList() {
     if (!Store.activeCourses().length) { toast('La liste est vide'); return; }

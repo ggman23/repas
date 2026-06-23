@@ -27,7 +27,11 @@ et une **liste de courses partagée** entre plusieurs appareils.
   - ajout d'articles libres (café, éponges…) ;
   - **rangée par rayon** ; on **touche un produit pour le cocher/l'enlever** ;
   - **listes enregistrées** réutilisables (vos courses habituelles) ;
-  - « **Ajouter mes favoris** » en un geste.
+  - « **Ajouter mes favoris** » en un geste ;
+  - **📷 Photos par article** : prenez en photo le bon produit (ex. « gâteaux granola ») ; la liste
+    n'affiche qu'un petit 📷, les images sont regroupées dans l'onglet **Photos**. Synchronisées si la
+    synchro est active, mises en cache pour rester visibles hors-ligne (sinon une croix s'affiche).
+- **📷 Photos de recettes** : ajoutez la photo de votre plat (synchronisée) ; sinon une jolie icône.
 - **☁️ Synchronisation** entre vos appareils et ceux de votre famille (voir plus bas).
 - **📱 Responsive + hors-ligne** — s'installe sur l'écran d'accueil du téléphone et fonctionne même
   sans réseau dans les rayons (service worker).

@@ -15,7 +15,7 @@
 
   function defaultState() {
     return { v: 1, favoris: [], ingredientsFavoris: [], courses: [], listes: [],
-      customRecipes: [], customIngredients: [], updatedAt: 0, updatedBy: '' };
+      customRecipes: [], customIngredients: [], photos: [], recipePhotos: [], updatedAt: 0, updatedBy: '' };
   }
 
   const Store = {
@@ -190,6 +190,57 @@
       return true;
     },
 
+    /* ---------- photos (liste de courses & recettes) ---------- */
+    activePhotos() { return (this.state.photos || []).filter(p => !p.deleted); },
+    photosForLabel(label) {
+      const n = normName(label);
+      return this.activePhotos().filter(p => normName(p.label) === n);
+    },
+    addShoppingPhoto(label, url) {
+      if (!url) return;
+      (this.state.photos || (this.state.photos = [])).push({
+        id: uid(), label: (label || '').trim() || 'Photo', url, by: this.userName(), at: now(), updatedAt: now(), deleted: false
+      });
+      this.commit();
+    },
+    removeShoppingPhoto(id) {
+      const p = (this.state.photos || []).find(x => x.id === id);
+      if (p) { p.deleted = true; p.updatedAt = now(); this.commit(); }
+    },
+    recipePhotoFor(rid) {
+      const p = (this.state.recipePhotos || []).find(x => x.id === rid && !x.deleted);
+      return p ? p.url : null;
+    },
+    setRecipePhoto(rid, url) {
+      if (!url) return;
+      const list = this.state.recipePhotos || (this.state.recipePhotos = []);
+      const ex = list.find(x => x.id === rid);
+      if (ex) { ex.url = url; ex.deleted = false; ex.updatedAt = now(); }
+      else list.push({ id: rid, url, updatedAt: now(), by: this.userName() });
+      this.commit();
+    },
+    removeRecipePhoto(rid) {
+      const p = (this.state.recipePhotos || []).find(x => x.id === rid);
+      if (p) { p.deleted = true; p.updatedAt = now(); this.commit(); }
+    },
+    rawUrl(path) { return `https://raw.githubusercontent.com/${C.owner}/${C.repo}/${this.dataBranch()}/${path}`; },
+    /* Envoie une image (dataURL JPEG) : sur GitHub si la synchro est active
+       (=> partagee + URL stable), sinon garde le dataURL en local. */
+    async saveImage(dataUrl) {
+      if (!dataUrl) return null;
+      if (!this.syncEnabled()) return dataUrl;
+      try {
+        const base64 = dataUrl.replace(/^data:[^,]+,/, '');
+        const path = 'data/photos/p' + Date.now().toString(36) + Math.random().toString(36).slice(2, 6) + '.jpg';
+        const put = await this._api('contents/' + path, {
+          method: 'PUT', headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ message: 'ajout photo', content: base64, branch: this.dataBranch() })
+        });
+        if (!put.ok) throw new Error('HTTP ' + put.status);
+        return this.rawUrl(path);
+      } catch (e) { console.warn('saveImage', e); return dataUrl; }
+    },
+
     /* ---------- preferences locales (par appareil) ---------- */
     theme() { return localStorage.getItem('repas_theme') || 'auto'; },
     setTheme(t) { localStorage.setItem('repas_theme', t); },
@@ -318,6 +369,8 @@
       listes: mergeById(remote.listes, local.listes),
       customRecipes: mergeById(remote.customRecipes, local.customRecipes),
       customIngredients: unionStr(remote.customIngredients, local.customIngredients),
+      photos: mergeById(remote.photos, local.photos),
+      recipePhotos: mergeById(remote.recipePhotos, local.recipePhotos),
       updatedAt: Math.max(remote.updatedAt || 0, local.updatedAt || 0),
       updatedBy: (local.updatedAt || 0) >= (remote.updatedAt || 0) ? local.updatedBy : remote.updatedBy
     };

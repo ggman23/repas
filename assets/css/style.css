@@ -271,3 +271,19 @@ html[data-theme="dark"] select.field option{background:#16211e;color:var(--ink)}
 .cook__dots{display:flex;gap:7px;flex-wrap:wrap;justify-content:center;flex:1}
 .cook__dot{width:9px;height:9px;border-radius:50%;background:var(--line);transition:.15s}
 .cook__dot.on{background:var(--teal);transform:scale(1.35)}
+
+/* ---------- Photos ---------- */
+.rcard__top{position:relative;overflow:hidden}
+.rcard__img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.rcard__img.hide{display:none}
+.emoji-img{width:58px;height:58px;border-radius:12px;object-fit:cover;display:block}
+.photo-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:10px;margin-bottom:10px}
+.photo-cell{position:relative;aspect-ratio:1/1;border-radius:12px;overflow:hidden;border:1px solid var(--line);background:var(--soft)}
+.photo-cell img{width:100%;height:100%;object-fit:cover}
+.photo-cell img.hide{display:none}
+.photo-cell.imgerr::after{content:"✖ hors-ligne";position:absolute;inset:0;display:flex;align-items:center;
+  justify-content:center;color:var(--muted);font-size:.8rem;text-align:center;padding:6px}
+.photo-del{position:absolute;top:6px;right:6px;width:27px;height:27px;border-radius:50%;border:0;
+  background:rgba(0,0,0,.55);color:#fff;cursor:pointer;font-size:.8rem}
+.photo-by{position:absolute;bottom:5px;left:6px;background:rgba(0,0,0,.5);color:#fff;font-size:.62rem;padding:1px 7px;border-radius:7px}
+.citem__star sup{font-size:.58rem;color:var(--teal);font-weight:800;margin-left:1px}

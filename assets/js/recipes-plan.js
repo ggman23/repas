@@ -170,6 +170,11 @@
       return { results, terms, filters };
     },
 
+    photoFor(r) {
+      if (!r) return null;
+      const u = App.Store && App.Store.recipePhotoFor && App.Store.recipePhotoFor(r.id);
+      return u || r.image || null;
+    },
     emojiFor(r) {
       if (!r) return '🍽️';
       if (r.famille === 'soupe') return '🥣';
