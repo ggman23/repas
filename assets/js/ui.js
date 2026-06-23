@@ -24,6 +24,12 @@
   function diffLabel(d) {
     return d <= 2 ? 'Très facile' : d <= 4 ? 'Facile' : d <= 6 ? 'Intermédiaire' : d <= 8 ? 'Difficile' : 'Expert';
   }
+  function cgBadge(r) {
+    if (r.cg == null) return '';
+    const cls = r.cg_label === 'basse' ? 'ig-bas' : r.cg_label === 'moderee' ? 'ig-modere' : 'ig-eleve';
+    const lbl = r.cg_label === 'basse' ? 'CG basse' : r.cg_label === 'moderee' ? 'CG modérée' : 'CG élevée';
+    return `<span class="badge ${cls}" title="Charge glycémique par portion : ${r.cg}">${lbl} · ${r.cg}</span>`;
+  }
   function metaRow(r) {
     return `<div class="rcard__meta">
       <span class="badge badge--soft">⏱ ${r.temps} min</span>
@@ -66,6 +72,7 @@
   const selected = new Set();
   let selMode = false;
   let tokenVisible = false;
+  let detailServings = 0, detailId = null;
 
   function mondayOf(d) {
     const x = new Date(d); const day = (x.getDay() + 6) % 7;
@@ -81,7 +88,9 @@
    * ------------------------------------------------------------------ */
   function viewPlanning() {
     const today = new Date();
-    let html = `<div class="page-head"><h2>📅 Planning de la semaine</h2></div>
+    const season = Data.seasonOf(planWeekStart);
+    let html = `<div class="page-head"><h2>📅 Planning</h2><span class="spacer"></span>
+        <span class="badge badge--soft" title="Les repas proposés tiennent compte de la saison">${Data.seasonEmoji(season)} ${esc(Data.seasonLabel(season))}</span></div>
       <div class="week-nav">
         <button class="btn btn--sm" data-act="prevweek">◀ Semaine</button>
         <button class="btn btn--sm" data-act="today">Aujourd'hui</button>
@@ -137,7 +146,8 @@
     view.innerHTML = `<div class="page-head">
         <h2>🍽️ Recettes <span class="muted small">(${Data.recipes.length})</span></h2>
         <span class="spacer"></span>
-        <button class="btn btn--sm ${selMode ? 'btn--primary' : ''}" data-act="selmode">${selMode ? '✓ Sélection' : '☑️ Sélection multiple'}</button>
+        <a class="btn btn--sm" href="#/ajouter">➕ Ajouter</a>
+        <button class="btn btn--sm ${selMode ? 'btn--primary' : ''}" data-act="selmode">${selMode ? '✓ Sélection' : '☑️ Sélection'}</button>
       </div>
       <div class="chips">${chips}</div>
       ${grid(list)}`;
@@ -368,6 +378,35 @@
       </div>
 
       <div class="set-card">
+        <h3>🎨 Affichage</h3>
+        <label class="lbl">Thème</label>
+        <div class="chips">
+          ${['auto', 'light', 'dark'].map(k => `<span class="chip${Store.theme() === k ? ' active' : ''}" data-act="theme-set" data-theme="${k}">${({ auto: '🌗 Auto', light: '☀️ Clair', dark: '🌙 Sombre' })[k]}</span>`).join('')}
+        </div>
+        <label class="lbl">Nombre de personnes par défaut</label>
+        <div class="servings">
+          <button class="srv-btn" data-act="srv-def-dec">−</button>
+          <b>${Store.defaultServings()}</b>
+          <button class="srv-btn" data-act="srv-def-inc">＋</button>
+          <span class="muted small">quantités & liste de courses (2 adultes + 2 enfants = 4)</span>
+        </div>
+      </div>
+
+      <div class="set-card">
+        <h3>📝 Mes recettes personnelles</h3>
+        <a class="btn btn--sm btn--primary" href="#/ajouter">➕ Ajouter une recette</a>
+        ${Store.activeCustomRecipes().length ? Store.activeCustomRecipes().map(r => `<div class="saved-list" style="margin-top:8px">
+            <b>${esc(r.nom)}</b>
+            <a class="btn btn--sm" href="#/recette/${r.id}">Voir</a>
+            <a class="btn btn--sm" href="#/ajouter/${r.id}">✏️</a>
+            <button class="btn btn--sm btn--danger" data-act="cust-del" data-id="${r.id}">✕</button>
+          </div>`).join('') : '<p class="small muted" style="margin-top:8px">Aucune recette personnelle pour l\'instant.</p>'}
+        ${(Store.state.customIngredients && Store.state.customIngredients.length) ? `
+          <label class="lbl">Ingrédients mémorisés</label>
+          <div class="chips">${Store.state.customIngredients.map(nm => `<span class="chip">${esc(nm)}<button class="citem__del" data-act="custing-del" data-name="${esc(nm)}" style="padding:0 0 0 6px">✕</button></span>`).join('')}</div>` : ''}
+      </div>
+
+      <div class="set-card">
         <h3>ℹ️ À propos</h3>
         <p class="small">${Data.recipes.length} recettes · planning d'un an. Données nutritionnelles et index glycémique
         <b>approximatifs</b>, donnés à titre indicatif — ils ne remplacent pas l'avis de votre médecin ou diététicien.</p>
@@ -382,52 +421,72 @@
   function viewRecette(id) {
     const r = Data.byId[id];
     if (!r) { view.innerHTML = `<div class="empty">Recette introuvable. <a href="#/recettes">Retour</a></div>`; return; }
+    if (detailId !== id) { detailId = id; detailServings = Store.defaultServings(); }
+    const base = Data.baseServings || 2;
+    const factor = detailServings / base;
     const n = r.nutrition;
     const ings = r.ingredients.map(ing => `<div class="ing">
         <div><span class="ing__name">${esc(ing.nom)}</span>
           ${ing.subs && ing.subs.length ? `<div class="ing__sub">↔ à la place : ${ing.subs.map(esc).join(', ')}</div>` : ''}
+          ${ing.plaisir && ing.plaisir.length ? `<div class="ing__plaisir">😋 plaisir : ${ing.plaisir.map(p => `<button class="plz" data-act="addplaisir" data-name="${esc(p)}">${esc(p)}</button>`).join(' ')}</div>` : ''}
         </div>
-        <div class="ing__qte">${esc(ing.qte)}</div>
+        <div class="ing__qte">${esc(App.scaleQty(ing.qte, factor))}</div>
       </div>`).join('');
+    const hasPlaisir = r.ingredients.some(i => i.plaisir && i.plaisir.length);
     view.innerHTML = `<div class="detail">
       <button class="btn btn--sm" data-act="back">← Retour</button>
       <div class="detail__hero">
         <div class="detail__emoji">${Data.emojiFor(r)}</div>
         <div style="flex:1">
-          <h2 style="margin:0 0 6px">${esc(r.nom)}</h2>
-          <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">${igBadge(r)}
+          <h2 style="margin:0 0 6px">${esc(r.nom)} ${r.custom ? '<span class="badge badge--soft">perso</span>' : ''}</h2>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">${igBadge(r)} ${cgBadge(r)}
             <span class="badge badge--soft">⏱ ${r.temps} min</span>
             <span class="badge badge--soft">🔧 ${esc(diffLabel(r.diff))} (${r.diff}/10)</span></div>
         </div>
         <button class="rcard__fav" style="position:static" data-act="fav" data-fav-id="${r.id}">${Store.isFavori(r.id) ? '★' : '☆'}</button>
       </div>
 
-      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px">
-        <button class="btn btn--primary" data-act="addcourses" data-id="${r.id}">🛒 Ajouter aux courses</button>
-        <a class="btn" href="${esc(r.lien)}" target="_blank" rel="noopener">🔗 Voir des variantes</a>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px;align-items:center">
+        <button class="btn btn--primary" data-act="cook" data-id="${r.id}">👨‍🍳 Mode cuisine</button>
+        <button class="btn" data-act="addcourses-srv" data-id="${r.id}">🛒 Ajouter aux courses</button>
+        <a class="btn" href="${esc(r.lien)}" target="_blank" rel="noopener">🔗 Variantes</a>
+        ${r.custom ? `<a class="btn btn--sm" href="#/ajouter/${r.id}">✏️ Modifier</a>` : ''}
+      </div>
+
+      <div class="servings">
+        <span>👥 Pour</span>
+        <button class="srv-btn" data-act="srv-dec">−</button>
+        <b id="srv-n">${detailServings}</b>
+        <button class="srv-btn" data-act="srv-inc">＋</button>
+        <span>pers.</span>
+        <span class="muted small">quantités ajustées · valeurs nutri. par portion</span>
       </div>
 
       <div class="detail__stats">
-        <div class="stat"><div class="v">${n.kcal}</div><div class="k">kcal</div></div>
-        <div class="stat"><div class="v">${n.glucides} g</div><div class="k">Glucides</div></div>
-        <div class="stat"><div class="v">${n.proteines} g</div><div class="k">Protéines</div></div>
-        <div class="stat"><div class="v">${n.lipides} g</div><div class="k">Lipides</div></div>
-        <div class="stat"><div class="v">${n.fibres} g</div><div class="k">Fibres</div></div>
+        <div class="stat"><div class="v">${n.kcal || '–'}</div><div class="k">kcal</div></div>
+        <div class="stat"><div class="v">${n.glucides || 0} g</div><div class="k">Glucides</div></div>
+        <div class="stat"><div class="v">${n.proteines || 0} g</div><div class="k">Protéines</div></div>
+        <div class="stat"><div class="v">${n.lipides || 0} g</div><div class="k">Lipides</div></div>
+        <div class="stat"><div class="v">${n.fibres || 0} g</div><div class="k">Fibres</div></div>
         <div class="stat"><div class="v">${r.ig}</div><div class="k">Index glyc.</div></div>
+        <div class="stat"><div class="v">${r.cg}</div><div class="k">Charge glyc.</div></div>
       </div>
 
-      <div class="section"><h3>🧺 Ingrédients <span class="muted small">(pour 2 personnes)</span></h3>${ings}</div>
-      <div class="section"><h3>👨‍🍳 Préparation</h3><ol class="steps">${r.etapes.map(s => `<li>${esc(s)}</li>`).join('')}</ol></div>
+      <div class="section"><h3>🧺 Ingrédients <span class="muted small">(pour ${detailServings} pers.)</span></h3>${ings}</div>
+      <div class="section"><h3>👨‍🍳 Préparation</h3><ol class="steps">${r.etapes.map(s => `<li>${esc(s)}</li>`).join('')}</ol>
+        <button class="btn btn--primary btn--block" data-act="cook" data-id="${r.id}" style="margin-top:10px">👨‍🍳 Lancer le mode cuisine (minuteur)</button></div>
       ${r.astuce ? `<div class="section"><h3>💡 Astuce</h3><p>${esc(r.astuce)}</p></div>` : ''}
       <div class="section">
         <h3>↔ Produits de substitution</h3>
-        <p class="small muted">Manque un ingrédient ? Remplacez-le simplement :</p>
         ${r.ingredients.filter(i => i.subs && i.subs.length).map(i =>
           `<div class="ing"><span class="ing__name">${esc(i.nom)}</span><span class="ing__qte">→ ${i.subs.map(esc).join(', ')}</span></div>`).join('') || '<p class="small muted">Recette sans substitution particulière.</p>'}
+        ${hasPlaisir ? `<p class="small" style="margin-top:10px">😋 <b>Versions « plaisir »</b> (pour faire plaisir aux enfants, IG plus élevé) :</p>
+          ${r.ingredients.filter(i => i.plaisir && i.plaisir.length).map(i =>
+            `<div class="ing"><span class="ing__name">${esc(i.nom)}</span><span class="ing__qte">😋 ${i.plaisir.map(esc).join(', ')}</span></div>`).join('')}` : ''}
       </div>
-      <p class="small muted center">Valeurs par portion, approximatives. Index glycémique global estimé : ${r.ig}/100 (${esc(r.ig_label)}).</p>
+      <p class="small muted center">Valeurs par portion, approximatives. IG ${r.ig}/100 · charge glycémique ${r.cg} (${esc(r.cg_label)}).</p>
     </div>`;
-    view.scrollTop = 0; window.scrollTo(0, 0);
+    window.scrollTo(0, 0);
   }
 
   /* ------------------------------------------------------------------ *
@@ -465,6 +524,7 @@
       else if (route === 'courses') { viewCourses(); Store.startPolling(); }
       else if (route === 'reglages') viewReglages();
       else if (route === 'recette') viewRecette(param);
+      else if (route === 'ajouter') App.AddRecipe.render(view, param);
       else viewPlanning();
     } catch (e) { console.error(e); view.innerHTML = `<div class="empty">Erreur d'affichage : ${esc(e.message)}</div>`; }
     updateSelbar();
@@ -487,9 +547,11 @@
   }
 
   function onStoreChange() {
+    const changed = Data.syncCustom(Store.state.customRecipes);
     const { route } = currentRoute();
     updateAmbient();
-    if (route === 'courses' || route === 'favoris' || route === 'planning' || route === 'reglages') {
+    if (route === 'ajouter') return;
+    if (changed || route === 'courses' || route === 'favoris' || route === 'planning' || route === 'reglages') {
       const y = window.scrollY;
       render();
       window.scrollTo(0, y);
@@ -507,6 +569,23 @@
       sync: ['🔄', 'Synchronisation…'], error: ['🔴', 'Erreur de synchronisation'] };
     const m = map[status] || map.off;
     el.textContent = m[0]; el.title = m[1];
+  }
+
+  /* ------------------------------------------------------------------ *
+   *  Theme clair / sombre                                               *
+   * ------------------------------------------------------------------ */
+  function applyTheme() {
+    const t = Store.theme();
+    const dark = t === 'dark' || (t === 'auto' && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+    const btn = document.getElementById('theme-toggle');
+    if (btn) { btn.textContent = dark ? '☀️' : '🌙'; btn.title = 'Thème : ' + ({ auto: 'auto', light: 'clair', dark: 'sombre' }[t]); }
+  }
+  function cycleTheme() {
+    const order = ['auto', 'light', 'dark'];
+    const next = order[(order.indexOf(Store.theme()) + 1) % order.length];
+    Store.setTheme(next); applyTheme();
+    toast('Thème : ' + ({ auto: 'automatique', light: 'clair', dark: 'sombre' }[next]));
   }
 
   /* ------------------------------------------------------------------ *
@@ -530,6 +609,20 @@
       case 'addcourses':
         if (recipe) { Store.addRecipeToCourses(recipe); toast('🛒 Ingrédients ajoutés à la liste'); }
         break;
+      case 'addcourses-srv':
+        if (recipe) { Store.addRecipeToCourses(recipe, detailServings / (Data.baseServings || 2)); toast('🛒 Ajouté pour ' + detailServings + ' pers.'); }
+        break;
+      case 'cook': if (recipe) App.Cooking.open(recipe); break;
+      case 'srv-dec': detailServings = Math.max(1, detailServings - 1); render(); break;
+      case 'srv-inc': detailServings = Math.min(20, detailServings + 1); render(); break;
+      case 'addplaisir': Store.addCourse(t.dataset.name); toast('🛒 Ajouté : ' + t.dataset.name); break;
+      case 'theme-set': Store.setTheme(t.dataset.theme); applyTheme(); render(); break;
+      case 'srv-def-dec': Store.setDefaultServings(Store.defaultServings() - 1); render(); break;
+      case 'srv-def-inc': Store.setDefaultServings(Store.defaultServings() + 1); render(); break;
+      case 'cust-del':
+        if (confirm('Supprimer cette recette personnelle ?')) Store.deleteCustomRecipe(t.dataset.id);
+        break;
+      case 'custing-del': Store.removeCustomIngredient(t.dataset.name); break;
       case 'sel': toggleSelect(id); break;
       case 'selmode': selMode = !selMode; if (!selMode) selected.clear(); render(); break;
 
@@ -655,6 +748,11 @@
       location.hash = '#/courses';
     });
     document.getElementById('sync-indicator').addEventListener('click', () => location.hash = '#/reglages');
+    document.getElementById('theme-toggle').addEventListener('click', cycleTheme);
+    applyTheme();
+    if (window.matchMedia) {
+      try { window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', applyTheme); } catch (e) {}
+    }
 
     Store.onChange = onStoreChange;
     Store.onSyncStatus = setSyncIndicator;

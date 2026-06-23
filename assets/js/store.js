@@ -14,7 +14,8 @@
   function uid() { return Math.random().toString(36).slice(2, 9) + now().toString(36).slice(-3); }
 
   function defaultState() {
-    return { v: 1, favoris: [], ingredientsFavoris: [], courses: [], listes: [], updatedAt: 0, updatedBy: '' };
+    return { v: 1, favoris: [], ingredientsFavoris: [], courses: [], listes: [],
+      customRecipes: [], customIngredients: [], updatedAt: 0, updatedBy: '' };
   }
 
   const Store = {
@@ -113,16 +114,23 @@
       });
       if (!this._batch) this.commit();
     },
-    addRecipeToCourses(recipe) {
+    _factor(f) {
+      if (f) return f;
+      const base = (App.Data && App.Data.baseServings) || 2;
+      return this.defaultServings() / base;
+    },
+    addRecipeToCourses(recipe, factor) {
+      const f = this._factor(factor);
       this.batch(() => {
         recipe.ingredients.forEach(ing =>
-          this.addCourse(ing.nom, ing.qte, App.classifyRayon(ing.nom), recipe.id));
+          this.addCourse(ing.nom, App.scaleQty(ing.qte, f), App.classifyRayon(ing.nom), recipe.id));
       });
     },
-    addRecipesToCourses(recipes) {
+    addRecipesToCourses(recipes, factor) {
+      const f = this._factor(factor);
       this.batch(() => {
         recipes.forEach(r => r.ingredients.forEach(ing =>
-          this.addCourse(ing.nom, ing.qte, App.classifyRayon(ing.nom), r.id)));
+          this.addCourse(ing.nom, App.scaleQty(ing.qte, f), App.classifyRayon(ing.nom), r.id)));
       });
     },
 
@@ -153,6 +161,40 @@
         this.state.ingredientsFavoris.forEach(n => this.addCourse(n, '', App.classifyRayon(n), 'favori'));
       });
     },
+
+    /* ---------- recettes & ingredients personnalises ---------- */
+    activeCustomRecipes() { return (this.state.customRecipes || []).filter(r => !r.deleted); },
+    upsertCustomRecipe(rec) {
+      const list = this.state.customRecipes || (this.state.customRecipes = []);
+      rec.updatedAt = now(); rec.custom = true; rec.deleted = false;
+      const i = list.findIndex(r => r.id === rec.id);
+      if (i >= 0) list[i] = rec; else list.push(rec);
+      (rec.ingredients || []).forEach(ing => this._learnIngredient(ing.nom));
+      this.commit();
+    },
+    deleteCustomRecipe(id) {
+      const r = (this.state.customRecipes || []).find(x => x.id === id);
+      if (r) { r.deleted = true; r.updatedAt = now(); this.commit(); }
+    },
+    addCustomIngredient(name) { if (this._learnIngredient(name)) this.commit(); },
+    removeCustomIngredient(name) {
+      const i = (this.state.customIngredients || []).findIndex(n => eqName(n, name));
+      if (i >= 0) { this.state.customIngredients.splice(i, 1); this.commit(); }
+    },
+    _learnIngredient(name) {
+      name = (name || '').trim(); if (!name) return false;
+      this.state.customIngredients = this.state.customIngredients || [];
+      if (App.Data && App.Data.knownIngredient && App.Data.knownIngredient(name)) return false;
+      if (this.state.customIngredients.some(n => eqName(n, name))) return false;
+      this.state.customIngredients.push(name);
+      return true;
+    },
+
+    /* ---------- preferences locales (par appareil) ---------- */
+    theme() { return localStorage.getItem('repas_theme') || 'auto'; },
+    setTheme(t) { localStorage.setItem('repas_theme', t); },
+    defaultServings() { return parseInt(localStorage.getItem('repas_servings') || '4', 10) || 4; },
+    setDefaultServings(n) { localStorage.setItem('repas_servings', String(Math.max(1, Math.min(20, n)))); },
 
     /* ============================================================
        Synchronisation GitHub
@@ -274,6 +316,8 @@
       ingredientsFavoris: unionStr(remote.ingredientsFavoris, local.ingredientsFavoris),
       courses: mergeById(remote.courses, local.courses),
       listes: mergeById(remote.listes, local.listes),
+      customRecipes: mergeById(remote.customRecipes, local.customRecipes),
+      customIngredients: unionStr(remote.customIngredients, local.customIngredients),
       updatedAt: Math.max(remote.updatedAt || 0, local.updatedAt || 0),
       updatedBy: (local.updatedAt || 0) >= (remote.updatedAt || 0) ? local.updatedBy : remote.updatedBy
     };

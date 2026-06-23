@@ -4,6 +4,7 @@
   try {
     App.Store.load();
     await App.Data.load();
+    App.Data.syncCustom(App.Store.state.customRecipes);
     App.UI.init();
   } catch (e) {
     console.error(e);

@@ -1008,6 +1008,38 @@ def slugify(s):
     return urllib.parse.quote_plus(s)
 
 
+# Substituts "plaisir" : alternatives gourmandes (pas forcement IG bas) pour
+# faire plaisir a toute la famille. Associes par mot-cle a l'ingredient-legume.
+PLAISIR = [
+    ("haricots verts", ["frites maison", "pates", "gratin de pommes de terre"]),
+    ("haricot vert", ["frites maison", "pates"]),
+    ("chou-fleur", ["pommes de terre vapeur", "pates", "gratin dauphinois"]),
+    ("epinard", ["pates", "frites maison", "puree maison"]),
+    ("brocoli", ["pates", "gratin de pommes de terre", "frites maison"]),
+    ("courgette", ["pates", "riz blanc", "frites maison"]),
+    ("ratatouille", ["pates", "riz blanc", "frites maison"]),
+    ("salade verte", ["frites maison", "pommes de terre sautees"]),
+    ("poireau", ["pommes de terre", "pates"]),
+    ("champignon", ["pates", "riz blanc"]),
+    ("carotte", ["pommes de terre", "frites maison"]),
+    ("potiron", ["pommes de terre", "pates"]),
+    ("potimarron", ["pommes de terre", "pates"]),
+    ("lentilles", ["riz blanc", "pates"]),
+    ("legumes", ["riz blanc", "pates", "frites maison"]),
+    ("chou", ["pommes de terre", "pates"]),
+    ("quinoa", ["riz blanc", "pates"]),
+    ("boulgour", ["riz blanc", "pates"]),
+]
+
+
+def plaisir_for(nom):
+    n = nom.lower()
+    for key, opts in PLAISIR:
+        if key in n:
+            return opts
+    return None
+
+
 def build():
     seen = set()
     for idx, r in enumerate(RECIPES, start=1):
@@ -1019,14 +1051,23 @@ def build():
         # label IG
         ig = r["ig"]
         r["ig_label"] = "bas" if ig <= 50 else ("modere" if ig < 70 else "eleve")
+        # charge glycemique estimee par portion (IG x glucides / 100)
+        r["cg"] = round(ig * r["nutrition"]["glucides"] / 100)
+        r["cg_label"] = "basse" if r["cg"] <= 10 else ("moderee" if r["cg"] < 20 else "elevee")
+        # substituts plaisir
+        for ing in r["ingredients"]:
+            opts = plaisir_for(ing["nom"])
+            if opts:
+                ing["plaisir"] = opts
         del r["marm"]
 
     here = os.path.dirname(os.path.abspath(__file__))
     out = os.path.join(here, "..", "data", "recipes.json")
     payload = {
-        "version": 1,
+        "version": 2,
         "generated_for": "outil repas diabetique",
-        "note": "Valeurs nutritionnelles approximatives par portion. IG = index glycemique global estime.",
+        "base_servings": 2,
+        "note": "Valeurs nutritionnelles approximatives par portion. IG = index glycemique global estime. CG = charge glycemique.",
         "count": len(RECIPES),
         "recipes": RECIPES,
     }
@@ -1036,6 +1077,8 @@ def build():
     # petit recap familles
     from collections import Counter
     print(Counter(r["famille"] for r in RECIPES))
+    nb_plaisir = sum(1 for r in RECIPES for i in r["ingredients"] if i.get("plaisir"))
+    print("ingredients avec substitut plaisir:", nb_plaisir)
 
 
 if __name__ == "__main__":

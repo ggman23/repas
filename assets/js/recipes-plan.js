@@ -27,40 +27,98 @@
     recipes: [],
     byId: {},
     plan: [],
+    builtin: [],
+    custom: [],
+    baseServings: 2,
+    _customSig: '',
 
     async load() {
       const res = await fetch(C.recipesPath, { cache: 'no-cache' });
       if (!res.ok) throw new Error('Impossible de charger les recettes (' + res.status + ')');
       const data = await res.json();
-      this.recipes = data.recipes || [];
-      this.recipes.forEach(r => {
-        this.byId[r.id] = r;
-        r._blob = norm([r.nom, r.ingredients.map(i => i.nom).join(' '),
-          r.ingredients.map(i => (i.subs || []).join(' ')).join(' '),
-          (r.tags || []).join(' '), r.famille, r.ig_label, (r.saisons || []).join(' ')].join(' '));
-      });
+      this.baseServings = data.base_servings || 2;
+      this.builtin = data.recipes || [];
+      this.custom = [];
+      this._reindex();
       this.buildPlan();
       return this.recipes;
     },
 
-    /* ---------- planning annuel ---------- */
+    /* fusionne les recettes perso (synchronisees) ; retourne true si change */
+    syncCustom(list) {
+      const active = (list || []).filter(r => !r.deleted);
+      const sig = active.map(r => r.id + ':' + (r.updatedAt || 0)).join('|');
+      if (sig === this._customSig) return false;
+      this._customSig = sig;
+      this.custom = active;
+      this._reindex();
+      return true;
+    },
+
+    _reindex() {
+      this.recipes = this.builtin.concat(this.custom);
+      this.byId = {};
+      this.recipes.forEach(r => {
+        this.byId[r.id] = r;
+        const nut = r.nutrition || (r.nutrition = {});
+        if (r.cg == null) r.cg = Math.round((r.ig || 0) * (nut.glucides || 0) / 100);
+        if (!r.cg_label) r.cg_label = r.cg <= 10 ? 'basse' : (r.cg < 20 ? 'moderee' : 'elevee');
+        if (!r.ig_label) r.ig_label = (r.ig || 0) <= 50 ? 'bas' : ((r.ig || 0) < 70 ? 'modere' : 'eleve');
+        r._blob = norm([r.nom, r.ingredients.map(i => i.nom).join(' '),
+          r.ingredients.map(i => (i.subs || []).join(' ')).join(' '),
+          (r.tags || []).join(' '), r.famille || '', r.ig_label || '', (r.saisons || []).join(' ')].join(' '));
+      });
+      const set = new Set();
+      const addAtom = s => { const n = norm(s); if (n.length >= 3) set.add(n); };
+      this.builtin.forEach(r => r.ingredients.forEach(i => {
+        (i.subs || []).forEach(addAtom); (i.plaisir || []).forEach(addAtom);
+        splitParts(i.nom).forEach(addAtom);
+      }));
+      EXTRA_INGREDIENTS.forEach(addAtom);
+      this._builtinDict = set;
+    },
+
+    knownIngredient(name) { return this._builtinDict ? this._builtinDict.has(norm(name)) : false; },
+
+    /* ---------- saisons ---------- */
+    seasonOf(date) {
+      const m = date.getMonth();
+      return (m >= 2 && m <= 4) ? 'printemps' : (m >= 5 && m <= 7) ? 'ete'
+        : (m >= 8 && m <= 10) ? 'automne' : 'hiver';
+    },
+    seasonLabel(s) { return { printemps: 'Printemps', ete: 'Été', automne: 'Automne', hiver: 'Hiver' }[s] || s; },
+    seasonEmoji(s) { return { printemps: '🌷', ete: '☀️', automne: '🍂', hiver: '❄️' }[s] || ''; },
+    inSeason(r, season) {
+      const ss = r.saisons || [];
+      return !ss.length || ss.indexOf('toute') >= 0 || ss.indexOf(season) >= 0;
+    },
+
+    /* ---------- planning annuel (saisonnier, deterministe) ---------- */
     buildPlan() {
-      const midiPool = this.recipes.filter(r => r.types.indexOf('m') >= 0);
-      const soirPool = this.recipes.filter(r => r.types.indexOf('s') >= 0);
       const rndM = mulberry32(C.planSeed);
       const rndS = mulberry32(C.planSeed ^ 0x9e3779b9);
-      let mDeck = [], sDeck = [];
-      const draw = (pool, deck, rnd, avoid) => {
-        if (!deck.length) deck.push.apply(deck, shuffle(pool.slice(), rnd));
+      const decks = {};
+      const poolFor = (slot, season) => {
+        let p = this.builtin.filter(r => r.types.indexOf(slot) >= 0 && this.inSeason(r, season));
+        if (p.length < 3) p = this.builtin.filter(r => r.types.indexOf(slot) >= 0);
+        return p;
+      };
+      const draw = (slot, season, rnd, avoid) => {
+        const key = slot + '_' + season;
+        let deck = decks[key];
+        if (!deck || !deck.length) deck = decks[key] = shuffle(poolFor(slot, season).slice(), rnd);
         let i = 0;
         while (i < deck.length && deck[i].id === avoid) i++;
         if (i >= deck.length) i = 0;
         return deck.splice(i, 1)[0];
       };
+      const base = new Date(2026, 0, 1);
       this.plan = [];
       for (let d = 0; d < C.planDays; d++) {
-        const m = draw(midiPool, mDeck, rndM, null);
-        const s = draw(soirPool, sDeck, rndS, m.id);
+        const date = new Date(base.getTime() + d * 86400000);
+        const season = this.seasonOf(date);
+        const m = draw('m', season, rndM, null);
+        const s = draw('s', season, rndS, m.id);
         this.plan.push({ m: m.id, s: s.id });
       }
     },
@@ -72,6 +130,29 @@
       const idx = ((this.dayOfYear(date) % C.planDays) + C.planDays) % C.planDays;
       const e = this.plan[idx] || this.plan[0];
       return { midi: this.byId[e.m], soir: this.byId[e.s] };
+    },
+
+    /* ---------- extraction d'ingredients depuis un texte colle ---------- */
+    extractIngredients(text) {
+      const t = ' ' + norm(text).replace(/[\n\r]+/g, ' ') + ' ';
+      const dict = this._extractionDict();
+      const found = [];
+      dict.forEach(d => {
+        const idx = indexOfWord(t, d.n);
+        if (idx >= 0) found.push({ n: d.n, nom: d.display, qte: guessQty(t, idx) });
+      });
+      const kept = found.filter(f => !found.some(g => g !== f && g.n.length > f.n.length && g.n.indexOf(f.n) >= 0));
+      const seen = new Set(); const out = [];
+      kept.forEach(f => { if (!seen.has(f.n)) { seen.add(f.n); out.push({ nom: f.nom, qte: f.qte }); } });
+      return out;
+    },
+    _extractionDict() {
+      const map = new Map();
+      const add = (s) => { const n = norm(s); if (n.length >= 3 && !map.has(n)) map.set(n, cap(s)); };
+      (this._builtinDict || new Set()).forEach(n => map.set(n, cap(n)));
+      this.custom.forEach(r => r.ingredients.forEach(i => add(i.nom)));
+      ((App.Store && App.Store.state.customIngredients) || []).forEach(add);
+      return Array.from(map, ([n, display]) => ({ n, display }));
     },
 
     /* ---------- recherche ---------- */
@@ -93,13 +174,14 @@
       if (!r) return '🍽️';
       if (r.famille === 'soupe') return '🥣';
       if (r.famille === 'salade') return '🥗';
-      const map = { oeuf: '🍳', volaille: '🍗', poisson: '🐟', boeuf: '🥩', porc: '🥓', legumineuse: '🫘', vege: '🥗' };
+      const map = { oeuf: '🍳', volaille: '🍗', poisson: '🐟', boeuf: '🥩', porc: '🥓', legumineuse: '🫘', vege: '🥗', perso: '📝' };
       return map[r.famille] || '🍽️';
     }
   };
 
   function metricValue(r, key) {
     switch (key) {
+      case 'cg': return r.cg;
       case 'ig': return r.ig;
       case 'glucides': return r.nutrition.glucides;
       case 'calories': return r.nutrition.kcal;
@@ -116,7 +198,8 @@
      Analyse de la requete de recherche
      ============================================================ */
   const METRICS = [
-    { key: 'ig', kw: /\b(?:ig|index glycemique|indice glycemique|glycemique)\b/, unit: '' },
+    { key: 'cg', kw: /\b(?:charge glycemique|charge gly|charge|cg)\b/, unit: '' },
+    { key: 'ig', kw: /\b(?:ig|index glycemique|indice glycemique)\b/, unit: '' },
     { key: 'glucides', kw: /\b(?:glucides?|carbs?|sucres?)\b/, unit: ' g' },
     { key: 'calories', kw: /\b(?:calories?|kcal|cal)\b/, unit: ' kcal' },
     { key: 'proteines', kw: /\b(?:proteines?|prot)\b/, unit: ' g' },
@@ -130,7 +213,7 @@
     'environ autour index indice glycemique ig glucides glucide carbs carb sucre sucres calories calorie kcal cal ' +
     'proteines proteine prot lipides lipide gras graisse graisses fibres fibre temps minutes minute duree preparation ' +
     'complexite difficulte bas basse modere moderee modere eleve elevee elevees g gr gramme grammes note quelque chose ' +
-    'cherche trouve montre veut idee idees menu midi soir ' +
+    'cherche trouve montre veut idee idees menu midi soir charge cg ' +
     'facile simple rapide express complique complexe difficile dur tres').split(' '));
 
   function num(x) { return parseFloat(String(x).replace(',', '.')); }
@@ -194,7 +277,7 @@
   }
 
   function fmtFilter(key, c, unit) {
-    const names = { ig: 'IG', glucides: 'Glucides', calories: 'Calories', proteines: 'Protéines',
+    const names = { cg: 'Charge gly.', ig: 'IG', glucides: 'Glucides', calories: 'Calories', proteines: 'Protéines',
       lipides: 'Lipides', fibres: 'Fibres', temps: 'Temps', diff: 'Complexité' };
     const n = names[key] || key;
     if (c.min != null && c.max != null) return `${n} ${c.min}–${c.max}${unit}`;
@@ -202,6 +285,56 @@
     if (c.min != null) return `${n} ≥ ${c.min}${unit}`;
     return n;
   }
+
+  /* ============================================================
+     Aides : extraction d'ingredients & mise a l'echelle
+     ============================================================ */
+  const EXTRA_INGREDIENTS = ['tomate', 'oignon', 'ail', 'carotte', 'courgette', 'aubergine', 'poivron', 'salade',
+    'concombre', 'brocoli', 'chou', 'chou-fleur', 'champignon', 'epinard', 'poireau', 'pomme de terre', 'patate douce',
+    'potiron', 'citron', 'avocat', 'haricot vert', 'navet', 'celeri', 'menthe', 'persil', 'basilic', 'ciboulette',
+    'gingembre', 'echalote', 'radis', 'fenouil', 'poulet', 'dinde', 'boeuf', 'steak', 'porc', 'jambon', 'lardons',
+    'saumon', 'cabillaud', 'colin', 'thon', 'truite', 'maquereau', 'sardine', 'crevette', 'tofu', 'oeuf', 'lait',
+    'creme', 'fromage', 'feta', 'mozzarella', 'emmental', 'comte', 'parmesan', 'chevre', 'yaourt', 'beurre', 'riz',
+    'pates', 'quinoa', 'boulgour', 'semoule', 'lentilles', 'pois chiches', 'haricots', 'mais', 'huile', 'vinaigre',
+    'moutarde', 'olive', 'amande', 'noisette', 'sesame', 'farine', 'bouillon', 'curry', 'cumin', 'paprika', 'curcuma',
+    'miel', 'flocons', 'avoine', 'pain', 'banane', 'pomme', 'poire', 'fraise', 'courge', 'butternut', 'saucisse',
+    'chorizo', 'noix', 'raisin', 'petit pois', 'asperge', 'betterave', 'brebis', 'ricotta', 'creme fraiche',
+    'sucre', 'vanille', 'cannelle', 'chocolat', 'levure', 'cacao', 'sirop', 'fruits rouges', 'abricot', 'peche'];
+
+  function splitParts(s) {
+    return String(s).split(/\s*\+\s*|,|\(|\)|\/| ou /i).map(x => x.trim()).filter(x => x.length >= 3);
+  }
+  function cap(s) { s = String(s); return s.charAt(0).toUpperCase() + s.slice(1); }
+  function escapeRe(s) { return s.replace(/[.*+?^${}()|[\]\\-]/g, '\\$&'); }
+  function indexOfWord(hay, n) {
+    const m = new RegExp('(^|[^a-z0-9])' + escapeRe(n) + '(?:s|x)?([^a-z0-9]|$)').exec(hay);
+    return m ? m.index : -1;
+  }
+  function guessQty(t, idx) {
+    const before = t.slice(Math.max(0, idx - 18), idx);
+    const m = before.match(/(\d+(?:[.,]\d+)?)\s*(kg|g|cl|ml|l|c\.?\s*a\s*(?:soupe|cafe)|cuilleres?|gousses?|tranches?|boites?|pincees?|poignees?|sachets?|cas|cac)?\.?\s*(?:d['e]?\s*)?$/);
+    return m ? (m[1] + (m[2] ? ' ' + m[2] : '')).trim() : '';
+  }
+
+  function fmtScaled(v) {
+    if (!isFinite(v)) return '';
+    let r;
+    if (v >= 100) r = Math.round(v / 10) * 10;
+    else if (v >= 20) r = Math.round(v / 5) * 5;
+    else r = Math.round(v * 2) / 2;
+    return Math.abs(r - Math.round(r)) < 1e-9 ? String(Math.round(r)) : String(r).replace('.', ',');
+  }
+  function scaleQty(qte, factor) {
+    if (!qte || factor === 1 || !/\d/.test(qte)) return qte;
+    return qte.replace(/(\d+(?:[.,]\d+)?)\s*\/\s*(\d+(?:[.,]\d+)?)|(\d+(?:[.,]\d+)?)/g,
+      (mm, fa, fb, nn) => {
+        const val = (fa != null && fb != null)
+          ? parseFloat(fa.replace(',', '.')) / parseFloat(fb.replace(',', '.'))
+          : parseFloat(nn.replace(',', '.'));
+        return fmtScaled(val * factor);
+      });
+  }
+  App.scaleQty = scaleQty;
 
   /* ============================================================
      Classement par rayon (pour la liste de courses)

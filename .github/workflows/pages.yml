@@ -3,7 +3,7 @@
 name: Deploy GitHub Pages
 on:
   push:
-    branches: [main]
+    branches: [main, claude/loving-mccarthy-5hedzk]
   workflow_dispatch:
 permissions:
   contents: read

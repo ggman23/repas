@@ -1,7 +1,8 @@
 {
- "version": 1,
+ "version": 2,
  "generated_for": "outil repas diabetique",
- "note": "Valeurs nutritionnelles approximatives par portion. IG = index glycemique global estime.",
+ "base_servings": 2,
+ "note": "Valeurs nutritionnelles approximatives par portion. IG = index glycemique global estime. CG = charge glycemique.",
  "count": 83,
  "recipes": [
   {
@@ -35,6 +36,10 @@
      "subs": [
       "epinards",
       "courgette"
+     ],
+     "plaisir": [
+      "pates",
+      "riz blanc"
      ]
     },
     {
@@ -71,7 +76,9 @@
    "astuce": "",
    "id": "r001",
    "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=omelette+champignons",
-   "ig_label": "bas"
+   "ig_label": "bas",
+   "cg": 1,
+   "cg_label": "basse"
   },
   {
    "nom": "Omelette aux fines herbes",
@@ -130,7 +137,9 @@
    "astuce": "",
    "id": "r002",
    "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=omelette+fines+herbes",
-   "ig_label": "bas"
+   "ig_label": "bas",
+   "cg": 1,
+   "cg_label": "basse"
   },
   {
    "nom": "Oeufs brouilles a la tomate",
@@ -194,7 +203,9 @@
    "astuce": "",
    "id": "r003",
    "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=oeufs+brouilles+tomate",
-   "ig_label": "bas"
+   "ig_label": "bas",
+   "cg": 3,
+   "cg_label": "basse"
   },
   {
    "nom": "Shakshuka (oeufs poches tomate-poivron)",
@@ -266,7 +277,9 @@
    "astuce": "",
    "id": "r004",
    "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=shakshuka",
-   "ig_label": "bas"
+   "ig_label": "bas",
+   "cg": 6,
+   "cg_label": "basse"
   },
   {
    "nom": "Frittata courgette-feta",
@@ -298,6 +311,11 @@
      "subs": [
       "poireau",
       "brocoli"
+     ],
+     "plaisir": [
+      "pates",
+      "riz blanc",
+      "frites maison"
      ]
     },
     {
@@ -331,7 +349,9 @@
    "astuce": "",
    "id": "r005",
    "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=frittata+courgette",
-   "ig_label": "bas"
+   "ig_label": "bas",
+   "cg": 2,
+   "cg_label": "basse"
   },
   {
    "nom": "Oeufs cocotte aux epinards",
@@ -363,6 +383,11 @@
      "subs": [
       "blettes",
       "brocoli"
+     ],
+     "plaisir": [
+      "pates",
+      "frites maison",
+      "puree maison"
      ]
     },
     {
@@ -390,7 +415,9 @@
    "astuce": "",
    "id": "r006",
    "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=oeufs+cocotte+epinards",
-   "ig_label": "bas"
+   "ig_label": "bas",
+   "cg": 2,
+   "cg_label": "basse"
   },
   {
    "nom": "Salade d'oeufs durs et crudites",
@@ -419,7 +446,11 @@
     {
      "nom": "Salade verte",
      "qte": "1",
-     "subs": []
+     "subs": [],
+     "plaisir": [
+      "frites maison",
+      "pommes de terre sautees"
+     ]
     },
     {
      "nom": "Concombre",
@@ -452,7 +483,9 @@
    "astuce": "",
    "id": "r007",
    "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=salade+oeufs+durs",
-   "ig_label": "bas"
+   "ig_label": "bas",
+   "cg": 3,
+   "cg_label": "basse"
   },
   {
    "nom": "Galette de sarrasin oeuf-jambon",
@@ -512,7 +545,9 @@
    "astuce": "",
    "id": "r008",
    "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=galette+sarrasin+complete",
-   "ig_label": "bas"
+   "ig_label": "bas",
+   "cg": 14,
+   "cg_label": "moderee"
   },
   {
    "nom": "Quiche sans pate aux poireaux",
@@ -544,6 +579,10 @@
      "subs": [
       "courgette",
       "brocoli"
+     ],
+     "plaisir": [
+      "pommes de terre",
+      "pates"
      ]
     },
     {
@@ -579,7 +618,9 @@
    "astuce": "",
    "id": "r009",
    "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=quiche+sans+pate+poireaux",
-   "ig_label": "bas"
+   "ig_label": "bas",
+   "cg": 5,
+   "cg_label": "basse"
   },
   {
    "nom": "Tartines avocat-oeuf",
@@ -642,7 +683,9 @@
    "astuce": "",
    "id": "r010",
    "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=tartine+avocat+oeuf",
-   "ig_label": "bas"
+   "ig_label": "bas",
+   "cg": 10,
+   "cg_label": "basse"
   },
   {
    "nom": "Poulet grille citron-thym",
@@ -707,7 +750,9 @@
    "astuce": "",
    "id": "r011",
    "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=poulet+citron+thym",
-   "ig_label": "bas"
+   "ig_label": "bas",
+   "cg": 1,
+   "cg_label": "basse"
   },
   {
    "nom": "Escalope de poulet a la moutarde",
@@ -754,6 +799,10 @@
      "qte": "150 g",
      "subs": [
       "echalote"
+     ],
+     "plaisir": [
+      "pates",
+      "riz blanc"
      ]
     }
    ],
@@ -769,7 +818,9 @@
    "astuce": "",
    "id": "r012",
    "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=escalope+poulet+moutarde",
-   "ig_label": "bas"
+   "ig_label": "bas",
+   "cg": 1,
+   "cg_label": "basse"
   },
   {
    "nom": "Poulet au curry et lait de coco",
@@ -838,7 +889,9 @@
    "astuce": "",
    "id": "r013",
    "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=poulet+curry+coco",
-   "ig_label": "bas"
+   "ig_label": "bas",
+   "cg": 5,
+   "cg_label": "basse"
   },
   {
    "nom": "Emince de dinde au wok",
@@ -872,6 +925,10 @@
      "subs": [
       "courgette",
       "haricots verts"
+     ],
+     "plaisir": [
+      "pommes de terre",
+      "frites maison"
      ]
     },
     {
@@ -907,7 +964,9 @@
    "astuce": "",
    "id": "r014",
    "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=wok+dinde+legumes",
-   "ig_label": "bas"
+   "ig_label": "bas",
+   "cg": 6,
+   "cg_label": "basse"
   },
   {
    "nom": "Cuisses de poulet roties au four",
@@ -972,7 +1031,9 @@
    "astuce": "",
    "id": "r015",
    "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=cuisses+poulet+four",
-   "ig_label": "bas"
+   "ig_label": "bas",
+   "cg": 2,
+   "cg_label": "basse"
   },
   {
    "nom": "Poulet basquaise",
@@ -1041,7 +1102,9 @@
    "astuce": "",
    "id": "r016",
    "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=poulet+basquaise",
-   "ig_label": "bas"
+   "ig_label": "bas",
+   "cg": 6,
+   "cg_label": "basse"
   },
   {
    "nom": "Salade de poulet et crudites",
@@ -1073,7 +1136,11 @@
     {
      "nom": "Salade verte",
      "qte": "1",
-     "subs": []
+     "subs": [],
+     "plaisir": [
+      "frites maison",
+      "pommes de terre sautees"
+     ]
     },
     {
      "nom": "Tomates cerises",
@@ -1106,7 +1173,9 @@
    "astuce": "",
    "id": "r017",
    "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=salade+poulet",
-   "ig_label": "bas"
+   "ig_label": "bas",
+   "cg": 4,
+   "cg_label": "basse"
   },
   {
    "nom": "Brochettes de poulet et courgettes",
@@ -1140,6 +1209,11 @@
      "subs": [
       "poivron",
       "champignon"
+     ],
+     "plaisir": [
+      "pates",
+      "riz blanc",
+      "frites maison"
      ]
     },
     {
@@ -1168,7 +1242,9 @@
    "astuce": "",
    "id": "r018",
    "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=brochettes+poulet+courgette",
-   "ig_label": "bas"
+   "ig_label": "bas",
+   "cg": 2,
+   "cg_label": "basse"
   },
   {
    "nom": "Poulet, riz complet et brocoli",
@@ -1209,6 +1285,11 @@
      "subs": [
       "haricots verts",
       "chou-fleur"
+     ],
+     "plaisir": [
+      "pates",
+      "gratin de pommes de terre",
+      "frites maison"
      ]
     },
     {
@@ -1230,7 +1311,9 @@
    "astuce": "",
    "id": "r019",
    "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=poulet+riz+complet+brocoli",
-   "ig_label": "bas"
+   "ig_label": "bas",
+   "cg": 19,
+   "cg_label": "moderee"
   },
   {
    "nom": "Wrap au poulet et crudites",
@@ -1268,7 +1351,11 @@
     {
      "nom": "Salade, tomate, carotte rapee",
      "qte": "1 bol",
-     "subs": []
+     "subs": [],
+     "plaisir": [
+      "pommes de terre",
+      "frites maison"
+     ]
     },
     {
      "nom": "Fromage blanc + moutarde",
@@ -1291,7 +1378,9 @@
    "astuce": "",
    "id": "r020",
    "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=wrap+poulet",
-   "ig_label": "bas"
+   "ig_label": "bas",
+   "cg": 15,
+   "cg_label": "moderee"
   },
   {
    "nom": "Emince de dinde a la creme et champignons",
@@ -1322,7 +1411,11 @@
     {
      "nom": "Champignons",
      "qte": "250 g",
-     "subs": []
+     "subs": [],
+     "plaisir": [
+      "pates",
+      "riz blanc"
+     ]
     },
     {
      "nom": "Creme legere",
@@ -1357,7 +1450,9 @@
    "astuce": "",
    "id": "r021",
    "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=emince+dinde+creme+champignons",
-   "ig_label": "bas"
+   "ig_label": "bas",
+   "cg": 3,
+   "cg_label": "basse"
   },
   {
    "nom": "Pave de saumon au four",
@@ -1416,7 +1511,9 @@
    "astuce": "",
    "id": "r022",
    "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=saumon+four+citron",
-   "ig_label": "bas"
+   "ig_label": "bas",
+   "cg": 0,
+   "cg_label": "basse"
   },
   {
    "nom": "Papillote de cabillaud aux legumes",
@@ -1450,6 +1547,11 @@
      "subs": [
       "fenouil",
       "poireau"
+     ],
+     "plaisir": [
+      "pates",
+      "riz blanc",
+      "frites maison"
      ]
     },
     {
@@ -1481,7 +1583,9 @@
    "astuce": "",
    "id": "r023",
    "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=papillote+cabillaud+legumes",
-   "ig_label": "bas"
+   "ig_label": "bas",
+   "cg": 2,
+   "cg_label": "basse"
   },
   {
    "nom": "Colin sauce tomate",
@@ -1544,7 +1648,9 @@
    "astuce": "",
    "id": "r024",
    "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=colin+sauce+tomate",
-   "ig_label": "bas"
+   "ig_label": "bas",
+   "cg": 3,
+   "cg_label": "basse"
   },
   {
    "nom": "Truite aux amandes",
@@ -1603,7 +1709,9 @@
    "astuce": "",
    "id": "r025",
    "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=truite+amandes",
-   "ig_label": "bas"
+   "ig_label": "bas",
+   "cg": 1,
+   "cg_label": "basse"
   },
   {
    "nom": "Maquereaux au four a la moutarde",
@@ -1660,7 +1768,9 @@
    "astuce": "",
    "id": "r026",
    "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=maquereau+moutarde+four",
-   "ig_label": "bas"
+   "ig_label": "bas",
+   "cg": 1,
+   "cg_label": "basse"
   },
   {
    "nom": "Salade de sardines et pommes de terre",
@@ -1704,7 +1814,11 @@
     {
      "nom": "Salade verte + vinaigrette",
      "qte": "1 bol",
-     "subs": []
+     "subs": [],
+     "plaisir": [
+      "frites maison",
+      "pommes de terre sautees"
+     ]
     }
    ],
    "etapes": [
@@ -1720,7 +1834,9 @@
    "astuce": "",
    "id": "r027",
    "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=salade+sardines+pommes+de+terre",
-   "ig_label": "bas"
+   "ig_label": "bas",
+   "cg": 14,
+   "cg_label": "moderee"
   },
   {
    "nom": "Salade de thon, haricots et oeuf",
@@ -1786,7 +1902,9 @@
    "astuce": "",
    "id": "r028",
    "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=salade+thon+haricots+blancs",
-   "ig_label": "bas"
+   "ig_label": "bas",
+   "cg": 6,
+   "cg_label": "basse"
   },
   {
    "nom": "Crevettes sautees a l'ail",
@@ -1850,7 +1968,9 @@
    "astuce": "",
    "id": "r029",
    "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=crevettes+ail+persil",
-   "ig_label": "bas"
+   "ig_label": "bas",
+   "cg": 1,
+   "cg_label": "basse"
   },
   {
    "nom": "Poke bowl au saumon",
@@ -1917,7 +2037,9 @@
    "astuce": "",
    "id": "r030",
    "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=poke+bowl+saumon",
-   "ig_label": "bas"
+   "ig_label": "bas",
+   "cg": 21,
+   "cg_label": "elevee"
   },
   {
    "nom": "Dos de cabillaud et lentilles",
@@ -1952,12 +2074,20 @@
      "subs": [
       "lentilles corail",
       "pois chiches"
+     ],
+     "plaisir": [
+      "riz blanc",
+      "pates"
      ]
     },
     {
      "nom": "Carotte",
      "qte": "1",
-     "subs": []
+     "subs": [],
+     "plaisir": [
+      "pommes de terre",
+      "frites maison"
+     ]
     },
     {
      "nom": "Echalote",
@@ -1983,7 +2113,9 @@
    "astuce": "",
    "id": "r031",
    "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=cabillaud+lentilles",
-   "ig_label": "bas"
+   "ig_label": "bas",
+   "cg": 10,
+   "cg_label": "basse"
   },
   {
    "nom": "Filet de colin pane maison et epinards",
@@ -2028,6 +2160,11 @@
      "qte": "300 g",
      "subs": [
       "brocoli"
+     ],
+     "plaisir": [
+      "pates",
+      "frites maison",
+      "puree maison"
      ]
     }
    ],
@@ -2043,7 +2180,9 @@
    "astuce": "",
    "id": "r032",
    "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=colin+pane+epinards",
-   "ig_label": "bas"
+   "ig_label": "bas",
+   "cg": 7,
+   "cg_label": "basse"
   },
   {
    "nom": "Steak hache et haricots verts",
@@ -2076,6 +2215,11 @@
      "subs": [
       "brocoli",
       "courgette"
+     ],
+     "plaisir": [
+      "frites maison",
+      "pates",
+      "gratin de pommes de terre"
      ]
     },
     {
@@ -2102,7 +2246,9 @@
    "astuce": "",
    "id": "r033",
    "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=steak+hache+haricots+verts",
-   "ig_label": "bas"
+   "ig_label": "bas",
+   "cg": 2,
+   "cg_label": "basse"
   },
   {
    "nom": "Chili con carne",
@@ -2168,7 +2314,9 @@
    "astuce": "",
    "id": "r034",
    "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=chili+con+carne",
-   "ig_label": "bas"
+   "ig_label": "bas",
+   "cg": 17,
+   "cg_label": "moderee"
   },
   {
    "nom": "Boulettes de boeuf a la tomate",
@@ -2236,7 +2384,9 @@
    "astuce": "",
    "id": "r035",
    "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=boulettes+boeuf+tomate",
-   "ig_label": "bas"
+   "ig_label": "bas",
+   "cg": 6,
+   "cg_label": "basse"
   },
   {
    "nom": "Boeuf saute aux legumes (wok)",
@@ -2270,6 +2420,11 @@
      "subs": [
       "chou",
       "haricots verts"
+     ],
+     "plaisir": [
+      "pates",
+      "gratin de pommes de terre",
+      "frites maison"
      ]
     },
     {
@@ -2301,7 +2456,9 @@
    "astuce": "",
    "id": "r036",
    "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=boeuf+saute+legumes+wok",
-   "ig_label": "bas"
+   "ig_label": "bas",
+   "cg": 7,
+   "cg_label": "basse"
   },
   {
    "nom": "Hachis parmentier de patate douce",
@@ -2367,7 +2524,9 @@
    "astuce": "",
    "id": "r037",
    "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=hachis+parmentier+patate+douce",
-   "ig_label": "bas"
+   "ig_label": "bas",
+   "cg": 20,
+   "cg_label": "elevee"
   },
   {
    "nom": "Filet mignon de porc au four",
@@ -2402,7 +2561,11 @@
     {
      "nom": "Oignon + champignons",
      "qte": "1 + 200 g",
-     "subs": []
+     "subs": [],
+     "plaisir": [
+      "pates",
+      "riz blanc"
+     ]
     },
     {
      "nom": "Herbes de Provence",
@@ -2422,7 +2585,9 @@
    "astuce": "",
    "id": "r038",
    "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=filet+mignon+porc+four",
-   "ig_label": "bas"
+   "ig_label": "bas",
+   "cg": 2,
+   "cg_label": "basse"
   },
   {
    "nom": "Endives au jambon gratinees (light)",
@@ -2481,7 +2646,9 @@
    "astuce": "",
    "id": "r039",
    "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=endives+jambon+gratin",
-   "ig_label": "bas"
+   "ig_label": "bas",
+   "cg": 6,
+   "cg_label": "basse"
   },
   {
    "nom": "Saute de porc aux poivrons",
@@ -2545,7 +2712,9 @@
    "astuce": "",
    "id": "r040",
    "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=saute+porc+poivrons",
-   "ig_label": "bas"
+   "ig_label": "bas",
+   "cg": 5,
+   "cg_label": "basse"
   },
   {
    "nom": "Lentilles et oeuf poche",
@@ -2572,6 +2741,10 @@
      "subs": [
       "lentilles corail",
       "pois chiches"
+     ],
+     "plaisir": [
+      "riz blanc",
+      "pates"
      ]
     },
     {
@@ -2582,12 +2755,21 @@
     {
      "nom": "Carotte + oignon",
      "qte": "1 + 1",
-     "subs": []
+     "subs": [],
+     "plaisir": [
+      "pommes de terre",
+      "frites maison"
+     ]
     },
     {
      "nom": "Bouillon de legumes",
      "qte": "1 cube",
-     "subs": []
+     "subs": [],
+     "plaisir": [
+      "riz blanc",
+      "pates",
+      "frites maison"
+     ]
     },
     {
      "nom": "Vinaigre + moutarde",
@@ -2609,7 +2791,9 @@
    "astuce": "",
    "id": "r041",
    "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=lentilles+oeuf+poche",
-   "ig_label": "bas"
+   "ig_label": "bas",
+   "cg": 12,
+   "cg_label": "moderee"
   },
   {
    "nom": "Dahl de lentilles corail",
@@ -2634,6 +2818,10 @@
      "qte": "200 g",
      "subs": [
       "lentilles vertes"
+     ],
+     "plaisir": [
+      "riz blanc",
+      "pates"
      ]
     },
     {
@@ -2673,7 +2861,9 @@
    "astuce": "",
    "id": "r042",
    "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=dahl+lentilles+corail",
-   "ig_label": "bas"
+   "ig_label": "bas",
+   "cg": 15,
+   "cg_label": "moderee"
   },
   {
    "nom": "Curry de pois chiches",
@@ -2711,6 +2901,11 @@
      "qte": "150 g",
      "subs": [
       "chou kale"
+     ],
+     "plaisir": [
+      "pates",
+      "frites maison",
+      "puree maison"
      ]
     },
     {
@@ -2737,7 +2932,9 @@
    "astuce": "",
    "id": "r043",
    "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=curry+pois+chiches",
-   "ig_label": "bas"
+   "ig_label": "bas",
+   "cg": 18,
+   "cg_label": "moderee"
   },
   {
    "nom": "Salade de pois chiches",
@@ -2803,7 +3000,9 @@
    "astuce": "",
    "id": "r044",
    "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=salade+pois+chiches+feta",
-   "ig_label": "bas"
+   "ig_label": "bas",
+   "cg": 13,
+   "cg_label": "moderee"
   },
   {
    "nom": "Soupe de pois casses",
@@ -2835,7 +3034,11 @@
     {
      "nom": "Carotte + oignon",
      "qte": "2 + 1",
-     "subs": []
+     "subs": [],
+     "plaisir": [
+      "pommes de terre",
+      "frites maison"
+     ]
     },
     {
      "nom": "Lardons ou jambon (option)",
@@ -2863,7 +3066,9 @@
    "astuce": "",
    "id": "r045",
    "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=soupe+pois+casses",
-   "ig_label": "bas"
+   "ig_label": "bas",
+   "cg": 12,
+   "cg_label": "moderee"
   },
   {
    "nom": "Chili sin carne (vegetarien)",
@@ -2925,7 +3130,9 @@
    "astuce": "",
    "id": "r046",
    "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=chili+sin+carne+vegetarien",
-   "ig_label": "bas"
+   "ig_label": "bas",
+   "cg": 20,
+   "cg_label": "elevee"
   },
   {
    "nom": "Salade de lentilles et feta",
@@ -2951,6 +3158,10 @@
      "qte": "250 g",
      "subs": [
       "lentilles en boite"
+     ],
+     "plaisir": [
+      "riz blanc",
+      "pates"
      ]
     },
     {
@@ -2990,7 +3201,9 @@
    "astuce": "",
    "id": "r047",
    "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=salade+lentilles+feta",
-   "ig_label": "bas"
+   "ig_label": "bas",
+   "cg": 11,
+   "cg_label": "moderee"
   },
   {
    "nom": "Tartine de houmous et crudites",
@@ -3030,6 +3243,10 @@
      "subs": [
       "radis",
       "tomate"
+     ],
+     "plaisir": [
+      "pommes de terre",
+      "frites maison"
      ]
     },
     {
@@ -3051,7 +3268,9 @@
    "astuce": "",
    "id": "r048",
    "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=tartine+houmous+crudites",
-   "ig_label": "bas"
+   "ig_label": "bas",
+   "cg": 14,
+   "cg_label": "moderee"
   },
   {
    "nom": "Ratatouille et oeuf",
@@ -3075,7 +3294,12 @@
     {
      "nom": "Aubergine + courgette",
      "qte": "1 + 2",
-     "subs": []
+     "subs": [],
+     "plaisir": [
+      "pates",
+      "riz blanc",
+      "frites maison"
+     ]
     },
     {
      "nom": "Poivrons",
@@ -3121,7 +3345,9 @@
    "astuce": "",
    "id": "r049",
    "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=ratatouille",
-   "ig_label": "bas"
+   "ig_label": "bas",
+   "cg": 5,
+   "cg_label": "basse"
   },
   {
    "nom": "Gratin de courgettes",
@@ -3148,6 +3374,11 @@
      "subs": [
       "brocoli",
       "chou-fleur"
+     ],
+     "plaisir": [
+      "pates",
+      "riz blanc",
+      "frites maison"
      ]
     },
     {
@@ -3188,7 +3419,9 @@
    "astuce": "",
    "id": "r050",
    "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=gratin+courgettes",
-   "ig_label": "bas"
+   "ig_label": "bas",
+   "cg": 4,
+   "cg_label": "basse"
   },
   {
    "nom": "Poelee mediterraneenne",
@@ -3211,7 +3444,12 @@
     {
      "nom": "Courgette + aubergine",
      "qte": "1 + 1",
-     "subs": []
+     "subs": [],
+     "plaisir": [
+      "pates",
+      "riz blanc",
+      "frites maison"
+     ]
     },
     {
      "nom": "Poivrons",
@@ -3247,7 +3485,9 @@
    "astuce": "",
    "id": "r051",
    "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=poelee+legumes+mediterraneenne",
-   "ig_label": "bas"
+   "ig_label": "bas",
+   "cg": 7,
+   "cg_label": "basse"
   },
   {
    "nom": "Buddha bowl quinoa",
@@ -3273,6 +3513,10 @@
      "subs": [
       "boulgour",
       "riz complet"
+     ],
+     "plaisir": [
+      "riz blanc",
+      "pates"
      ]
     },
     {
@@ -3291,7 +3535,11 @@
     {
      "nom": "Carotte rapee + chou rouge",
      "qte": "1 bol",
-     "subs": []
+     "subs": [],
+     "plaisir": [
+      "pommes de terre",
+      "frites maison"
+     ]
     },
     {
      "nom": "Sauce yaourt-citron",
@@ -3313,7 +3561,9 @@
    "astuce": "",
    "id": "r052",
    "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=buddha+bowl+quinoa",
-   "ig_label": "bas"
+   "ig_label": "bas",
+   "cg": 22,
+   "cg_label": "elevee"
   },
   {
    "nom": "Taboule de chou-fleur",
@@ -3338,6 +3588,11 @@
      "qte": "1/2",
      "subs": [
       "chou-fleur surgele rape"
+     ],
+     "plaisir": [
+      "pommes de terre vapeur",
+      "pates",
+      "gratin dauphinois"
      ]
     },
     {
@@ -3375,7 +3630,9 @@
    "astuce": "",
    "id": "r053",
    "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=taboule+chou-fleur",
-   "ig_label": "bas"
+   "ig_label": "bas",
+   "cg": 4,
+   "cg_label": "basse"
   },
   {
    "nom": "Legumes rotis au four",
@@ -3402,6 +3659,10 @@
      "subs": [
       "potiron",
       "navet"
+     ],
+     "plaisir": [
+      "pommes de terre",
+      "frites maison"
      ]
     },
     {
@@ -3412,7 +3673,12 @@
     {
      "nom": "Courgette",
      "qte": "1",
-     "subs": []
+     "subs": [],
+     "plaisir": [
+      "pates",
+      "riz blanc",
+      "frites maison"
+     ]
     },
     {
      "nom": "Huile d'olive + herbes",
@@ -3433,7 +3699,9 @@
    "astuce": "",
    "id": "r054",
    "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=legumes+rotis+four",
-   "ig_label": "bas"
+   "ig_label": "bas",
+   "cg": 11,
+   "cg_label": "moderee"
   },
   {
    "nom": "Poivrons farcis au quinoa",
@@ -3468,6 +3736,10 @@
      "subs": [
       "riz complet",
       "boulgour"
+     ],
+     "plaisir": [
+      "riz blanc",
+      "pates"
      ]
     },
     {
@@ -3499,7 +3771,9 @@
    "astuce": "",
    "id": "r055",
    "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=poivrons+farcis+quinoa",
-   "ig_label": "bas"
+   "ig_label": "bas",
+   "cg": 19,
+   "cg_label": "moderee"
   },
   {
    "nom": "Tomates farcies (light)",
@@ -3559,7 +3833,9 @@
    "astuce": "",
    "id": "r056",
    "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=tomates+farcies",
-   "ig_label": "bas"
+   "ig_label": "bas",
+   "cg": 6,
+   "cg_label": "basse"
   },
   {
    "nom": "Courgettes farcies",
@@ -3585,6 +3861,11 @@
      "subs": [
       "aubergines",
       "poivrons"
+     ],
+     "plaisir": [
+      "pates",
+      "riz blanc",
+      "frites maison"
      ]
     },
     {
@@ -3617,7 +3898,9 @@
    "astuce": "",
    "id": "r057",
    "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=courgettes+farcies",
-   "ig_label": "bas"
+   "ig_label": "bas",
+   "cg": 5,
+   "cg_label": "basse"
   },
   {
    "nom": "Gratin de brocoli",
@@ -3644,6 +3927,11 @@
      "subs": [
       "chou-fleur",
       "courgette"
+     ],
+     "plaisir": [
+      "pates",
+      "gratin de pommes de terre",
+      "frites maison"
      ]
     },
     {
@@ -3680,7 +3968,9 @@
    "astuce": "",
    "id": "r058",
    "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=gratin+brocoli",
-   "ig_label": "bas"
+   "ig_label": "bas",
+   "cg": 4,
+   "cg_label": "basse"
   },
   {
    "nom": "Chou-fleur roti aux epices",
@@ -3707,6 +3997,11 @@
      "subs": [
       "brocoli",
       "romanesco"
+     ],
+     "plaisir": [
+      "pommes de terre vapeur",
+      "pates",
+      "gratin dauphinois"
      ]
     },
     {
@@ -3741,7 +4036,9 @@
    "astuce": "",
    "id": "r059",
    "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=chou-fleur+roti+epices",
-   "ig_label": "bas"
+   "ig_label": "bas",
+   "cg": 5,
+   "cg_label": "basse"
   },
   {
    "nom": "Risotto d'orge aux champignons",
@@ -3773,7 +4070,11 @@
     {
      "nom": "Champignons",
      "qte": "300 g",
-     "subs": []
+     "subs": [],
+     "plaisir": [
+      "pates",
+      "riz blanc"
+     ]
     },
     {
      "nom": "Oignon + ail",
@@ -3783,7 +4084,12 @@
     {
      "nom": "Bouillon de legumes",
      "qte": "75 cl",
-     "subs": []
+     "subs": [],
+     "plaisir": [
+      "riz blanc",
+      "pates",
+      "frites maison"
+     ]
     },
     {
      "nom": "Parmesan",
@@ -3804,7 +4110,9 @@
    "astuce": "",
    "id": "r060",
    "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=risotto+orge+champignons",
-   "ig_label": "bas"
+   "ig_label": "bas",
+   "cg": 23,
+   "cg_label": "elevee"
   },
   {
    "nom": "Soupe minestrone",
@@ -3838,6 +4146,11 @@
      "subs": [
       "poireau",
       "chou"
+     ],
+     "plaisir": [
+      "pates",
+      "riz blanc",
+      "frites maison"
      ]
     },
     {
@@ -3871,7 +4184,9 @@
    "astuce": "",
    "id": "r061",
    "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=minestrone",
-   "ig_label": "bas"
+   "ig_label": "bas",
+   "cg": 15,
+   "cg_label": "moderee"
   },
   {
    "nom": "Veloute de courgette",
@@ -3897,6 +4212,11 @@
      "qte": "4",
      "subs": [
       "brocoli"
+     ],
+     "plaisir": [
+      "pates",
+      "riz blanc",
+      "frites maison"
      ]
     },
     {
@@ -3930,7 +4250,9 @@
    "astuce": "",
    "id": "r062",
    "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=veloute+courgette",
-   "ig_label": "bas"
+   "ig_label": "bas",
+   "cg": 4,
+   "cg_label": "basse"
   },
   {
    "nom": "Veloute de potiron",
@@ -3957,6 +4279,10 @@
      "subs": [
       "courge butternut",
       "carotte"
+     ],
+     "plaisir": [
+      "pommes de terre",
+      "pates"
      ]
     },
     {
@@ -3993,7 +4319,9 @@
    "astuce": "",
    "id": "r063",
    "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=veloute+potiron",
-   "ig_label": "bas"
+   "ig_label": "bas",
+   "cg": 11,
+   "cg_label": "moderee"
   },
   {
    "nom": "Soupe de legumes maison",
@@ -4020,6 +4348,10 @@
      "subs": [
       "celeri",
       "courgette"
+     ],
+     "plaisir": [
+      "pommes de terre",
+      "pates"
      ]
     },
     {
@@ -4053,7 +4385,9 @@
    "astuce": "",
    "id": "r064",
    "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=soupe+legumes+maison",
-   "ig_label": "bas"
+   "ig_label": "bas",
+   "cg": 9,
+   "cg_label": "basse"
   },
   {
    "nom": "Veloute de brocoli",
@@ -4079,6 +4413,11 @@
      "subs": [
       "chou-fleur",
       "epinards"
+     ],
+     "plaisir": [
+      "pates",
+      "gratin de pommes de terre",
+      "frites maison"
      ]
     },
     {
@@ -4112,7 +4451,9 @@
    "astuce": "",
    "id": "r065",
    "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=veloute+brocoli",
-   "ig_label": "bas"
+   "ig_label": "bas",
+   "cg": 4,
+   "cg_label": "basse"
   },
   {
    "nom": "Soupe de lentilles",
@@ -4138,12 +4479,20 @@
      "qte": "200 g",
      "subs": [
       "lentilles corail"
+     ],
+     "plaisir": [
+      "riz blanc",
+      "pates"
      ]
     },
     {
      "nom": "Carotte + oignon + celeri",
      "qte": "2 + 1 + 1",
-     "subs": []
+     "subs": [],
+     "plaisir": [
+      "pommes de terre",
+      "frites maison"
+     ]
     },
     {
      "nom": "Tomates concassees",
@@ -4175,7 +4524,9 @@
    "astuce": "",
    "id": "r066",
    "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=soupe+lentilles",
-   "ig_label": "bas"
+   "ig_label": "bas",
+   "cg": 12,
+   "cg_label": "moderee"
   },
   {
    "nom": "Veloute de champignons",
@@ -4201,6 +4552,10 @@
      "qte": "500 g",
      "subs": [
       "cepes surgeles"
+     ],
+     "plaisir": [
+      "pates",
+      "riz blanc"
      ]
     },
     {
@@ -4237,7 +4592,9 @@
    "astuce": "",
    "id": "r067",
    "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=veloute+champignons",
-   "ig_label": "bas"
+   "ig_label": "bas",
+   "cg": 4,
+   "cg_label": "basse"
   },
   {
    "nom": "Salade grecque",
@@ -4294,7 +4651,9 @@
    "astuce": "",
    "id": "r068",
    "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=salade+grecque+feta",
-   "ig_label": "bas"
+   "ig_label": "bas",
+   "cg": 4,
+   "cg_label": "basse"
   },
   {
    "nom": "Salade caprese et oeuf",
@@ -4351,7 +4710,9 @@
    "astuce": "",
    "id": "r069",
    "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=salade+caprese",
-   "ig_label": "bas"
+   "ig_label": "bas",
+   "cg": 2,
+   "cg_label": "basse"
   },
   {
    "nom": "Salade concombre-feta et poulet",
@@ -4408,7 +4769,9 @@
    "astuce": "",
    "id": "r070",
    "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=salade+concombre+feta+poulet",
-   "ig_label": "bas"
+   "ig_label": "bas",
+   "cg": 2,
+   "cg_label": "basse"
   },
   {
    "nom": "Salade composee complete",
@@ -4432,7 +4795,11 @@
     {
      "nom": "Salade verte",
      "qte": "1",
-     "subs": []
+     "subs": [],
+     "plaisir": [
+      "frites maison",
+      "pommes de terre sautees"
+     ]
     },
     {
      "nom": "Thon ou jambon",
@@ -4471,7 +4838,9 @@
    "astuce": "",
    "id": "r071",
    "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=salade+composee",
-   "ig_label": "bas"
+   "ig_label": "bas",
+   "cg": 8,
+   "cg_label": "basse"
   },
   {
    "nom": "Pates completes sauce tomate-basilic",
@@ -4534,7 +4903,9 @@
    "astuce": "",
    "id": "r072",
    "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=pates+completes+tomate+basilic",
-   "ig_label": "bas"
+   "ig_label": "bas",
+   "cg": 31,
+   "cg_label": "elevee"
   },
   {
    "nom": "Spaghetti complets aux legumes et thon",
@@ -4570,7 +4941,12 @@
     {
      "nom": "Courgette + tomates",
      "qte": "1 + 300 g",
-     "subs": []
+     "subs": [],
+     "plaisir": [
+      "pates",
+      "riz blanc",
+      "frites maison"
+     ]
     },
     {
      "nom": "Ail + huile d'olive",
@@ -4591,7 +4967,9 @@
    "astuce": "",
    "id": "r073",
    "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=spaghetti+complets+thon+legumes",
-   "ig_label": "bas"
+   "ig_label": "bas",
+   "cg": 30,
+   "cg_label": "elevee"
   },
   {
    "nom": "Semoule complete aux legumes (couscous leger)",
@@ -4622,7 +5000,12 @@
     {
      "nom": "Courgette + carotte + navet",
      "qte": "3 legumes",
-     "subs": []
+     "subs": [],
+     "plaisir": [
+      "pates",
+      "riz blanc",
+      "frites maison"
+     ]
     },
     {
      "nom": "Pois chiches",
@@ -4653,7 +5036,9 @@
    "astuce": "",
    "id": "r074",
    "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=couscous+legumes+semoule+complete",
-   "ig_label": "bas"
+   "ig_label": "bas",
+   "cg": 32,
+   "cg_label": "elevee"
   },
   {
    "nom": "Boulgour aux petits legumes",
@@ -4679,12 +5064,21 @@
      "subs": [
       "quinoa",
       "semoule complete"
+     ],
+     "plaisir": [
+      "riz blanc",
+      "pates"
      ]
     },
     {
      "nom": "Poivron + courgette",
      "qte": "1 + 1",
-     "subs": []
+     "subs": [],
+     "plaisir": [
+      "pates",
+      "riz blanc",
+      "frites maison"
+     ]
     },
     {
      "nom": "Tomates + oignon",
@@ -4710,7 +5104,9 @@
    "astuce": "",
    "id": "r075",
    "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=boulgour+legumes",
-   "ig_label": "bas"
+   "ig_label": "bas",
+   "cg": 26,
+   "cg_label": "elevee"
   },
   {
    "nom": "Wok de nouilles soba et crevettes",
@@ -4748,7 +5144,12 @@
     {
      "nom": "Legumes wok",
      "qte": "300 g",
-     "subs": []
+     "subs": [],
+     "plaisir": [
+      "riz blanc",
+      "pates",
+      "frites maison"
+     ]
     },
     {
      "nom": "Sauce soja + gingembre",
@@ -4769,7 +5170,9 @@
    "astuce": "",
    "id": "r076",
    "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=wok+nouilles+soba+crevettes",
-   "ig_label": "bas"
+   "ig_label": "bas",
+   "cg": 27,
+   "cg_label": "elevee"
   },
   {
    "nom": "Oeuf dur, avocat et pain complet",
@@ -4825,7 +5228,9 @@
    "astuce": "",
    "id": "r077",
    "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=oeuf+dur+avocat+tartine",
-   "ig_label": "bas"
+   "ig_label": "bas",
+   "cg": 8,
+   "cg_label": "basse"
   },
   {
    "nom": "Saute de tofu aux legumes",
@@ -4856,7 +5261,12 @@
     {
      "nom": "Brocoli + poivron + carotte",
      "qte": "400 g",
-     "subs": []
+     "subs": [],
+     "plaisir": [
+      "pates",
+      "gratin de pommes de terre",
+      "frites maison"
+     ]
     },
     {
      "nom": "Sauce soja + gingembre + ail",
@@ -4882,7 +5292,9 @@
    "astuce": "",
    "id": "r078",
    "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=saute+tofu+legumes",
-   "ig_label": "bas"
+   "ig_label": "bas",
+   "cg": 7,
+   "cg_label": "basse"
   },
   {
    "nom": "Soupe de tomate et vermicelles complets",
@@ -4940,7 +5352,9 @@
    "astuce": "",
    "id": "r079",
    "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=soupe+tomate+vermicelles",
-   "ig_label": "bas"
+   "ig_label": "bas",
+   "cg": 16,
+   "cg_label": "moderee"
   },
   {
    "nom": "Salade de quinoa, concombre et feta",
@@ -4965,6 +5379,10 @@
      "qte": "100 g cru",
      "subs": [
       "boulgour"
+     ],
+     "plaisir": [
+      "riz blanc",
+      "pates"
      ]
     },
     {
@@ -4997,7 +5415,9 @@
    "astuce": "",
    "id": "r080",
    "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=salade+quinoa+concombre+feta",
-   "ig_label": "bas"
+   "ig_label": "bas",
+   "cg": 17,
+   "cg_label": "moderee"
   },
   {
    "nom": "Poelee de haricots verts, amandes et poulet",
@@ -5030,6 +5450,11 @@
      "qte": "400 g",
      "subs": [
       "brocoli"
+     ],
+     "plaisir": [
+      "frites maison",
+      "pates",
+      "gratin de pommes de terre"
      ]
     },
     {
@@ -5058,7 +5483,9 @@
    "astuce": "",
    "id": "r081",
    "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=poelee+haricots+verts+poulet+amandes",
-   "ig_label": "bas"
+   "ig_label": "bas",
+   "cg": 4,
+   "cg_label": "basse"
   },
   {
    "nom": "Cabillaud vapeur et ratatouille",
@@ -5092,6 +5519,11 @@
      "qte": "400 g",
      "subs": [
       "legumes du soleil"
+     ],
+     "plaisir": [
+      "pates",
+      "riz blanc",
+      "frites maison"
      ]
     },
     {
@@ -5113,7 +5545,9 @@
    "astuce": "",
    "id": "r082",
    "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=cabillaud+ratatouille",
-   "ig_label": "bas"
+   "ig_label": "bas",
+   "cg": 5,
+   "cg_label": "basse"
   },
   {
    "nom": "Veloute de lentilles corail et carotte",
@@ -5139,6 +5573,10 @@
      "qte": "150 g",
      "subs": [
       "lentilles vertes"
+     ],
+     "plaisir": [
+      "riz blanc",
+      "pates"
      ]
     },
     {
@@ -5146,6 +5584,10 @@
      "qte": "3",
      "subs": [
       "potiron"
+     ],
+     "plaisir": [
+      "pommes de terre",
+      "frites maison"
      ]
     },
     {
@@ -5180,7 +5622,9 @@
    "astuce": "",
    "id": "r083",
    "lien": "https://www.marmiton.org/recettes/recherche.aspx?aqt=veloute+lentilles+corail+carotte",
-   "ig_label": "bas"
+   "ig_label": "bas",
+   "cg": 11,
+   "cg_label": "moderee"
   }
  ]
 }

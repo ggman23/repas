@@ -1,11 +1,12 @@
 /* Service worker : met le site en cache pour un usage hors-ligne
    (pratique pour la liste de courses en magasin). Les appels a
    l'API GitHub passent toujours par le reseau. */
-const VERSION = 'v1';
+const VERSION = 'v2';
 const CACHE = 'mes-repas-' + VERSION;
 const SHELL = [
   './', './index.html', './manifest.webmanifest', './assets/css/style.css',
   './assets/js/config.js', './assets/js/store.js', './assets/js/recipes-plan.js',
+  './assets/js/cooking.js', './assets/js/addrecipe.js',
   './assets/js/ui.js', './assets/js/app.js', './data/recipes.json'
 ];
 
