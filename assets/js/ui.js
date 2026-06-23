@@ -738,14 +738,18 @@
     if (nom === null) return;
     if (Store.saveCurrentAsList(nom)) toast('💾 Liste enregistrée');
   }
-  function doSaveSync() {
+  async function doSaveSync() {
     Store.setToken(document.getElementById('set-token').value);
     Store.setDataBranch(document.getElementById('set-branch').value);
     Store.setUserName(document.getElementById('set-user').value);
     setSyncIndicator(Store.syncEnabled() ? 'ok' : 'off');
-    setSyncMsg(Store.syncEnabled() ? 'ok' : 'warn',
-      Store.syncEnabled() ? 'Enregistré. Synchronisation activée.' : 'Enregistré (mode local, pas de token).');
-    if (Store.syncEnabled()) Store.pullRemote();
+    if (!Store.syncEnabled()) { setSyncMsg('warn', 'Enregistré (mode local, pas de token).'); return; }
+    setSyncMsg('warn', 'Synchronisation (envoi de vos données + réception)…');
+    const ok = await Store.pushRemote();   // fusionne distant + local PUIS envoie => remonte la liste deja saisie
+    setSyncMsg(ok ? 'ok' : 'error', ok
+      ? "Synchronisé ✓ Vos listes sont partagées. Ouvrez « Courses » sur l'autre appareil (ou « Synchroniser maintenant »)."
+      : 'Échec : vérifiez le token (droits Contents en écriture) et la branche « ' + esc(Store.dataBranch()) + ' ».');
+    render();
   }
   async function doTestSync() {
     Store.setToken(document.getElementById('set-token').value);
@@ -757,8 +761,8 @@
   async function doSyncNow() {
     if (!Store.syncEnabled()) { setSyncMsg('warn', 'Activez d\'abord la synchro (token).'); return; }
     setSyncMsg('warn', 'Synchronisation…');
-    await Store.pushRemote();
-    setSyncMsg('ok', 'Synchronisé.');
+    const ok = await Store.pushRemote();
+    setSyncMsg(ok ? 'ok' : 'error', ok ? 'Synchronisé ✓ (données envoyées et reçues).' : 'Échec — vérifiez le token et la branche.');
   }
   function doResetLocal() {
     if (!confirm('Effacer les favoris et listes de CE navigateur ? (les données synchronisées restent sur GitHub)')) return;

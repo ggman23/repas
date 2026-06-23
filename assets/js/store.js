@@ -283,7 +283,7 @@
       this._pushTimer = setTimeout(() => this.pushRemote(), C.pushDebounceMs);
     },
     async pushRemote(retry = 0) {
-      if (!this.syncEnabled()) return;
+      if (!this.syncEnabled()) return false;
       this._status('sync');
       try {
         // toujours fusionner avec la derniere version distante avant d'ecrire
@@ -315,8 +315,10 @@
         this._sha = res.content && res.content.sha;
         this._status('ok');
         if (this.onChange) this.onChange();
+        return true;
       } catch (e) {
         console.warn('pushRemote', e); this._status('error');
+        return false;
       }
     },
     startPolling() {
