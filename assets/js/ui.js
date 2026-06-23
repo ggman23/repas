@@ -812,7 +812,8 @@
     setSyncIndicator(Store.syncEnabled() ? 'ok' : 'off');
     if (!location.hash) location.hash = '#/planning';
     render();
-    if (Store.syncEnabled()) Store.pullRemote();
+    // au demarrage : fusionne + remonte les donnees locales si besoin (sans commit inutile)
+    if (Store.syncEnabled()) Store.pushRemote();
   }
 
   App.UI = { init, render, toast };

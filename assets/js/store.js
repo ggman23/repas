@@ -286,19 +286,27 @@
       if (!this.syncEnabled()) return false;
       this._status('sync');
       try {
-        // toujours fusionner avec la derniere version distante avant d'ecrire
+        // recupere la derniere version distante et fusionne avant d'ecrire
         const r = await this._api(`contents/${C.statePath}?ref=${encodeURIComponent(this.dataBranch())}&t=${now()}`,
           { cache: 'no-store' });
+        let remoteObj = null;
         if (r.ok) {
           const data = await r.json();
           this._sha = data.sha;
-          try {
-            const remote = JSON.parse(b64decode(data.content));
-            this.state = mergeStates(remote, this.state);
-            this._saveLocal();
-          } catch (e) {}
+          try { remoteObj = JSON.parse(b64decode(data.content)); } catch (e) { remoteObj = null; }
         } else if (r.status === 404) {
           this._sha = null;
+        } else {
+          throw new Error('HTTP ' + r.status);
+        }
+        const before = JSON.stringify(this.state);
+        if (remoteObj) { this.state = mergeStates(remoteObj, this.state); this._saveLocal(); }
+        const localChanged = JSON.stringify(this.state) !== before;
+        // rien de nouveau a envoyer => pas de commit inutile
+        if (remoteObj && JSON.stringify(remoteObj) === JSON.stringify(this.state)) {
+          this._status('ok');
+          if (localChanged && this.onChange) this.onChange();
+          return true;
         }
         const body = {
           message: `maj donnees (${this.userName() || 'app'})`,
@@ -332,13 +340,35 @@
 
     async testConnection() {
       try {
-        const r = await this._api(`contents/${encodeURIComponent(C.recipesPath)}?ref=${encodeURIComponent(this.dataBranch())}`);
-        if (r.status === 404) return { ok: true, msg: 'Connexion OK (le fichier de donnees sera cree au premier ajout).' };
-        if (r.status === 401) return { ok: false, msg: 'Token refuse (401). Verifiez le token.' };
-        if (r.status === 403) return { ok: false, msg: 'Acces refuse (403). Le token a-t-il les droits Contents en ecriture ?' };
-        if (!r.ok) return { ok: false, msg: 'Erreur HTTP ' + r.status + ' (branche "' + this.dataBranch() + '" introuvable ?)' };
-        return { ok: true, msg: 'Connexion OK — synchronisation prete sur la branche "' + this.dataBranch() + '".' };
-      } catch (e) { return { ok: false, msg: 'Reseau indisponible : ' + e.message }; }
+        const ref = encodeURIComponent(this.dataBranch());
+        const r = await this._api(`contents/${encodeURIComponent(C.recipesPath)}?ref=${ref}`);
+        if (r.status === 401) return { ok: false, msg: 'Token refusé (401). Vérifiez que le jeton est correct et non expiré.' };
+        if (r.status === 403) return { ok: false, msg: 'Accès refusé (403). Le token n\'a pas accès à ce dépôt.' };
+        if (!r.ok && r.status !== 404) return { ok: false, msg: 'Erreur HTTP ' + r.status + ' (branche « ' + this.dataBranch() + ' » introuvable ?).' };
+        // sonde d'ECRITURE : c'est ce qui manque le plus souvent (token en lecture seule)
+        const probe = await this._writeProbe();
+        if (probe.ok) return { ok: true, msg: 'Lecture ET écriture OK — la synchronisation va fonctionner (branche « ' + this.dataBranch() + ' »).' };
+        return { ok: false, msg: probe.msg };
+      } catch (e) { return { ok: false, msg: 'Réseau indisponible : ' + e.message }; }
+    },
+    async _writeProbe() {
+      try {
+        const path = 'data/.synccheck';
+        const ref = encodeURIComponent(this.dataBranch());
+        let sha = null;
+        const g = await this._api(`contents/${path}?ref=${ref}&t=${now()}`, { cache: 'no-store' });
+        if (g.ok) { try { sha = (await g.json()).sha; } catch (e) {} }
+        const body = { message: 'verif synchro', content: b64encode('ok ' + new Date().toISOString()), branch: this.dataBranch() };
+        if (sha) body.sha = sha;
+        const put = await this._api(`contents/${path}`, {
+          method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body)
+        });
+        if (put.ok) return { ok: true };
+        if (put.status === 403) return { ok: false, msg: 'Lecture OK, mais ÉCRITURE refusée (403) : votre token est en LECTURE SEULE. Modifiez-le → Permissions → Contents → Read and write.' };
+        if (put.status === 404) return { ok: false, msg: 'Écriture impossible : la branche « ' + this.dataBranch() + ' » est introuvable.' };
+        if (put.status === 409 && sha == null) return { ok: true }; // course d'ecriture, l'acces marche
+        return { ok: false, msg: 'Écriture refusée (HTTP ' + put.status + ').' };
+      } catch (e) { return { ok: false, msg: 'Écriture impossible : ' + e.message }; }
     }
   };
 
