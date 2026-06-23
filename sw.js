@@ -1,8 +1,9 @@
-/* Service worker : met le site en cache pour un usage hors-ligne
-   (pratique pour la liste de courses en magasin). Les appels a
-   l'API GitHub passent toujours par le reseau. Les photos sont
-   mises en cache pour rester visibles hors connexion. */
-const VERSION = 'v6';
+/* Service worker.
+   - Coquille de l'app (HTML/JS/CSS/JSON) : RESEAU d'abord, repli cache hors-ligne
+     => on a toujours la derniere version quand on est en ligne.
+   - Images : cache d'abord (pour rester visibles hors-ligne).
+   - API GitHub : jamais touchee (toujours reseau direct). */
+const VERSION = 'v7';
 const CACHE = 'mes-repas-' + VERSION;
 const IMG = 'mes-repas-img';
 const SHELL = [
@@ -45,16 +46,13 @@ self.addEventListener('fetch', e => {
   if (url.hostname === 'api.github.com') return;     // donnees synchro : toujours reseau
   if (url.origin !== location.origin) return;        // autres ressources externes : non gerees
 
-  if (req.mode === 'navigate') {
-    e.respondWith(fetch(req).catch(() => caches.match('./index.html')));
-    return;
-  }
-  e.respondWith(caches.open(CACHE).then(async cache => {
-    const cached = await cache.match(req, { ignoreSearch: true });
-    const network = fetch(req).then(res => {
-      if (res && res.ok) cache.put(req, res.clone());
+  // Coquille de l'app : RESEAU d'abord, repli cache si hors-ligne.
+  e.respondWith(
+    fetch(req).then(res => {
+      if (res && res.ok) { const copy = res.clone(); caches.open(CACHE).then(c => c.put(req, copy)); }
       return res;
-    }).catch(() => cached);
-    return cached || network;
-  }));
+    }).catch(() => caches.match(req, { ignoreSearch: true }).then(
+      r => r || (req.mode === 'navigate' ? caches.match('./index.html') : Response.error())
+    ))
+  );
 });
