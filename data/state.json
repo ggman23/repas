@@ -4,7 +4,8 @@
  "ingredientsFavoris": [
   "Oeufs",
   "granola",
-  "papier wc"
+  "papier wc",
+  "Pain complet"
  ],
  "courses": [
   {
@@ -173,6 +174,6 @@
   }
  ],
  "recipePhotos": [],
- "updatedAt": 1782287987476,
+ "updatedAt": 1782288085830,
  "updatedBy": ""
 }
