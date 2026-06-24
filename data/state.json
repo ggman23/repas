@@ -2,11 +2,31 @@
  "v": 1,
  "favoris": [],
  "ingredientsFavoris": [
-  "Oeufs",
-  "granola",
-  "papier wc",
-  "Pain complet",
-  "café"
+  {
+   "k": "Oeufs",
+   "at": 0,
+   "del": false
+  },
+  {
+   "k": "granola",
+   "at": 0,
+   "del": false
+  },
+  {
+   "k": "papier wc",
+   "at": 0,
+   "del": false
+  },
+  {
+   "k": "Pain complet",
+   "at": 0,
+   "del": false
+  },
+  {
+   "k": "café",
+   "at": 0,
+   "del": false
+  }
  ],
  "courses": [
   {
