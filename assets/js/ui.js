@@ -544,11 +544,13 @@
   const selbar = document.getElementById('selbar');
   function updateSelbar() {
     document.body.classList.toggle('selmode', selMode);
-    if (selMode && selected.size) {
-      selbar.hidden = false;
-      document.getElementById('selbar-count').textContent =
-        selected.size + ' recette' + (selected.size > 1 ? 's' : '') + ' sélectionnée' + (selected.size > 1 ? 's' : '');
-    } else { selbar.hidden = true; }
+    selbar.hidden = !selMode;
+    if (!selMode) return;
+    const n = selected.size;
+    document.getElementById('selbar-count').textContent = n
+      ? (n + ' recette' + (n > 1 ? 's' : '') + ' sélectionnée' + (n > 1 ? 's' : ''))
+      : 'Touchez les recettes à ajouter';
+    document.getElementById('selbar-add').disabled = n === 0;
   }
   function exitSelMode() { selMode = false; selected.clear(); updateSelbar(); }
 
@@ -648,7 +650,7 @@
     const recipe = id ? Data.byId[id] : null;
 
     switch (act) {
-      case 'open': location.hash = '#/recette/' + id; break;
+      case 'open': if (selMode) { toggleSelect(id); } else { location.hash = '#/recette/' + id; } break;
       case 'back': history.length > 1 ? history.back() : (location.hash = '#/recettes'); break;
       case 'fav': {
         Store.toggleFavori(t.dataset.favId);

@@ -3,14 +3,15 @@
      => on a toujours la derniere version quand on est en ligne.
    - Images : cache d'abord (pour rester visibles hors-ligne).
    - API GitHub : jamais touchee (toujours reseau direct). */
-const VERSION = 'v8';
+const VERSION = 'v9';
 const CACHE = 'mes-repas-' + VERSION;
 const IMG = 'mes-repas-img';
 const SHELL = [
   './', './index.html', './manifest.webmanifest', './assets/css/style.css',
   './assets/js/config.js', './assets/js/store.js', './assets/js/recipes-plan.js',
   './assets/js/photos.js', './assets/js/cooking.js', './assets/js/addrecipe.js',
-  './assets/js/ui.js', './assets/js/app.js', './data/recipes.json'
+  './assets/js/ui.js', './assets/js/app.js', './data/recipes.json',
+  './assets/icons/icon-192.png', './assets/icons/icon-512.png', './assets/icons/icon-180.png'
 ];
 
 self.addEventListener('install', e => {
