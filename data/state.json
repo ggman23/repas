@@ -189,9 +189,9 @@
    "nom": "café",
    "qte": "",
    "rayon": "Autre",
-   "coche": false,
+   "coche": true,
    "deleted": false,
-   "updatedAt": 1782291007991,
+   "updatedAt": 1782294522140,
    "updatedBy": ""
   },
   {
@@ -199,9 +199,9 @@
    "nom": "Mouches",
    "qte": "",
    "rayon": "Autre",
-   "coche": false,
+   "coche": true,
    "deleted": false,
-   "updatedAt": 1782294459541,
+   "updatedAt": 1782294523610,
    "updatedBy": ""
   }
  ],
@@ -327,6 +327,6 @@
   }
  ],
  "recipePhotos": [],
- "updatedAt": 1782294478439,
+ "updatedAt": 1782294523610,
  "updatedBy": ""
 }
