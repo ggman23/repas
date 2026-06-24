@@ -170,7 +170,96 @@
    "updatedBy": ""
   }
  ],
- "listes": [],
+ "listes": [
+  {
+   "id": "addn5fn21i",
+   "nom": "Liste du 24/06/2026",
+   "items": [
+    {
+     "nom": "Courgettes",
+     "qte": "8",
+     "rayon": "Fruits & legumes"
+    },
+    {
+     "nom": "Oeufs",
+     "qte": "6 + 10",
+     "rayon": "Cremerie & oeufs"
+    },
+    {
+     "nom": "Creme legere",
+     "qte": "20 cl",
+     "rayon": "Cremerie & oeufs"
+    },
+    {
+     "nom": "Emmental rape",
+     "qte": "120 g",
+     "rayon": "Cremerie & oeufs"
+    },
+    {
+     "nom": "Ail",
+     "qte": "2 gousse",
+     "rayon": "Fruits & legumes"
+    },
+    {
+     "nom": "Courgette",
+     "qte": "2",
+     "rayon": "Fruits & legumes"
+    },
+    {
+     "nom": "Feta",
+     "qte": "160 g",
+     "rayon": "Cremerie & oeufs"
+    },
+    {
+     "nom": "Oignon",
+     "qte": "1",
+     "rayon": "Fruits & legumes"
+    },
+    {
+     "nom": "Huile d'olive",
+     "qte": "2 c. a soupe",
+     "rayon": "Epicerie"
+    },
+    {
+     "nom": "Pain complet",
+     "qte": "4 tranches",
+     "rayon": "Pain & feculents frais"
+    },
+    {
+     "nom": "Houmous",
+     "qte": "8 c. a soupe",
+     "rayon": "Epicerie"
+    },
+    {
+     "nom": "Carotte rapee + concombre",
+     "qte": "2 bol",
+     "rayon": "Fruits & legumes"
+    },
+    {
+     "nom": "Graines de sesame",
+     "qte": "2 c. a soupe",
+     "rayon": "Epicerie"
+    },
+    {
+     "nom": "papier wc",
+     "qte": "",
+     "rayon": "Autre"
+    },
+    {
+     "nom": "granola",
+     "qte": "",
+     "rayon": "Autre"
+    },
+    {
+     "nom": "café",
+     "qte": "",
+     "rayon": "Autre"
+    }
+   ],
+   "deleted": false,
+   "updatedAt": 1782289015830
+  }
+ ],
  "customRecipes": [],
  "customIngredients": [],
  "photos": [
@@ -194,6 +283,6 @@
   }
  ],
  "recipePhotos": [],
- "updatedAt": 1782288987168,
+ "updatedAt": 1782289015830,
  "updatedBy": ""
 }
