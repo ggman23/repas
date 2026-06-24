@@ -252,17 +252,30 @@
         Ajoutez un produit, vos favoris, ou envoyez des ingrédients depuis une recette.</div>`;
       return html;
     }
-    html += `<p class="muted small">${pris}/${total} pris — touchez un produit pour le cocher.</p>`;
-    const byRayon = {};
-    items.forEach(i => { (byRayon[i.rayon] = byRayon[i.rayon] || []).push(i); });
-    const order = App.RAYON_ORDER.filter(r => byRayon[r]).concat(Object.keys(byRayon).filter(r => App.RAYON_ORDER.indexOf(r) < 0));
-    order.forEach(rayon => {
-      html += `<div class="rayon"><div class="rayon__title">${App.RAYON_EMOJI[rayon] || '🛒'} ${esc(rayon)}</div>`;
-      byRayon[rayon].sort((a, b) => a.nom.localeCompare(b.nom, 'fr')).forEach(i => {
-        html += citem(i);
+    const todo = items.filter(i => !i.coche);
+    const done = items.filter(i => i.coche);
+
+    if (todo.length === 0) {
+      html += `<div class="done-banner">🎉 Courses finies !<span>Les ${total} articles sont pris — rien d'oublié.</span></div>`;
+    } else {
+      html += `<p class="muted small">${pris}/${total} pris — touchez un produit quand vous l'avez mis dans le panier.</p>`;
+      // articles a prendre, groupes par rayon
+      const byRayon = {};
+      todo.forEach(i => { (byRayon[i.rayon] = byRayon[i.rayon] || []).push(i); });
+      const order = App.RAYON_ORDER.filter(r => byRayon[r]).concat(Object.keys(byRayon).filter(r => App.RAYON_ORDER.indexOf(r) < 0));
+      order.forEach(rayon => {
+        html += `<div class="rayon"><div class="rayon__title">${App.RAYON_EMOJI[rayon] || '🛒'} ${esc(rayon)}</div>`;
+        byRayon[rayon].sort((a, b) => a.nom.localeCompare(b.nom, 'fr')).forEach(i => { html += citem(i); });
+        html += `</div>`;
       });
+    }
+    // articles deja pris, regroupes en bas
+    if (done.length) {
+      html += `<div class="rayon"><div class="rayon__title rayon__title--done">✓ Achetés (${done.length})
+        <button class="btn btn--sm" data-act="clear-checked" style="margin-left:auto">Retirer de la liste</button></div>`;
+      done.sort((a, b) => (b.updatedAt || 0) - (a.updatedAt || 0)).forEach(i => { html += citem(i); });
       html += `</div>`;
-    });
+    }
     return html;
   }
   function citem(i) {
@@ -272,8 +285,8 @@
       <div class="citem__check">${i.coche ? '✓' : ''}</div>
       <div class="citem__name">${esc(i.nom)}</div>
       ${i.qte ? `<div class="citem__qte">${esc(i.qte)}</div>` : ''}
-      <button class="citem__star" data-act="item-photo" data-name="${esc(i.nom)}" title="Ajouter une photo">📷${pc ? `<sup>${pc}</sup>` : ''}</button>
-      <button class="citem__star" data-act="cfav" data-name="${esc(i.nom)}" title="Ingrédient favori">${fav ? '★' : '☆'}</button>
+      <button class="citem__star${pc ? ' haspic' : ''}" data-act="item-photo" data-name="${esc(i.nom)}" title="${pc ? pc + ' photo(s) — voir l\'onglet Photos' : 'Ajouter une photo'}">📷${pc ? `<sup>${pc}</sup>` : ''}</button>
+      <button class="citem__star${fav ? ' isfav' : ''}" data-act="cfav" data-name="${esc(i.nom)}" title="Ingrédient favori">${fav ? '★' : '☆'}</button>
       <button class="citem__del" data-act="cdel" data-id="${i.id}" title="Supprimer">✕</button>
     </div>`;
   }
@@ -302,7 +315,7 @@
   }
 
   function coursesFavoris() {
-    const favs = Store.state.ingredientsFavoris.slice().sort((a, b) => a.localeCompare(b, 'fr'));
+    const favs = Store.ingFav().sort((a, b) => a.localeCompare(b, 'fr'));
     let html = `<div class="courses-add">
         <input id="ingfav-input" class="field" placeholder="Nouvel ingrédient favori (ex : lait, œufs…)" />
         <button class="btn btn--primary" data-act="addingfav">＋</button>
@@ -313,12 +326,12 @@
       return html;
     }
     html += `<div class="chips"><span class="chip" data-act="ingfav-add-all">🛒 Tout ajouter à la liste</span></div>
-      <p class="muted small">Touchez un favori pour l'ajouter à la liste du jour (re-touchez pour l'enlever).</p>`;
+      <p class="muted small">Touchez un favori pour l'ajouter à la liste (✓ = déjà dedans, re-touchez pour l'enlever). ✕ = retirer des favoris.</p>`;
     const inList = {};
     Store.activeCourses().forEach(c => inList[App.normName(c.nom)] = true);
     favs.forEach(n => {
       const on = inList[App.normName(n)];
-      html += `<div class="citem${on ? ' done' : ''}" data-act="ingfav-toggle" data-name="${esc(n)}">
+      html += `<div class="citem${on ? ' in-list' : ''}" data-act="ingfav-toggle" data-name="${esc(n)}">
         <div class="citem__check">${on ? '✓' : '＋'}</div>
         <div class="citem__name">${esc(n)}</div>
         <button class="citem__del" data-act="ingfav-remove" data-name="${esc(n)}" title="Retirer des favoris">✕</button>
@@ -434,9 +447,9 @@
             <a class="btn btn--sm" href="#/ajouter/${r.id}">✏️</a>
             <button class="btn btn--sm btn--danger" data-act="cust-del" data-id="${r.id}">✕</button>
           </div>`).join('') : '<p class="small muted" style="margin-top:8px">Aucune recette personnelle pour l\'instant.</p>'}
-        ${(Store.state.customIngredients && Store.state.customIngredients.length) ? `
+        ${Store.activeCustomIngredients().length ? `
           <label class="lbl">Ingrédients mémorisés</label>
-          <div class="chips">${Store.state.customIngredients.map(nm => `<span class="chip">${esc(nm)}<button class="citem__del" data-act="custing-del" data-name="${esc(nm)}" style="padding:0 0 0 6px">✕</button></span>`).join('')}</div>` : ''}
+          <div class="chips">${Store.activeCustomIngredients().map(nm => `<span class="chip">${esc(nm)}<button class="citem__del" data-act="custing-del" data-name="${esc(nm)}" style="padding:0 0 0 6px">✕</button></span>`).join('')}</div>` : ''}
       </div>
 
       <div class="set-card">

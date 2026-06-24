@@ -7,6 +7,7 @@
   --red:#dc2626; --red-bg:#fee2e2;
   --amber:#f59e0b;
   --shadow:0 1px 3px rgba(16,40,36,.08),0 6px 18px rgba(16,40,36,.06);
+  --overlay:#1f2a28; /* surface foncee fixe (toasts, barre de selection) — lisible dans les 2 themes */
   --radius:16px; --radius-s:10px;
   --nav-h:62px;
   font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
@@ -206,16 +207,18 @@ body.selmode .rcard__fav{display:none}
 
 /* ---------- Selection bar & toasts ---------- */
 .selbar{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(var(--nav-h) + 12px);z-index:40;
-  background:var(--ink);color:#fff;border-radius:14px;padding:10px 12px 10px 16px;display:flex;align-items:center;gap:14px;
+  background:var(--overlay);color:#fff;border-radius:14px;padding:10px 12px 10px 16px;display:flex;align-items:center;gap:14px;
   box-shadow:0 10px 30px rgba(0,0,0,.3);max-width:94vw}
+.selbar #selbar-count{color:#fff}
+.selbar .btn--ghost{color:#fff;background:transparent;border-color:rgba(255,255,255,.35)}
 @media(min-width:860px){.selbar{bottom:18px}}
 .selbar__actions{display:flex;gap:8px}
 .selbar .btn{padding:8px 12px}
 .toasts{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(var(--nav-h) + 78px);z-index:50;
   display:flex;flex-direction:column;gap:8px;align-items:center;pointer-events:none}
 @media(min-width:860px){.toasts{bottom:80px}}
-.toast{background:var(--ink);color:#fff;padding:11px 16px;border-radius:11px;font-size:.88rem;
-  box-shadow:var(--shadow);animation:pop .25s ease}
+.toast{background:var(--overlay);color:#fff;padding:11px 16px;border-radius:11px;font-size:.88rem;
+  box-shadow:0 8px 26px rgba(0,0,0,.35);animation:pop .25s ease}
 @keyframes pop{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
 
 /* nav drawer on small screens via menu button (we keep bottom nav, menu toggles nothing essential) */
@@ -287,3 +290,14 @@ html[data-theme="dark"] select.field option{background:#16211e;color:var(--ink)}
   background:rgba(0,0,0,.55);color:#fff;cursor:pointer;font-size:.8rem}
 .photo-by{position:absolute;bottom:5px;left:6px;background:rgba(0,0,0,.5);color:#fff;font-size:.62rem;padding:1px 7px;border-radius:7px}
 .citem__star sup{font-size:.58rem;color:var(--teal);font-weight:800;margin-left:1px}
+
+/* ---------- Indicateurs liste de courses ---------- */
+.citem.in-list{border-color:var(--teal);background:var(--soft)}
+.citem.in-list .citem__check{background:var(--teal);color:#fff;border-color:var(--teal)}
+.citem__star.haspic{background:var(--teal-l);border-radius:9px;padding:2px 7px;line-height:1}
+.citem__star.haspic sup{color:#fff}
+.citem__star.isfav{color:var(--amber)}
+.rayon__title--done{color:var(--green)}
+.done-banner{background:linear-gradient(135deg,var(--green),#15803d);color:#fff;border-radius:16px;
+  padding:20px 18px;text-align:center;font-size:1.4rem;font-weight:800;margin-bottom:14px;box-shadow:var(--shadow)}
+.done-banner span{display:block;font-size:.85rem;font-weight:500;margin-top:6px;opacity:.95}

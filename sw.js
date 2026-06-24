@@ -3,7 +3,7 @@
      => on a toujours la derniere version quand on est en ligne.
    - Images : cache d'abord (pour rester visibles hors-ligne).
    - API GitHub : jamais touchee (toujours reseau direct). */
-const VERSION = 'v7';
+const VERSION = 'v8';
 const CACHE = 'mes-repas-' + VERSION;
 const IMG = 'mes-repas-img';
 const SHELL = [

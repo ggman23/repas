@@ -101,7 +101,7 @@ Mélanger la farine et le beurre. Étaler. Disposer les poires. Cuire 30 min à 
     if (!box) return;
     if (!cur.ings.length) { box.innerHTML = `<p class="muted small">Aucun ingrédient pour l'instant — analysez le texte ou ajoutez-en.</p>`; return; }
     box.innerHTML = cur.ings.map((i, k) => {
-      const isNew = !Data().knownIngredient(i.nom) && !((Store().state.customIngredients || []).some(n => App.eqName(n, i.nom)));
+      const isNew = !Data().knownIngredient(i.nom) && !Store().isCustomIngredient(i.nom);
       return `<div class="ar-ing">
         <input class="field ar-ing-n" data-k="${k}" value="${esc(i.nom)}" />
         <input class="field ar-ing-q" data-k="${k}" style="max-width:120px" value="${esc(i.qte)}" placeholder="qté" />

@@ -34,6 +34,10 @@
         const raw = localStorage.getItem(LS_STATE);
         if (raw) this.state = Object.assign(defaultState(), JSON.parse(raw));
       } catch (e) { /* ignore */ }
+      // migration ancien format (tableaux de chaines) -> registres
+      this.state.favoris = regNorm(this.state.favoris);
+      this.state.ingredientsFavoris = regNorm(this.state.ingredientsFavoris);
+      this.state.customIngredients = regNorm(this.state.customIngredients);
       return this.state;
     },
     _saveLocal() {
@@ -63,21 +67,20 @@
     setUserName(n) { n ? localStorage.setItem(LS_USER, n.trim()) : localStorage.removeItem(LS_USER); },
     syncEnabled() { return !!this.token(); },
 
-    /* ---------- favoris recettes ---------- */
-    isFavori(id) { return this.state.favoris.includes(id); },
+    /* ---------- favoris recettes (registre : ajout/suppression synchronisables) ---------- */
+    isFavori(id) { return regHas(this.state.favoris, id); },
+    favRecipeIds() { return regActive(this.state.favoris); },
     toggleFavori(id) {
-      const i = this.state.favoris.indexOf(id);
-      if (i >= 0) this.state.favoris.splice(i, 1); else this.state.favoris.push(id);
+      regSet(this.state.favoris, id, regHas(this.state.favoris, id)); // si present -> del=true
       this.commit();
       return this.isFavori(id);
     },
 
-    /* ---------- ingredients favoris ---------- */
-    isIngFav(name) { return this.state.ingredientsFavoris.some(n => eqName(n, name)); },
+    /* ---------- ingredients favoris (registre) ---------- */
+    isIngFav(name) { return regHas(this.state.ingredientsFavoris, name); },
+    ingFav() { return regActive(this.state.ingredientsFavoris); },
     toggleIngFav(name) {
-      const i = this.state.ingredientsFavoris.findIndex(n => eqName(n, name));
-      if (i >= 0) this.state.ingredientsFavoris.splice(i, 1);
-      else this.state.ingredientsFavoris.push(name);
+      regSet(this.state.ingredientsFavoris, name, regHas(this.state.ingredientsFavoris, name));
       this.commit();
     },
 
@@ -158,7 +161,7 @@
     },
     addFavorisToCourses() {
       this.batch(() => {
-        this.state.ingredientsFavoris.forEach(n => this.addCourse(n, '', App.classifyRayon(n), 'favori'));
+        this.ingFav().forEach(n => this.addCourse(n, '', App.classifyRayon(n), 'favori'));
       });
     },
 
@@ -176,17 +179,18 @@
       const r = (this.state.customRecipes || []).find(x => x.id === id);
       if (r) { r.deleted = true; r.updatedAt = now(); this.commit(); }
     },
+    activeCustomIngredients() { return regActive(this.state.customIngredients); },
+    isCustomIngredient(name) { return regHas(this.state.customIngredients, name); },
     addCustomIngredient(name) { if (this._learnIngredient(name)) this.commit(); },
     removeCustomIngredient(name) {
-      const i = (this.state.customIngredients || []).findIndex(n => eqName(n, name));
-      if (i >= 0) { this.state.customIngredients.splice(i, 1); this.commit(); }
+      if (regHas(this.state.customIngredients, name)) { regSet(this.state.customIngredients, name, true); this.commit(); }
     },
     _learnIngredient(name) {
       name = (name || '').trim(); if (!name) return false;
       this.state.customIngredients = this.state.customIngredients || [];
       if (App.Data && App.Data.knownIngredient && App.Data.knownIngredient(name)) return false;
-      if (this.state.customIngredients.some(n => eqName(n, name))) return false;
-      this.state.customIngredients.push(name);
+      if (regHas(this.state.customIngredients, name)) return false;
+      regSet(this.state.customIngredients, name, false);
       return true;
     },
 
@@ -404,17 +408,45 @@
     if (!remote) return local;
     return {
       v: 1,
-      favoris: unionStr(remote.favoris, local.favoris),
-      ingredientsFavoris: unionStr(remote.ingredientsFavoris, local.ingredientsFavoris),
+      favoris: mergeReg(remote.favoris, local.favoris),
+      ingredientsFavoris: mergeReg(remote.ingredientsFavoris, local.ingredientsFavoris),
       courses: mergeById(remote.courses, local.courses),
       listes: mergeById(remote.listes, local.listes),
       customRecipes: mergeById(remote.customRecipes, local.customRecipes),
-      customIngredients: unionStr(remote.customIngredients, local.customIngredients),
+      customIngredients: mergeReg(remote.customIngredients, local.customIngredients),
       photos: mergeById(remote.photos, local.photos),
       recipePhotos: mergeById(remote.recipePhotos, local.recipePhotos),
       updatedAt: Math.max(remote.updatedAt || 0, local.updatedAt || 0),
       updatedBy: (local.updatedAt || 0) >= (remote.updatedAt || 0) ? local.updatedBy : remote.updatedBy
     };
+  }
+
+  /* ---------- registres "set" avec suppression synchronisable ----------
+     element : { k: clef, at: horodatage, del: supprime }. Compatible avec
+     l'ancien format (tableau de chaines) via regNorm. */
+  function regNorm(arr) {
+    return (arr || []).map(e => (typeof e === 'string' || typeof e === 'number')
+      ? { k: String(e), at: 0, del: false }
+      : { k: e.k, at: e.at || 0, del: !!e.del });
+  }
+  function regActive(reg) { return regNorm(reg).filter(e => !e.del).map(e => e.k); }
+  function regHas(reg, key) { const e = regNorm(reg).find(x => eqName(x.k, key)); return !!(e && !e.del); }
+  function regSet(reg, key, del) {
+    // reg est un tableau "vivant" (state.xxx) ; on le mute en place
+    let e = reg.find(x => typeof x === 'object' && eqName(x.k, key));
+    if (!e) { // peut contenir d'anciennes chaines : on cherche aussi par chaine
+      const i = reg.findIndex(x => typeof x === 'string' && eqName(x, key));
+      if (i >= 0) { e = { k: reg[i], at: 0, del: false }; reg[i] = e; }
+    }
+    if (e) { e.del = del; e.at = now(); } else { reg.push({ k: key, at: now(), del: del }); }
+  }
+  function mergeReg(remote, local) {
+    const map = new Map();
+    regNorm(remote).concat(regNorm(local)).forEach(e => {
+      const k = normName(e.k); const ex = map.get(k);
+      if (!ex || (e.at || 0) >= (ex.at || 0)) map.set(k, { k: e.k, at: e.at || 0, del: !!e.del });
+    });
+    return Array.from(map.values());
   }
 
   /* ---------- base64 unicode ---------- */

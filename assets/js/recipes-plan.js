@@ -151,7 +151,7 @@
       const add = (s) => { const n = norm(s); if (n.length >= 3 && !map.has(n)) map.set(n, cap(s)); };
       (this._builtinDict || new Set()).forEach(n => map.set(n, cap(n)));
       this.custom.forEach(r => r.ingredients.forEach(i => add(i.nom)));
-      ((App.Store && App.Store.state.customIngredients) || []).forEach(add);
+      (App.Store && App.Store.activeCustomIngredients ? App.Store.activeCustomIngredients() : []).forEach(add);
       return Array.from(map, ([n, display]) => ({ n, display }));
     },
 
