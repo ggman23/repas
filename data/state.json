@@ -5,7 +5,8 @@
   "Oeufs",
   "granola",
   "papier wc",
-  "Pain complet"
+  "Pain complet",
+  "café"
  ],
  "courses": [
   {
@@ -193,6 +194,6 @@
   }
  ],
  "recipePhotos": [],
- "updatedAt": 1782288735068,
+ "updatedAt": 1782288943144,
  "updatedBy": ""
 }
