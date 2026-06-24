@@ -39,9 +39,9 @@
    "nom": "Courgettes",
    "qte": "8",
    "rayon": "Fruits & legumes",
-   "coche": false,
+   "coche": true,
    "deleted": false,
-   "updatedAt": 1782212086999,
+   "updatedAt": 1782290995151,
    "updatedBy": ""
   },
   {
@@ -109,9 +109,9 @@
    "nom": "Oignon",
    "qte": "1",
    "rayon": "Fruits & legumes",
-   "coche": false,
+   "coche": true,
    "deleted": false,
-   "updatedAt": 1782212125746,
+   "updatedAt": 1782290996419,
    "updatedBy": ""
   },
   {
@@ -308,6 +308,6 @@
   }
  ],
  "recipePhotos": [],
- "updatedAt": 1782290987864,
+ "updatedAt": 1782290996419,
  "updatedBy": ""
 }
