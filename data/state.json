@@ -130,9 +130,9 @@
    "nom": "Graines de sesame",
    "qte": "2 c. a soupe",
    "rayon": "Epicerie",
-   "coche": false,
+   "coche": true,
    "deleted": false,
-   "updatedAt": 1782287668649,
+   "updatedAt": 1782287800823,
    "updatedBy": ""
   }
  ],
@@ -141,6 +141,6 @@
  "customIngredients": [],
  "photos": [],
  "recipePhotos": [],
- "updatedAt": 1782287779800,
+ "updatedAt": 1782287800823,
  "updatedBy": ""
 }
