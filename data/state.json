@@ -159,8 +159,18 @@
  "listes": [],
  "customRecipes": [],
  "customIngredients": [],
- "photos": [],
+ "photos": [
+  {
+   "id": "gzyzgmnsqb",
+   "label": "granola",
+   "url": "https://raw.githubusercontent.com/ggman23/repas/claude/loving-mccarthy-5hedzk/data/photos/pmqrs7ry5fwnu.jpg",
+   "by": "",
+   "at": 1782287930675,
+   "updatedAt": 1782287930675,
+   "deleted": false
+  }
+ ],
  "recipePhotos": [],
- "updatedAt": 1782287919980,
+ "updatedAt": 1782287930675,
  "updatedBy": ""
 }
