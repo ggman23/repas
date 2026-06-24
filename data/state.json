@@ -49,9 +49,9 @@
    "nom": "Oeufs",
    "qte": "6 + 10",
    "rayon": "Cremerie & oeufs",
-   "coche": false,
+   "coche": true,
    "deleted": false,
-   "updatedAt": 1782212125746,
+   "updatedAt": 1782290997798,
    "updatedBy": ""
   },
   {
@@ -59,9 +59,9 @@
    "nom": "Creme legere",
    "qte": "20 cl",
    "rayon": "Cremerie & oeufs",
-   "coche": false,
+   "coche": true,
    "deleted": false,
-   "updatedAt": 1782212086999,
+   "updatedAt": 1782290997003,
    "updatedBy": ""
   },
   {
@@ -69,9 +69,9 @@
    "nom": "Emmental rape",
    "qte": "120 g",
    "rayon": "Cremerie & oeufs",
-   "coche": false,
+   "coche": true,
    "deleted": false,
-   "updatedAt": 1782212086999,
+   "updatedAt": 1782290997319,
    "updatedBy": ""
   },
   {
@@ -99,9 +99,9 @@
    "nom": "Feta",
    "qte": "160 g",
    "rayon": "Cremerie & oeufs",
-   "coche": false,
+   "coche": true,
    "deleted": false,
-   "updatedAt": 1782212125746,
+   "updatedAt": 1782290997543,
    "updatedBy": ""
   },
   {
@@ -119,9 +119,9 @@
    "nom": "Huile d'olive",
    "qte": "2 c. a soupe",
    "rayon": "Epicerie",
-   "coche": false,
+   "coche": true,
    "deleted": false,
-   "updatedAt": 1782212125747,
+   "updatedAt": 1782290998847,
    "updatedBy": ""
   },
   {
@@ -129,9 +129,9 @@
    "nom": "Pain complet",
    "qte": "4 tranches",
    "rayon": "Pain & feculents frais",
-   "coche": false,
+   "coche": true,
    "deleted": false,
-   "updatedAt": 1782287668648,
+   "updatedAt": 1782290999391,
    "updatedBy": ""
   },
   {
@@ -139,9 +139,9 @@
    "nom": "Houmous",
    "qte": "8 c. a soupe",
    "rayon": "Epicerie",
-   "coche": false,
+   "coche": true,
    "deleted": false,
-   "updatedAt": 1782288987168,
+   "updatedAt": 1782290998409,
    "updatedBy": ""
   },
   {
@@ -169,9 +169,9 @@
    "nom": "papier wc",
    "qte": "",
    "rayon": "Autre",
-   "coche": false,
+   "coche": true,
    "deleted": false,
-   "updatedAt": 1782287825392,
+   "updatedAt": 1782291001280,
    "updatedBy": ""
   },
   {
@@ -179,9 +179,9 @@
    "nom": "granola",
    "qte": "",
    "rayon": "Autre",
-   "coche": false,
+   "coche": true,
    "deleted": false,
-   "updatedAt": 1782287950834,
+   "updatedAt": 1782291000383,
    "updatedBy": ""
   },
   {
@@ -189,9 +189,9 @@
    "nom": "café",
    "qte": "",
    "rayon": "Autre",
-   "coche": false,
+   "coche": true,
    "deleted": false,
-   "updatedAt": 1782288696961,
+   "updatedAt": 1782290999955,
    "updatedBy": ""
   }
  ],
@@ -308,6 +308,6 @@
   }
  ],
  "recipePhotos": [],
- "updatedAt": 1782290996419,
+ "updatedAt": 1782291001280,
  "updatedBy": ""
 }
