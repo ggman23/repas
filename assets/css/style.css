@@ -303,3 +303,11 @@ html[data-theme="dark"] select.field option{background:#16211e;color:var(--ink)}
 .done-banner{background:linear-gradient(135deg,var(--green),#15803d);color:#fff;border-radius:16px;
   padding:20px 18px;text-align:center;font-size:1.4rem;font-weight:800;margin-bottom:14px;box-shadow:var(--shadow)}
 .done-banner span{display:block;font-size:.85rem;font-weight:500;margin-top:6px;opacity:.95}
+
+/* ---------- Bandeau d'installation PWA ---------- */
+.install-banner{position:fixed;left:50%;transform:translateX(-50%);top:calc(58px + env(safe-area-inset-top));
+  z-index:38;background:var(--overlay);color:#fff;border-radius:12px;padding:8px 10px 8px 14px;display:flex;
+  align-items:center;gap:10px;box-shadow:0 8px 26px rgba(0,0,0,.35);max-width:94vw;font-size:.9rem;font-weight:600}
+.install-banner .spacer{flex:1}
+.install-banner .btn:not(.btn--primary){color:#fff;background:transparent;border-color:rgba(255,255,255,.3)}
+@media(min-width:860px){.install-banner{top:72px}}

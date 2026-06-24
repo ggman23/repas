@@ -3,11 +3,11 @@
      => on a toujours la derniere version quand on est en ligne.
    - Images : cache d'abord (pour rester visibles hors-ligne).
    - API GitHub : jamais touchee (toujours reseau direct). */
-const VERSION = 'v9';
+const VERSION = 'v10';
 const CACHE = 'mes-repas-' + VERSION;
 const IMG = 'mes-repas-img';
 const SHELL = [
-  './', './index.html', './manifest.webmanifest', './assets/css/style.css',
+  './', './index.html', './manifest.json', './assets/css/style.css',
   './assets/js/config.js', './assets/js/store.js', './assets/js/recipes-plan.js',
   './assets/js/photos.js', './assets/js/cooking.js', './assets/js/addrecipe.js',
   './assets/js/ui.js', './assets/js/app.js', './data/recipes.json',

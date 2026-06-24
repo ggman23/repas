@@ -78,6 +78,7 @@
   let selMode = false;
   let tokenVisible = false;
   let detailServings = 0, detailId = null;
+  let installPrompt = null;
 
   function mondayOf(d) {
     const x = new Date(d); const day = (x.getDay() + 6) % 7;
@@ -381,7 +382,20 @@
     const on = Store.syncEnabled();
     const statusTxt = on ? `<span class="status-dot ok"></span>Synchronisation activée`
       : `<span class="status-dot off"></span>Mode local (cet appareil uniquement)`;
+    const standalone = window.matchMedia && window.matchMedia('(display-mode: standalone)').matches;
     view.innerHTML = `<div class="page-head"><h2>⚙️ Réglages</h2></div>
+
+      <div class="set-card">
+        <h3>📲 Installer l'application</h3>
+        ${standalone
+          ? `<p class="small"><span class="status-dot ok"></span>L'application est installée. 👍</p>`
+          : installPrompt
+            ? `<p class="small">Installez « Mes Repas » comme une vraie appli (plein écran, sans la barre Chrome, icône salade).</p>
+               <button class="btn btn--primary" data-act="install">📲 Installer l'application</button>`
+            : `<p class="small muted">Le bouton d'installation apparaît dès que le téléphone est prêt :
+               restez quelques secondes sur la page (et touchez l'écran une fois), il s'affichera ici et en haut de l'écran.
+               Sinon, menu <b>⋮</b> de Chrome → « Installer l'application ». Sur iPhone : <b>Partager → Sur l'écran d'accueil</b>.</p>`}
+      </div>
 
       <div class="set-card">
         <h3>☁️ Synchronisation entre appareils</h3>
@@ -640,6 +654,30 @@
   }
 
   /* ------------------------------------------------------------------ *
+   *  Installation PWA (bandeau + bouton Réglages)                       *
+   * ------------------------------------------------------------------ */
+  function showInstallBanner() {
+    if (!installPrompt || localStorage.getItem('repas_install_dismissed')) return;
+    let b = document.getElementById('install-banner');
+    if (!b) {
+      b = document.createElement('div');
+      b.id = 'install-banner'; b.className = 'install-banner';
+      b.innerHTML = `<span>📲 Installer « Mes Repas »</span><span class="spacer"></span>
+        <button class="btn btn--sm btn--primary" data-act="install">Installer</button>
+        <button class="btn btn--sm" data-act="install-dismiss" aria-label="Fermer">✕</button>`;
+      document.body.appendChild(b);
+    }
+    b.hidden = false;
+  }
+  function hideInstallBanner() { const b = document.getElementById('install-banner'); if (b) b.hidden = true; }
+  async function doInstall() {
+    if (!installPrompt) return;
+    const p = installPrompt; installPrompt = null; hideInstallBanner();
+    try { p.prompt(); await p.userChoice; } catch (e) {}
+    if (currentRoute().route === 'reglages') render();
+  }
+
+  /* ------------------------------------------------------------------ *
    *  Gestion des clics (delegation)                                     *
    * ------------------------------------------------------------------ */
   function onClick(e) {
@@ -716,6 +754,8 @@
         if (confirm('Supprimer cette liste enregistrée ?')) Store.deleteList(t.dataset.id);
         break;
 
+      case 'install': doInstall(); break;
+      case 'install-dismiss': localStorage.setItem('repas_install_dismissed', '1'); hideInstallBanner(); break;
       case 'toktoggle': tokenVisible = !tokenVisible; render(); break;
       case 'save-sync': doSaveSync(); break;
       case 'test-sync': doTestSync(); break;
@@ -821,6 +861,11 @@
     if (window.matchMedia) {
       try { window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', applyTheme); } catch (e) {}
     }
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault(); installPrompt = e; showInstallBanner();
+      if (currentRoute().route === 'reglages') render();
+    });
+    window.addEventListener('appinstalled', () => { installPrompt = null; hideInstallBanner(); toast('🎉 Application installée'); });
 
     Store.onChange = onStoreChange;
     Store.onSyncStatus = setSyncIndicator;
