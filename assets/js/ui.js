@@ -395,6 +395,8 @@
             : `<p class="small muted">Le bouton d'installation apparaît dès que le téléphone est prêt :
                restez quelques secondes sur la page (et touchez l'écran une fois), il s'affichera ici et en haut de l'écran.
                Sinon, menu <b>⋮</b> de Chrome → « Installer l'application ». Sur iPhone : <b>Partager → Sur l'écran d'accueil</b>.</p>`}
+        <p class="small muted" style="margin-top:12px">Version pas à jour ou souci d'affichage ?</p>
+        <button class="btn btn--sm" data-act="force-update">🔄 Forcer la mise à jour (Repas uniquement)</button>
       </div>
 
       <div class="set-card">
@@ -656,20 +658,21 @@
   /* ------------------------------------------------------------------ *
    *  Installation PWA (bandeau + bouton Réglages)                       *
    * ------------------------------------------------------------------ */
-  function showInstallBanner() {
-    if (!installPrompt || localStorage.getItem('repas_install_dismissed')) return;
-    let b = document.getElementById('install-banner');
-    if (!b) {
-      b = document.createElement('div');
-      b.id = 'install-banner'; b.className = 'install-banner';
-      b.innerHTML = `<span>📲 Installer « Mes Repas »</span><span class="spacer"></span>
-        <button class="btn btn--sm btn--primary" data-act="install">Installer</button>
-        <button class="btn btn--sm" data-act="install-dismiss" aria-label="Fermer">✕</button>`;
-      document.body.appendChild(b);
-    }
-    b.hidden = false;
+  function showInstallBanner() { /* la barre d'installation est gérée par le script inline du <head> */ }
+  function hideInstallBanner() { const b = document.getElementById('pwa-install-bar'); if (b) b.style.display = 'none'; }
+  async function doForceUpdate() {
+    try {
+      if (window.caches) {
+        const ks = await caches.keys();
+        await Promise.all(ks.filter(k => k.indexOf('mes-repas') === 0).map(k => caches.delete(k)));
+      }
+      if (navigator.serviceWorker) {
+        const rs = await navigator.serviceWorker.getRegistrations();
+        await Promise.all(rs.filter(r => (r.scope || '').indexOf('/repas/') >= 0).map(r => r.unregister()));
+      }
+    } catch (e) {}
+    location.reload();
   }
-  function hideInstallBanner() { const b = document.getElementById('install-banner'); if (b) b.hidden = true; }
   async function doInstall() {
     const p = installPrompt || window.__deferredInstallPrompt;
     if (!p) return;
@@ -756,7 +759,7 @@
         break;
 
       case 'install': doInstall(); break;
-      case 'install-dismiss': localStorage.setItem('repas_install_dismissed', '1'); hideInstallBanner(); break;
+      case 'force-update': doForceUpdate(); break;
       case 'toktoggle': tokenVisible = !tokenVisible; render(); break;
       case 'save-sync': doSaveSync(); break;
       case 'test-sync': doTestSync(); break;

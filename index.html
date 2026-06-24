@@ -15,22 +15,41 @@
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A5%97%3C/text%3E%3C/svg%3E" />
   <link rel="stylesheet" href="./assets/css/style.css" />
   <script>
-    /* Capture TRES TOT l'evenement d'installabilite de Chrome (il peut se
-       declencher avant le chargement des scripts de l'app). */
+    /* Installation PWA — TOUT est ici, dans la page (pas dans les JS qui peuvent
+       être en cache). La navigation étant "réseau d'abord", cette page est toujours
+       fraîche => le bouton d'installation apparaît dès le prochain rechargement. */
     (function () {
+      var deferred = null;
+      function dismissed() { try { return localStorage.getItem('repas_install_dismissed') === '1'; } catch (e) { return false; } }
+      function showBar() {
+        if (!deferred || dismissed()) return;
+        var existing = document.getElementById('pwa-install-bar');
+        if (existing) { existing.style.display = 'flex'; return; }
+        var bar = document.createElement('div');
+        bar.id = 'pwa-install-bar';
+        bar.style.cssText = 'position:fixed;left:50%;transform:translateX(-50%);top:64px;z-index:9999;background:#1f2a28;color:#fff;border-radius:12px;padding:8px 10px 8px 14px;display:flex;gap:10px;align-items:center;box-shadow:0 8px 26px rgba(0,0,0,.35);font:600 14px -apple-system,BlinkMacSystemFont,system-ui,sans-serif;max-width:94vw';
+        var label = document.createElement('span'); label.textContent = '📲 Installer « Mes Repas »';
+        var install = document.createElement('button'); install.textContent = 'Installer';
+        install.style.cssText = 'background:#0f766e;color:#fff;border:0;border-radius:9px;padding:8px 13px;font-weight:700;cursor:pointer';
+        install.onclick = function () { if (!deferred) return; var d = deferred; deferred = null; window.__deferredInstallPrompt = null; bar.style.display = 'none'; try { d.prompt(); } catch (e) {} };
+        var close = document.createElement('button'); close.textContent = '✕'; close.setAttribute('aria-label', 'Fermer');
+        close.style.cssText = 'background:transparent;color:#fff;border:1px solid rgba(255,255,255,.3);border-radius:9px;padding:8px 11px;cursor:pointer';
+        close.onclick = function () { try { localStorage.setItem('repas_install_dismissed', '1'); } catch (e) {} bar.style.display = 'none'; };
+        bar.appendChild(label); bar.appendChild(install); bar.appendChild(close);
+        (document.body || document.documentElement).appendChild(bar);
+      }
       window.addEventListener('beforeinstallprompt', function (e) {
-        e.preventDefault();
-        window.__deferredInstallPrompt = e;
+        e.preventDefault(); deferred = e; window.__deferredInstallPrompt = e;
         window.dispatchEvent(new Event('repas-installable'));
+        if (document.body) showBar(); else window.addEventListener('DOMContentLoaded', showBar);
       });
       window.addEventListener('appinstalled', function () {
-        window.__deferredInstallPrompt = null;
+        deferred = null; window.__deferredInstallPrompt = null;
+        var b = document.getElementById('pwa-install-bar'); if (b) b.style.display = 'none';
         window.dispatchEvent(new Event('repas-installed'));
       });
       if ('serviceWorker' in navigator) {
-        window.addEventListener('load', function () {
-          navigator.serviceWorker.register('./sw.js').catch(function () {});
-        });
+        window.addEventListener('load', function () { navigator.serviceWorker.register('./sw.js').catch(function () {}); });
       }
     })();
   </script>
