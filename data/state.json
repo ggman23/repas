@@ -4,8 +4,8 @@
  "ingredientsFavoris": [
   {
    "k": "Oeufs",
-   "at": 0,
-   "del": false
+   "at": 1782290981783,
+   "del": true
   },
   {
    "k": "granola",
@@ -308,6 +308,6 @@
   }
  ],
  "recipePhotos": [],
- "updatedAt": 1782290963584,
+ "updatedAt": 1782290981783,
  "updatedBy": ""
 }
