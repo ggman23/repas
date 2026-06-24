@@ -11,8 +11,5 @@
     view.innerHTML = `<div class="empty"><span class="big">😕</span>
       Impossible de charger les recettes.<br><span class="small">${e.message}</span></div>`;
   }
-  // Service worker (mode hors-ligne pour faire les courses en magasin)
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('./sw.js').catch(() => {});
-  }
+  // Le service worker est enregistre tot via le script inline du <head>.
 })();

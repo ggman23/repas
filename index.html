@@ -14,6 +14,26 @@
   <meta name="apple-mobile-web-app-title" content="Mes Repas" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A5%97%3C/text%3E%3C/svg%3E" />
   <link rel="stylesheet" href="./assets/css/style.css" />
+  <script>
+    /* Capture TRES TOT l'evenement d'installabilite de Chrome (il peut se
+       declencher avant le chargement des scripts de l'app). */
+    (function () {
+      window.addEventListener('beforeinstallprompt', function (e) {
+        e.preventDefault();
+        window.__deferredInstallPrompt = e;
+        window.dispatchEvent(new Event('repas-installable'));
+      });
+      window.addEventListener('appinstalled', function () {
+        window.__deferredInstallPrompt = null;
+        window.dispatchEvent(new Event('repas-installed'));
+      });
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function () {
+          navigator.serviceWorker.register('./sw.js').catch(function () {});
+        });
+      }
+    })();
+  </script>
 </head>
 <body>
   <header class="appbar">

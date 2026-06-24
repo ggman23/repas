@@ -671,8 +671,9 @@
   }
   function hideInstallBanner() { const b = document.getElementById('install-banner'); if (b) b.hidden = true; }
   async function doInstall() {
-    if (!installPrompt) return;
-    const p = installPrompt; installPrompt = null; hideInstallBanner();
+    const p = installPrompt || window.__deferredInstallPrompt;
+    if (!p) return;
+    installPrompt = null; window.__deferredInstallPrompt = null; hideInstallBanner();
     try { p.prompt(); await p.userChoice; } catch (e) {}
     if (currentRoute().route === 'reglages') render();
   }
@@ -861,11 +862,20 @@
     if (window.matchMedia) {
       try { window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', applyTheme); } catch (e) {}
     }
-    window.addEventListener('beforeinstallprompt', (e) => {
-      e.preventDefault(); installPrompt = e; showInstallBanner();
-      if (currentRoute().route === 'reglages') render();
+    const pickupInstall = () => {
+      if (window.__deferredInstallPrompt && !installPrompt) {
+        installPrompt = window.__deferredInstallPrompt;
+        showInstallBanner();
+        if (currentRoute().route === 'reglages') render();
+      }
+    };
+    window.addEventListener('repas-installable', pickupInstall);
+    window.addEventListener('repas-installed', () => {
+      installPrompt = null; window.__deferredInstallPrompt = null; hideInstallBanner(); toast('🎉 Application installée');
     });
-    window.addEventListener('appinstalled', () => { installPrompt = null; hideInstallBanner(); toast('🎉 Application installée'); });
+    // secours si l'evenement arrive apres l'init (et au cas ou il a deja eu lieu)
+    window.addEventListener('beforeinstallprompt', (e) => { e.preventDefault(); window.__deferredInstallPrompt = e; pickupInstall(); });
+    pickupInstall();
 
     Store.onChange = onStoreChange;
     Store.onSyncStatus = setSyncIndicator;
