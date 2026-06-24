@@ -114,9 +114,9 @@
    "nom": "Houmous",
    "qte": "8 c. a soupe",
    "rayon": "Epicerie",
-   "coche": false,
+   "coche": true,
    "deleted": false,
-   "updatedAt": 1782287668649,
+   "updatedAt": 1782288961886,
    "updatedBy": ""
   },
   {
@@ -194,6 +194,6 @@
   }
  ],
  "recipePhotos": [],
- "updatedAt": 1782288943144,
+ "updatedAt": 1782288961886,
  "updatedBy": ""
 }
