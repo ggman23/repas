@@ -50,9 +50,9 @@
    "nom": "Ail",
    "qte": "2 gousse",
    "rayon": "Fruits & legumes",
-   "coche": false,
+   "coche": true,
    "deleted": false,
-   "updatedAt": 1782212148118,
+   "updatedAt": 1782287772142,
    "updatedBy": ""
   },
   {
@@ -120,9 +120,9 @@
    "nom": "Carotte rapee + concombre",
    "qte": "2 bol",
    "rayon": "Fruits & legumes",
-   "coche": false,
+   "coche": true,
    "deleted": false,
-   "updatedAt": 1782287668649,
+   "updatedAt": 1782287773008,
    "updatedBy": ""
   },
   {
@@ -141,6 +141,6 @@
  "customIngredients": [],
  "photos": [],
  "recipePhotos": [],
- "updatedAt": 1782287668649,
+ "updatedAt": 1782287773008,
  "updatedBy": ""
 }
