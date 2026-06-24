@@ -60,9 +60,9 @@
    "nom": "Courgette",
    "qte": "2",
    "rayon": "Fruits & legumes",
-   "coche": false,
+   "coche": true,
    "deleted": false,
-   "updatedAt": 1782212125746,
+   "updatedAt": 1782287779800,
    "updatedBy": ""
   },
   {
@@ -141,6 +141,6 @@
  "customIngredients": [],
  "photos": [],
  "recipePhotos": [],
- "updatedAt": 1782287773008,
+ "updatedAt": 1782287779800,
  "updatedBy": ""
 }
