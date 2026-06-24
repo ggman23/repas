@@ -94,6 +94,46 @@
    "deleted": false,
    "updatedAt": 1782212125747,
    "updatedBy": ""
+  },
+  {
+   "id": "4ouhzze6js",
+   "nom": "Pain complet",
+   "qte": "4 tranches",
+   "rayon": "Pain & feculents frais",
+   "coche": false,
+   "deleted": false,
+   "updatedAt": 1782287668648,
+   "updatedBy": ""
+  },
+  {
+   "id": "amxnzc76jt",
+   "nom": "Houmous",
+   "qte": "8 c. a soupe",
+   "rayon": "Epicerie",
+   "coche": false,
+   "deleted": false,
+   "updatedAt": 1782287668649,
+   "updatedBy": ""
+  },
+  {
+   "id": "xvrahgv6jt",
+   "nom": "Carotte rapee + concombre",
+   "qte": "2 bol",
+   "rayon": "Fruits & legumes",
+   "coche": false,
+   "deleted": false,
+   "updatedAt": 1782287668649,
+   "updatedBy": ""
+  },
+  {
+   "id": "ncgpxgy6jt",
+   "nom": "Graines de sesame",
+   "qte": "2 c. a soupe",
+   "rayon": "Epicerie",
+   "coche": false,
+   "deleted": false,
+   "updatedAt": 1782287668649,
+   "updatedBy": ""
   }
  ],
  "listes": [],
@@ -101,6 +141,6 @@
  "customIngredients": [],
  "photos": [],
  "recipePhotos": [],
- "updatedAt": 1782212190162,
+ "updatedAt": 1782287668649,
  "updatedBy": ""
 }
