@@ -169,9 +169,9 @@
    "nom": "papier wc",
    "qte": "",
    "rayon": "Autre",
-   "coche": false,
+   "coche": true,
    "deleted": false,
-   "updatedAt": 1782291006496,
+   "updatedAt": 1782294535321,
    "updatedBy": ""
   },
   {
@@ -327,6 +327,6 @@
   }
  ],
  "recipePhotos": [],
- "updatedAt": 1782294523610,
+ "updatedAt": 1782294535321,
  "updatedBy": ""
 }
