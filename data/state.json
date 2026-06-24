@@ -2,7 +2,8 @@
  "v": 1,
  "favoris": [],
  "ingredientsFavoris": [
-  "Oeufs"
+  "Oeufs",
+  "granola"
  ],
  "courses": [
   {
@@ -171,6 +172,6 @@
   }
  ],
  "recipePhotos": [],
- "updatedAt": 1782287950834,
+ "updatedAt": 1782287980400,
  "updatedBy": ""
 }
